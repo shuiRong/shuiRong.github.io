@@ -343,9 +343,9 @@
         
         <tags>
             
-            <tag> 选择 </tag>
-            
             <tag> 一些思考 </tag>
+            
+            <tag> 选择 </tag>
             
             <tag> 人生经验 </tag>
             
@@ -822,7 +822,7 @@
 <h4 id="1-代码压缩-gzip"><a href="#1-代码压缩-gzip" class="headerlink" title="1.代码压缩(gzip)"></a>1.代码压缩(gzip)</h4><p>如果你用的是<code>nginx</code>服务器，请修改配置文件(其他 web server 类似)：</p>
 <p><code>sudo nano /etc/nginx/nginx.conf</code></p>
 <p>在 Gzip Settings 里加入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gzip on;</span><br><span class="line">gzip_min_length 1k;</span><br><span class="line">gzip_buffers 4 16k;</span><br><span class="line">gzip_comp_level 5;</span><br><span class="line">gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gzip on;</span><br><span class="line">gzip_min_length 1k;</span><br><span class="line">gzip_buffers 4 16k;</span><br><span class="line">gzip_comp_level 5;</span><br><span class="line">gzip_types text/plain application/javascript text/css application/xml text/javascript application/x-httpd-php;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>gzip<ul>
 <li>开启或者关闭 gzip 模块，这里使用 on 表示启动</li>
