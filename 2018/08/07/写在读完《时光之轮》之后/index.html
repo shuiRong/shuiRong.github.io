@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="林水溶的博客"/>
   <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
   <link rel="alternate" href="/atom.xml" title="林水溶的博客" type="application/atom+xml">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/m.min.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
@@ -236,36 +236,45 @@
 <div class="clearfix">
 </div>
 </footer>
-  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
 <script src="/js/search.min.js"></script>
 <script type="text/javascript">
 
-// disqus scripts
+  // disqus scripts
+  
 
+      // dropdown scripts
+      $(".dropdown").click(function (event) {
+        var current = $(this);
+        event.stopPropagation();
+        $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open")) ? 'removeClass' : 'addClass']("open")
+      });
+    $(document).click(function () {
+      $(".dropdown-content").removeClass("open");
+    })
 
-    // dropdown scripts
-    $(".dropdown").click(function (event) {
-      var current = $(this);
-      event.stopPropagation();
-      $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open")) ? 'removeClass' : 'addClass']("open")
-    });
-  $(document).click(function () {
-    $(".dropdown-content").removeClass("open");
-  })
-
-  var path = "/search.xml";
-  searchFunc(path, 'local-search-input', 'local-search-result');
-
+    var path = "/search.xml";
+    searchFunc(path, 'local-search-input', 'local-search-result');
 </script>
 
 <div id="updown">
   <div class="sidebar_wo" id="leimu">
-    <img src="/img/leimu.png" alt="雷姆" onmouseover="this.src='/img/leimu.png'" onmouseout="this.src='/img/leimu.png'"
-      id="audioBtn">
+    <img
+      src="/img/leimu.png"
+      alt="雷姆"
+      onmouseover="this.src='/img/leimu.png'"
+      onmouseout="this.src='/img/leimu.png'"
+      id="audioBtn"
+    />
   </div>
   <div class="sidebar_wo" id="lamu">
-    <img src="/img/lamu_2.png" alt="拉姆" onmouseover="this.src='/img/lamu_1.png'" onmouseout="this.src='/img/lamu_2.png'"
-      id="audioBtn">
+    <img
+      src="/img/lamu_2.png"
+      alt="拉姆"
+      onmouseover="this.src='/img/lamu_1.png'"
+      onmouseout="this.src='/img/lamu_2.png'"
+      id="audioBtn"
+    />
   </div>
 </div>
 
@@ -279,20 +288,20 @@
 
   #leimu {
     left: 0;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     -webkit-transform: translate(-7px, 7px);
     -ms-transform: translate(-7px, 7px);
     transform: translate(-7px, 7px);
   }
 
   #lamu {
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     -webkit-transform: translate(7px, 7px);
     -ms-transform: translate(7px, 7px);
     transform: translate(7px, 7px);
-    right: 0
+    right: 0;
   }
 
   #leimu:hover {
@@ -309,5 +318,6 @@
 </style>
 
 <script src="/js/click.js"></script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haru@1.0.5/01/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
