@@ -27,11 +27,19 @@
 </blockquote>
 <p><strong>开源意味着什么？</strong>意味深长！意味着大多数实例的站长都是个人或者小团体，而非追求利益的非商业公司。这决定着用户会不会被广告乱入、隐私窃取恶心到。看看微博吧，无处不在的烦人广告简直恶心死了。另外，还有一把<a href="http://www.baike.com/wiki/%E8%BE%BE%E6%91%A9%E5%85%8B%E9%87%8C%E6%96%AF%E4%B9%8B%E5%89%91" target="_blank" rel="noopener">达摩克利斯之剑</a>时刻悬浮在用户头上，这也不能说，那也不能提！（讽刺的是，他们还不告诉你都有哪些不能说！）Fuck！与其相反，Mastodon基本没什么审查。</p>
 <p>Mastodon<strong>尊重用户、尊重用户的数据</strong>：如果你不喜欢这个实例的氛围，完全可以<strong>导出</strong>你的所有数据，然后<strong>导入</strong>到其他你喜欢的实例，又是一条好汉！</p>
+<blockquote>
+<p>尽管基本所有数据都支持导出，但导入<strong>目前</strong>仅支持“关注列表、屏蔽列表、隐藏列表”，未来官方可能会支持。</p>
+</blockquote>
 <p><img src="http://wx2.sinaimg.cn/large/006fVPCvly1g09pyawy5pj31cl0u0gp5.jpg" alt="导出"></p>
-<p>用户不仅可以看到当前实例其他人发出的“消息”（我们都称之为<strong>嘟文</strong>），也可以通过<strong>“跨站公共时间轴”</strong>，看到其他实例用户发出来的嘟文。<strong>是不是很奇妙？Mastodon世界就是通过无数个（截止到目前，1583个）实例连接起来的～</strong></p>
+<p>用户不仅可以看到当前实例其他人发出的“消息”（我们都称之为<strong>嘟文</strong>），也可以通过<strong>“跨站公共时间轴”</strong>，看到其他实例用户发出来的嘟文。<strong>是不是很奇妙？Mastodon世界就是通过无数个实例连接起来的～</strong></p>
+<blockquote>
+<p>那么，Mastodon世界到底有多少个实例、多少个用户呢？</p>
+<p>在<a href="https://instances.social/list/old" target="_blank" rel="noopener">instances.social</a>网站查询的结果是：</p>
+<p>至少有<strong>8484</strong>个实例，<strong>170w</strong>用户</p>
+</blockquote>
 <p>P.S. 补一张<strong>首页图</strong></p>
 <p><img src="https://ww1.sinaimg.cn/large/007i4MEmgy1g09rxngehbj322q16i7my.jpg" alt="首页"></p>
-<p><strong>都看到这儿了，还不注册个玩玩？少年！</strong>（对了，注册仅需要邮箱，手机号是不需要的哦～）</p>
+<p><strong>都看到这儿了，少年还不注册个玩玩？</strong>（对了，注册仅需要邮箱，手机号是不需要的哦～）</p>
 ]]></content>
       
         <categories>
