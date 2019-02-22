@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>ReactNative实战之社交网络客户端（一：基础篇）</title>
+  <meta name="author" content="shuiRongLin">
+  <meta name="description" content="以前我没得选，现在我只想做个坏人">
+  
+  
+  <meta property="og:title" content="ReactNative实战之社交网络客户端（一：基础篇）"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="林水溶的博客"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="林水溶的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;以前我没得选，现在我只想做个坏人
+      </div>
+    </div>
+    <div class="main-ctnr">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        ReactNative实战之社交网络客户端（一：基础篇）
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2019-02-22T09:42:12.000Z">
+<svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2019-02-22
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/categories/大前端/">大前端</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/tags/ReactNative/">ReactNative</a>·<a href="/tags/Mastodon/">Mastodon</a>·<a href="/tags/App/">App</a>·<a href="/tags/Android/">Android</a>
+
+
+    </div>
+    <hr>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#介绍下目录规划"><span class="toc-text">介绍下目录规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UI库的选择"><span class="toc-text">UI库的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件重用"><span class="toc-text">组件重用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装请求"><span class="toc-text">封装请求</span></a></li></ol>
+    <div class="picture-container">
+      
+    </div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5350947&auto=0&height=66"></iframe>
+
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
+<p>完整项目地址：<a href="https://github.com/shuiRong/Gakki" target="_blank" rel="noopener">https://github.com/shuiRong/Gakki</a> 🌟🌟🌟</p>
+<p>系列文章：</p>
+<ul>
+<li><a href="">ReactNative实战之社交网络客户端（二：进阶篇）</a>（正在写）</li>
+<li><a href="">ReactNative实战之社交网络客户端（三：优化篇）</a>（正在写）</li>
+<li><a href="">ReactNative实战之社交网络客户端（四：踩坑篇）</a>（正在写）</li>
+</ul>
+<p>对了，<a href="https://linshuirong.cn/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">这里</a>有一篇介绍Mastodon (长毛象)的文章，毕竟我是在为它开发客户端🤣</p>
+<h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── App.js	// 项目路由配置，因为我这个项目需要登陆，所以我就根据登陆/未登陆，定义了两个路由入口</span><br><span class="line">├── LICENSE	// 证书</span><br><span class="line">├── README.md	// 介绍文档</span><br><span class="line">├── android	// 原生Android工程</span><br><span class="line">├── app.json // 用来配置原生App需要的基本信息</span><br><span class="line">├── index.js // 入口文件</span><br><span class="line">├── ios // 原生iOS工程</span><br><span class="line">├── node_modules // 依赖项目的源代码</span><br><span class="line">├── package.json // 定义项目所需要的各种依赖/模块，以及项目的配置信息</span><br><span class="line">├── preview // App预览图</span><br><span class="line">├── rn-cli.config.js // 顾名思义，是命令行工具：react-native的配置信息</span><br><span class="line">├── src // 项目源代码。你写的业务代码基本都在这里</span><br><span class="line">    ├── Main.js // 配置了“登陆”状态下各页面的路由信息</span><br><span class="line">    ├── SignedOutNavigator.js // 配置了“未登陆”状态下各页面的路由信息</span><br><span class="line">    ├── assets // 会被RN打包工具打包的静态资源</span><br><span class="line">    ├── pages // App的页面级文件</span><br><span class="line">    │   ├── About.js // 关于页面</span><br><span class="line">    │   ├── Auth.js // 授权认证页面（Mastodon客户端登录时不是常规的账号密码登录，而是输入账号密码然后弹出授权认证，想想微信的授权认证）</span><br><span class="line">    │   ├── BlockedUsers.js // 被屏蔽用户页面</span><br><span class="line">    │   ├── Envelope.js // 私信页面</span><br><span class="line">    │   ├── FollowRequestList.js // 关注请求页面</span><br><span class="line">    │   ├── Followers.js // 关注者页面</span><br><span class="line">    │   ├── Following.js // 关注页面</span><br><span class="line">    │   ├── Home.js // 首页</span><br><span class="line">    │   ├── Launcher.js // 启动页面，从存储系统中加载主题、用户Token等基础数据</span><br><span class="line">    │   ├── Login.js // 登陆页面，即输入账号密码的地方</span><br><span class="line">    │   ├── MutedUsers.js // 被隐藏用户页面</span><br><span class="line">    │   ├── Notifications.js // 消息通知页面</span><br><span class="line">    │   ├── OpenSource.js // 开源声明页面，列出了项目所有用到的开源软件及开源协议</span><br><span class="line">    │   ├── Profile.js // 个人详情页面</span><br><span class="line">    │   ├── Search.js // 搜索页面</span><br><span class="line">    │   ├── SendToot.js // 发送嘟文（类似于微博的博文）的页面</span><br><span class="line">    │   ├── SideBar.js // 主页侧栏组件</span><br><span class="line">    │   ├── Tag.js // 标签页面</span><br><span class="line">    │   ├── Test.js // 测试页面，开发项目时需要测试某模块时可以在这个页面单独测试</span><br><span class="line">    │   ├── TootDetail.js // 嘟文详情页面</span><br><span class="line">    │   ├── common // 项目中会多处使用的公共组件</span><br><span class="line">    │   │   ├── Context.js // 评论组件</span><br><span class="line">    │   │   ├── DefaultTabBar.js // Tab组件的顶部Bar组件</span><br><span class="line">    │   │   ├── Divider.js // 分割线组件</span><br><span class="line">    │   │   ├── Fab.js // Floating Action Button (FAB)组件，一般是漂浮在右下角的那个圆形按钮</span><br><span class="line">    │   │   ├── HTMLView.js // 把渲染HTML的部分提取出来，自成一个组件</span><br><span class="line">    │   │   ├── Header.js // 顶部的Header组件</span><br><span class="line">    │   │   ├── ListFooterComponent.js FlatList组件的尾部组件</span><br><span class="line">    │   │   ├── Loading.js // Loading加载效果组件</span><br><span class="line">    │   │   ├── MediaBox.js // 媒体文件（图片、视频）展示组件</span><br><span class="line">    │   │   ├── Notice.js // 提示框、确认框等组件</span><br><span class="line">    │   │   ├── ReplyInput.js // 封装的单行、多行输入框组件</span><br><span class="line">    │   │   ├── Spruce.js // 骨架屏组件，自定了几个常用骨架屏</span><br><span class="line">    │   │   ├── TootBox.js // 嘟文组件</span><br><span class="line">    │   │   ├── UserItem.js // 用户列组件</span><br><span class="line">    │   └── screen // Tab组件下的页面</span><br><span class="line">    │       ├── HomeScreen.js // 主页时间轴Tab下的组件</span><br><span class="line">    │       ├── LocalScreen.js // 本站时间轴Tab下的组件</span><br><span class="line">    │       ├── MediaScreen.js // 媒体文件Tab下的组件</span><br><span class="line">    │       ├── PublicScreen.js // 跨站公共时间轴Tab下的组件</span><br><span class="line">    │       └── TootScreen.js // （个人详情页面下）个人嘟文Tab下的组件</span><br><span class="line">    └── utils // 放置一些公共方法</span><br><span class="line">        ├── api.js // 定义用到的所有接口</span><br><span class="line">        ├── color.js // 统一管理项目颜色</span><br><span class="line">        ├── config.js // 配置信息，如开发时使用的Token</span><br><span class="line">        ├── locale.js // 国际化文件，目前只有中文的时间字符，未来会集成所有的国际化数据</span><br><span class="line">        ├── mobx.js // 项目全局状态管理中心</span><br><span class="line">        ├── request.js // 封装axios，增加全局请求、响应拦截器</span><br><span class="line">        └── store.js // 封装AsyncStorage：本地存储系统</span><br><span class="line">└── yarn.lock // yarn为了跨机器安装得到一致的结果而生成的文件</span><br></pre></td></tr></table></figure>
+<h4 id="介绍下目录规划"><a href="#介绍下目录规划" class="headerlink" title="介绍下目录规划"></a>介绍下目录规划</h4><p>使用<code>react-native-cli</code>工具初始化完项目的时候，你就会发现，它生成的所谓源码文件只有<code>index.js</code>、<code>App.js</code>，而这基本不足以支持任何复杂点的项目。所以就需要自己来：先新建一个<code>src</code>文件夹，然后规划文件。</p>
+<p>首先需要一个入口/路由文件（我这里根据“登陆”和“未登陆”两种状态，规划了两个入口文件：<code>Main.js</code>、<code>SignedOutNavigator.js</code>），然后还需要一个 <code>pages</code>文件夹放置所有的“页级”文件，一个<code>common</code>用来放置那些会被引用多次的组件，比如<code>Header</code>组件（基本每个页面都要用到<code>Heeader</code>组件）。然后我还建了一个<code>screen</code>组件用来放置每个Tab对应的文件，因为严格来说，一个Tab并不属于一个页面。首页的Tab是这样的：</p>
+<p><img src="https://ww1.sinaimg.cn/large/007i4MEmgy1g0c4dnl4ntj30go0rmgnq.jpg" alt="首页Tab"></p>
+<p>然后介绍下<code>utils</code>文件夹。</p>
+<p><img src="http://wx1.sinaimg.cn/large/006fVPCvly1g0fcmzwveij30ce070jrn.jpg" alt="utils"></p>
+<p><strong>统一管理很重要！</strong>所以我接口、本地存储、国际化、颜色搭配、状态管理都封装到了单独文件中，任何组件需要使用的时候都可以自行调用。</p>
+<p>最开始开发的时候，其实我并没有把颜色这一块给封装成单个文件，这导致后面我要实现夜间模式时直接懵逼，颜色写死在项目中的各处，完全没法实现夜间模式！因此希望大家谨记我的教训，<strong>任何重复两次以上的代码都要考虑下是否可以声明成变量或者封装成组件！</strong></p>
+<h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><hr>
+<p>我在项目开发初期并没有使用状态管理工具，因为当时项目复杂度还没有上来，使用<code>state</code>足矣。</p>
+<blockquote>
+<p>就像React社区中流传甚广的一句话：don’t use Redux until you have problems with vanilla React.</p>
+<p>意思是：除非你遇到了只使用React解决不了的问题，不要使用Redux。</p>
+<p>P.S. React Native将会在下一个稳定版本中支持<a href="https://react.docschina.org/docs/hooks-overview.html#-%E7%8A%B6%E6%80%81%E9%92%A9%E5%AD%90%EF%BC%88state-hook%EF%BC%89" target="_blank" rel="noopener">Hooks</a>：是一个用起来非常舒服的功能，建议了解一下。</p>
+</blockquote>
+<p>直到我遇到了“主题切换功能”，非引入一个状态管理功能不能解决，然后我就引入了<a href="https://cn.mobx.js.org/" target="_blank" rel="noopener">Mobx</a>（上手快）</p>
+<p>关于<code>Redux</code>和<code>Mobx</code>我们应该如何选择的问题，这里推荐一篇文章：<a href="https://www.robinwieruch.de/redux-mobx-confusion/" target="_blank" rel="noopener">Redux or MobX: An attempt to dissolve the Confusion</a>，<a href="https://segmentfault.com/a/1190000011148981" target="_blank" rel="noopener">中译文</a>。</p>
+<p>作者观点比较中立，并没有偏向任何一方。（所以看完之后，你的选择也没必要非要和我一样）</p>
+<h4 id="UI库的选择"><a href="#UI库的选择" class="headerlink" title="UI库的选择"></a>UI库的选择</h4><hr>
+<p>首先你需要知道的是，<strong>你不能奢求某一款UI库能完全满足你的需求。</strong>实际也不会存在这么一款UI库。</p>
+<p>因此项目开发时基本是这样：一个流行组件库 + N个“单UI”组件（根据需要自行Google） + 自行实现Style</p>
+<p>常见的流行UI库我基本都看过，包括不限于：</p>
+<ul>
+<li><a href="https://github.com/react-native-training/react-native-elements" target="_blank" rel="noopener">react-native-elements</a></li>
+<li><a href="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="noopener">NativeBase</a></li>
+<li><a href="https://github.com/xotahal/react-native-material-ui" target="_blank" rel="noopener">react-native-material-ui</a></li>
+<li><a href="https://github.com/rilyu/teaset" target="_blank" rel="noopener">Teaset</a></li>
+</ul>
+<p>最后选择了Teaset，理由简单实在（笑）：它由“纯JS”实现，不含任何原生代码。（这意味着，如果遇到问题需要去看源码的话，我能看懂🤣）</p>
+<h4 id="组件重用"><a href="#组件重用" class="headerlink" title="组件重用"></a>组件重用</h4><hr>
+<p>路由我用的是[react navigation]</p>
+<p>设想下这样的场景：在水溶的个人主页点击小明的头像。我们预期的是页面会跳转到小明的个人主页，但实际呢？实际是页面不会有任何变化（当然，如果你没有针对这种情况做处理的话。）</p>
+<p><img src="https://github.com/shuiRong/Gakki/raw/master/preview/14.png" alt="个人详情页面"></p>
+<p>这是因为当跳转前后的两个路由相同（也即组件复用）的话，默认不会重新渲染组件。那么<code>componentDidMount</code>钩子（一般我们在这个钩子里面请求接口数据）就不会触发，那么页面就不会有任何变化。</p>
+<p>P.S. 如果你在开发ReactNative之前曾写过Vue/React/Angular项目的话，可能就会遇到过这样的问题。</p>
+<p><strong>解决方法</strong>就是在<code>componentWillReceiveProps</code>钩子里重新请求接口数据，因为前后两个路由相同会触发此钩子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">	this.init(this.props.navigation.getParam(&apos;data&apos;))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillReceiveProps(&#123; navigation &#125;) &#123;</span><br><span class="line">	this.init(navigation.getParam(&apos;data&apos;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="封装请求"><a href="#封装请求" class="headerlink" title="封装请求"></a>封装请求</h4><hr>
+<blockquote>
+<p>用来请求接口数据的HTTP库，我是用的是<a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a>，因为之前在写Vue、React项目时就有在用，已经比较熟悉了。如果你是用了其他的库也无妨，思想都是想通的，可以借鉴。</p>
+</blockquote>
+<p>为了开发测试方便，有必要将axios封装一下，加上请求、响应拦截等逻辑。这样的话，未来增加特定Header或增加接口错误时提示信息也方便，在这里加就可以了。</p>
+<p>代码贴出来了，简单，都能看懂：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">import &#123; Toast &#125; from &apos;teaset&apos;</span><br><span class="line"></span><br><span class="line">const service = axios.create(&#123;</span><br><span class="line">  baseURL: &apos;https://cmx.im&apos;, // 统一Host</span><br><span class="line">  timeout: 10000 // 请求超时时间限制</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 请求拦截器</span><br><span class="line">service.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    // 如果未来需要增加统一Header，加在这里</span><br><span class="line">    return config</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    Promise.reject(err)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 响应拦截器</span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    // 如果你需要对接口返回的数据特殊处理一下的话，写在这里  </span><br><span class="line">    return response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    console.log(&apos;拦截器err:&apos;, err)</span><br><span class="line">    if (err &amp;&amp; err.error) &#123;</span><br><span class="line">      // 服务器异常，统一展示出来</span><br><span class="line">      Toast.message(err.error)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">export default service</span><br></pre></td></tr></table></figure>
+
+  </article>
+  </script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Hexo Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="/js/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+  // disqus scripts
+  
+
+      // dropdown scripts
+      $(".dropdown").click(function (event) {
+        var current = $(this);
+        event.stopPropagation();
+        $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open")) ? 'removeClass' : 'addClass']("open")
+      });
+    $(document).click(function () {
+      $(".dropdown-content").removeClass("open");
+    })
+
+    var path = "/search.xml";
+    searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+<div id="updown">
+  <div class="sidebar_wo" id="leimu">
+    <img
+      src="/img/leimu.png"
+      alt="雷姆"
+      onmouseover="this.src='/img/leimu.png'"
+      onmouseout="this.src='/img/leimu.png'"
+      id="audioBtn"
+    />
+  </div>
+  <div class="sidebar_wo" id="lamu">
+    <img
+      src="/img/lamu_2.png"
+      alt="拉姆"
+      onmouseover="this.src='/img/lamu_1.png'"
+      onmouseout="this.src='/img/lamu_2.png'"
+      id="audioBtn"
+    />
+  </div>
+</div>
+
+<style>
+  .sidebar_wo {
+    position: fixed;
+    line-height: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  #leimu {
+    left: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: translate(-7px, 7px);
+    -ms-transform: translate(-7px, 7px);
+    transform: translate(-7px, 7px);
+  }
+
+  #lamu {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: translate(7px, 7px);
+    -ms-transform: translate(7px, 7px);
+    transform: translate(7px, 7px);
+    right: 0;
+  }
+
+  #leimu:hover {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  #lamu:hover {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+</style>
+
+<script src="/js/click.js"></script>
+<style>
+  .cc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+</style>
+<div class="cc">
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+    ><img
+      alt="知识共享许可协议"
+      style="border-width:0"
+      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a
+  ><br />本作品采用<a
+    rel="license"
+    href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+    >知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a
+  >进行许可
+</div>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haru@1.0.5/01/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
