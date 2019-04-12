@@ -1,25 +1,26 @@
-@import "navigator";
-@import "search";
-@import "posts";
-@import "pager";
-@import "footer";
-@import "code";
-@import "animation";
-@import "toc";
+@import 'navigator';
+@import 'search';
+@import 'posts';
+@import 'pager';
+@import 'footer';
+@import 'code';
+@import 'animation';
+@import 'toc';
+
 $background: #fdfdfc;
 $theme: #2570a1;
 $para: #555;
 $lighter: #9c9c9c;
 ::selection {
-    background: lighten($theme, 40%);
+  background: lighten($theme, 40%);
 }
 
 ::-moz-selection {
-    background: lighten($theme, 40%);
+  background: lighten($theme, 40%);
 }
 
 ::-webkit-selection {
-    background: lighten($theme, 40%);
+  background: lighten($theme, 40%);
 }
 
 h1,
@@ -28,14 +29,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: bold;
-    margin: 2.36em 0 1em;
-    font-size: 1.79em;
-    color: #1a1a1a;
+  font-weight: bold;
+  margin: 2.36em 0 1em;
+  font-size: 1.79em;
+  color: #1a1a1a;
 }
 
 h1 {
-    font-size: 2.36em;
+  font-size: 2.36em;
 }
 
 .index-title,
@@ -51,26 +52,30 @@ h4,
 h5,
 h6,
 .toc {
-    font-family: 'Open Sans Condensed', Helvetica Neue, Helvetica, PingFang SC, Lantinghei SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeitiSC-Light, simsun, WenQuanYi Zen Hei, WenQuanYi Micro Hei, Arial, sans-serif;
+  font-family: 'Open Sans Condensed', Helvetica Neue, Helvetica, PingFang SC,
+    Lantinghei SC, Hiragino Sans GB, Microsoft YaHei, \\5fae\8f6f\96c5\9ed1,
+    STHeitiSC-Light, simsun, WenQuanYi Zen Hei, WenQuanYi Micro Hei, Arial,
+    sans-serif;
 }
 
 body {
-    font-size: 14px;
-    font-family: PingFang HK, -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    background-color: $background;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    word-wrap: break-word;
+  font-size: 14px;
+  font-family: Noto Sans, -apple-system, BlinkMacSystemFont, 'PingFang SC',
+    'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma, Simsun, sans-serif;
+  background-color: $background;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  word-wrap: break-word;
 }
 
 .archive-time {
-    background-color: $background;
+  background-color: $background;
 }
 
 .index-title,
@@ -78,7 +83,7 @@ body {
 .dropdown-content,
 .index-meta,
 .current {
-    font-weight: 700 !important;
+  font-weight: 700 !important;
 }
 
 p,
@@ -86,74 +91,74 @@ p,
 .behind,
 .meta,
 .post li {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .navbar-brand,
 .right-foot,
 .pager {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .busuanzi,
 .behind,
 .dropdown-content,
 .meta {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 a,
 a:hover,
 a:focus {
-    color: $theme;
+  color: $theme;
 }
 
 p {
-    margin: .7em 0;
-    letter-spacing: .6px;
-    color: $para;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    vertical-align: baseline;
-    background: transparent;
-    text-justify: auto;
+  margin: 0.7em 0;
+  letter-spacing: 0.6px;
+  color: $para;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  text-justify: auto;
 }
 
 .post li {
-    line-height: 2em;
-    color: lighten($para, 10%);
+  line-height: 2em;
+  color: lighten($para, 10%);
 }
 
 .post li:before {
-    content: '·';
-    margin-right: .4em;
+  content: '·';
+  margin-right: 0.4em;
 }
 
 li {
-    list-style-type: none;
-    list-style: none;
+  list-style-type: none;
+  list-style: none;
 }
 
 ol,
 ul {
-    padding-left: 1em;
+  padding-left: 1em;
 }
 
 .behind {
-    font-size: 22px;
-    padding: 28px 0 0;
-    word-spacing: 2px;
-    color: $lighter;
-    line-height: 1;
+  font-size: 22px;
+  padding: 28px 0 0;
+  word-spacing: 2px;
+  color: $lighter;
+  line-height: 1;
 }
 
 .back {
-    position: fixed;
-    top: 28px;
-    left: 5%;
-    height: 22px;
-    width: 22px;
+  position: fixed;
+  top: 28px;
+  left: 5%;
+  height: 22px;
+  width: 22px;
 }
 
 .center,
@@ -161,144 +166,144 @@ ul {
 .archive-title,
 .archive-num,
 .picture-container {
-    text-align: center;
+  text-align: center;
 }
 
 .meta {
-    font-size: 15px;
-    color: $lighter;
-    padding-top: 13px;
-    a {
-        color: lighten($theme, 10%);
-    }
+  font-size: 15px;
+  color: $lighter;
+  padding-top: 13px;
+  a {
+    color: lighten($theme, 10%);
+  }
 }
 
 .black-color {
-    color: black;
+  color: black;
 }
 
 .archive-num {
-    padding: 10px 0;
-    color: $lighter;
+  padding: 10px 0;
+  color: $lighter;
 }
 
 .archive-list {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .archive-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .archive-time {
-    font-size: 20px;
-    width: 40%;
-    margin-right: 20px;
-    text-align: right;
-    color: lighten($lighter, 10%);
+  font-size: 20px;
+  width: 40%;
+  margin-right: 20px;
+  text-align: right;
+  color: lighten($lighter, 10%);
 }
 
 .archive-detail {
-    font-size: 17px;
-    width: 90%;
-    padding: 0 20px;
-    word-wrap: break-word;
-    border-left: 1px solid lighten($lighter, 10%);
+  font-size: 17px;
+  width: 90%;
+  padding: 0 20px;
+  word-wrap: break-word;
+  border-left: 1px solid lighten($lighter, 10%);
 }
 
 article {
-    padding: 40px 0;
+  padding: 40px 0;
 }
 
 blockquote {
-    margin: 30px 0;
-    font-style: italic;
-    padding: 0;
-    padding-left: 3rem;
-    border: 0;
-    p {
-        color: #1a1a1a;
-        text-indent: 0;
-        line-height: 1.6;
-        font-size: 1.2em;
-    }
+  margin: 30px 0;
+  font-style: italic;
+  padding: 0;
+  padding-left: 3rem;
+  border: 0;
+  p {
+    color: #1a1a1a;
+    text-indent: 0;
+    line-height: 1.6;
+    font-size: 1.2em;
+  }
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 img,
 object,
 video {
-    max-width: 110%;
+  max-width: 110%;
 }
 
 iframe {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 img {
-    display: block;
-    height: auto;
-    position: relative;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+  display: block;
+  height: auto;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .busuanzi {
-    font-size: 14px;
-    line-height: 14px;
-    margin: 30px 0;
-    color: #CDD2D4;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 30px 0;
+  color: #cdd2d4;
 }
 
 .index-meta * {
-    vertical-align: top;
-    line-height: 1;
+  vertical-align: top;
+  line-height: 1;
 }
 
 .main-ctnr {
-    max-width: 782px;
-    position: relative;
-    left: calc(50% - 391px)
+  max-width: 782px;
+  position: relative;
+  left: calc(50% - 391px);
 }
 
 .standard,
 .archive,
 .archive-title,
 #disqus_thread {
-    padding: 0 6% 0 7%;
+  padding: 0 6% 0 7%;
 }
 
 p,
 .post li {
-    font-size: 16.6px;
-    line-height: 1.9em;
+  font-size: 19px;
+  line-height: 1.6;
 }
 
-@media screen and (max-width:782px) {
-    .main-ctnr {
-        left: 0;
-    }
-    .back,
-    li.archives,
-    .busuanzi {
-        display: none;
-    }
-    .behind {
-        padding: 12px 0;
-        opacity: 0;
-    }
-    .archive-title {
-        font-size: 2.2em;
-    }
-    .post ul {
-        margin-left: -10px;
-    }
+@media screen and (max-width: 782px) {
+  .main-ctnr {
+    left: 0;
+  }
+  .back,
+  li.archives,
+  .busuanzi {
+    display: none;
+  }
+  .behind {
+    padding: 12px 0;
+    opacity: 0;
+  }
+  .archive-title {
+    font-size: 2.2em;
+  }
+  .post ul {
+    margin-left: -10px;
+  }
 }
