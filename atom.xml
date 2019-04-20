@@ -68,9 +68,9 @@
       <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Mastodon" scheme="/tags/Mastodon/"/>
-    
       <category term="ReactNative" scheme="/tags/ReactNative/"/>
+    
+      <category term="Mastodon" scheme="/tags/Mastodon/"/>
     
       <category term="App" scheme="/tags/App/"/>
     
