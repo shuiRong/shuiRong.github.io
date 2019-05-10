@@ -594,8 +594,8 @@ p {
   color: #6f6f6f;
 }
 .post li:before {
-  content: '·';
-  margin-right: 0.4em;
+  content: '•';
+  margin-right: 0.6em;
 }
 li {
   list-style-type: none;
@@ -603,7 +603,7 @@ li {
 }
 ol,
 ul {
-  padding-left: 1em;
+  padding-left: 2em;
 }
 .behind {
   font-size: 22px;
@@ -728,6 +728,12 @@ p,
   font-size: 19px;
   line-height: 1.6;
 }
+
+p,
+.post li+li{
+  margin-top: .25em;
+}
+
 @media screen and (max-width: 782px) {
   .main-ctnr {
     left: 0;

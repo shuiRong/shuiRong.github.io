@@ -3,6 +3,98 @@
   
     
     <entry>
+      <title><![CDATA[Github：最后的言论自由之地]]></title>
+      <url>/2019/05/10/Github%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9A%84%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E4%B9%8B%E5%9C%B0/</url>
+      <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=780146&auto=0&height=66"></iframe>
+
+<blockquote>
+<p>奇葩的制度产生奇葩的社会现象</p>
+</blockquote>
+<p>有一个争论已经持续了很多年，而且在可见的未来它还将持续下去…</p>
+<h4 id="自由之地"><a href="#自由之地" class="headerlink" title="自由之地"></a>自由之地</h4><hr>
+<p><a href="http://github.com/" target="_blank" rel="noopener">Github</a>在天朝是一个很“神奇”的存在。神奇之处在于：</p>
+<ol>
+<li>它不受天朝政府监管：只要没有违反Github的<a href="https://help.github.com/en/articles/github-terms-of-service" target="_blank" rel="noopener">服务条款</a>，Github欢迎<a href="https://readwrite.com/2013/11/08/seven-ways-to-use-github-that-arent-coding/" target="_blank" rel="noopener">任何内容</a></li>
+<li>它没有被GFW屏蔽：用户可以直连</li>
+</ol>
+<p>的确，Github曾被至少两次<a href="https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81" target="_blank" rel="noopener">屏蔽</a>过。但是，由于屏蔽引发了用户和科技公司的强烈反应「1」，政府最终解除了对GitHub的屏蔽。</p>
+<blockquote>
+<p>「1」：李开复在新浪微博抗议，迅速引起网民的关注，该消息更在三小时内被转发逾3万2千次。2013年1月23日，GitHub被解封，事件平息。</p>
+</blockquote>
+<p><strong>在某种意义上，Github成了天朝局域网上最后的自由之地！</strong></p>
+<p>因此当社会性事件发生，但国内的社交网络（微博、知乎、论坛…）、即时通讯应用（微信、QQ）在大规模审查、删帖时，就有人想到了Github。于是人们把那些图片、文章、视频上传到Github来逃脱被删除的命运。</p>
+<p>开头提到的争论也因此产生。（由<a href="https://github.com/sikaozhe1997/Xin-Yue/issues/530#issuecomment-384553049" target="_blank" rel="noopener">@wql7013 总结</a>）</p>
+<p><strong>认为可以在GitHub发：</strong></p>
+<ol>
+<li>不违反GitHub条款；不违反GitHub文化；由于国内媒体被限制，致使GitHub传播效率相对更优；在GitHub上此项目并非唯一的非技术项目，也并非唯一的政治敏感项目。<a href="https://github.com/sikaozhe1997/Xin-Yue/issues/530#issuecomment-384175435" target="_blank" rel="noopener">详细参看@karkenhavedream</a></li>
+<li>即使GitHub被墙，翻墙就行了，翻墙是程序员必备技能。</li>
+<li>曾经有人总结了GitHub的非程序员用法：<a href="https://www.itworld.com/article/2822952/open-source-tools/142227-Gitty-up-12-things-other-than-programming-code-that-are-managed-on-GitHub.html" target="_blank" rel="noopener">12种非编程的GitHub用法</a>，<a href="https://readwrite.com/2013/11/08/seven-ways-to-use-github-that-arent-coding/" target="_blank" rel="noopener">7种非写代码的GitHub用法</a>。</li>
+<li>自由、开方、平等、互助、反对强权是互联网精神，也是GitHub文化；GitHub不只是用来拷贝代码的。</li>
+<li>程序员不应该只关心编程，应该有社会责任。</li>
+<li>Facebook、Twitter国内不能访问，对国内起不到传播作用；Facebook、Twitter、论坛、贴吧也有人在讨论。</li>
+<li>GitHub被墙不是项目发起者的错，是封锁GitHub的人的错，应该抱怨的是网络审查。</li>
+<li>GitHub官方曾表示，很高兴GitHub能用于政府协同治理；官方博客提到，GitHub上有不少政府项目，包括代码、数据、政策、行业规范、法律法规、活动反馈等，方便民主监督（<a href="https://blog.github.com/2014-08-14-government-opens-up-10k-active-government-users-on-github/" target="_blank" rel="noopener">GitHub官方博客</a>）。</li>
+<li>Git仓库很适合用于多人协作管理文档版本，协作收集整理资料，此项目的主要作用是整理记录事件；Twitter等网站没有此功能。</li>
+<li>更多此类repo是社会的进步，但是GitHub应该优化排行榜（Trending），分类技术和非技术类项目。</li>
+</ol>
+<p><strong>认为不可以在GitHub发：</strong></p>
+<ol>
+<li>只希望GitHub是用来写代码的，不希望GitHub受影响，从而影响国内互联网行业。<a href="https://github.com/sikaozhe1997/Xin-Yue/issues/534#issue-317498800" target="_blank" rel="noopener">引自@Hujunjob</a></li>
+<li>可以在Twitter、Facebook、wikipedia或者自建站点讨论此事。<a href="https://github.com/sikaozhe1997/Xin-Yue/issues/619#issue-317884530" target="_blank" rel="noopener">引自@xianghongai</a></li>
+<li>GitHub对大陆程序员很重要，不能为了自由而导致它被封。</li>
+<li>翻墙速度慢，影响效率。</li>
+<li>程序员本职是写程序，不必要会翻墙，翻墙只是加分项。</li>
+<li>非技术项目占用排行榜（Trending），影响优秀开源项目的获得和传播。</li>
+<li>此项目下有很多鼓动搞乱国内局势的人, <a href="https://github.com/sikaozhe1997/Xin-Yue/issues/530#issuecomment-384311213" target="_blank" rel="noopener">源自@zibengou</a>。</li>
+<li>在GitHub发没多大意义，很少人能看到，传播效果不好。</li>
+<li>可以到被封带来的影响更小的仓库记录此事 ( 暂未有人推荐类似功能的仓库 )。</li>
+<li>在规范issues前，issues曾成互相谩骂和攻击的舆论场，不希望带起更多同类的repo，使GitHub变为过分热烈的舆论平台。</li>
+</ol>
+<p>这两拨人谁都没办法说服对方，包括我。</p>
+<p>我曾花时间、精力去思考、翻阅相关资料（道德、正义、道德悖论、电车难题、科尔伯格道德发展阶段、普世价值）。但还是不知道该如何说服一个网友：“这些东西我都不关心，我就是想不翻墙就能访问Github。“</p>
+<p><strong>尽管争论不休，但客观地说：将国内敏感的内容上传至Github的行为永远不会停止，直到Github也被屏蔽或者GFW倒塌。</strong></p>
+<h4 id="“你为什么不？”"><a href="#“你为什么不？”" class="headerlink" title="“你为什么不？”"></a>“你为什么不？”</h4><hr>
+<blockquote>
+<p>有个奇葩且可恶的观点，我忍不住要批驳一下</p>
+</blockquote>
+<p>小明：“Twitter、Facebook也可以（放那些敏感政治信息）啊，为什么要用Github。如果仅仅因为Github没有被封的话，那Gitbook也没被封啊。为什么不去Gitbook，非得在Github上？”</p>
+<p>这种观点既奇葩又可恨。可恨之处在于，他们的<strong>观点背后的逻辑是：“不想让你说话”。</strong></p>
+<p>我来给大家解释：</p>
+<p>假如你认为小明说的有道理，然后将内容转移到了Gitbook上。那么一定有小明2在等着你，告诉你：“AAA、BBB、CCC也可以啊，为什么非要用Gitbook？”</p>
+<p>接着，你又转移到了AAA上，然后有个小明3对你说：“DDD、EEE、FFF也可以啊，为什么非要用AAA？”</p>
+<p>…</p>
+<p>在转移了100个阵地后，你会发现他喵的有个叫“小明101”的人在等着你…</p>
+<p><strong>明白了吗？</strong></p>
+<p>我又联想到之前Python 之父 Guido van Rossum 为中国的程序员发声：<a href="https://discuss.python.org/t/can-we-do-something-for-996-programmers-in-china/1119" target="_blank" rel="noopener">我们能为中国的“996”程序员做什么？ </a>时，在论坛里看到有人持有这样的言论，且还被很多人赞同：”不关心乌干达贫穷的孩子，反而关心中国‘贫穷’的程序员”</p>
+<p>这样嘲讽的语气（背后的逻辑），让我很不舒服。</p>
+<p>他的逻辑和前面“小明”的逻辑其实是一样的。如果你去关心“乌干达贫穷的孩子”，小明2就会说：“不关心XXX战乱地区濒临死亡的人，反而关心尽管贫穷但还能基本活下去的乌干达的孩子。”</p>
+<p>…</p>
+<p>同理，<strong>如果你认同这样的观点，那么到最后会发现我们什么都没有做，就一直在忙着比较哪个群体“更弱势”了…</strong></p>
+<p>谨防这样的观点的渗透。<strong>善心不分多寡，嘉行不分高下。做，就对了！</strong></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 一些思考 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> 言论自由 </tag>
+            
+            <tag> 逻辑 </tag>
+            
+            <tag> GFW </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[对抗假消息：虚假截图制作工具]]></title>
       <url>/2019/03/24/%E5%AF%B9%E6%8A%97%E5%81%87%E6%B6%88%E6%81%AF%EF%BC%9A%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</url>
       <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5045810&auto=0&height=66"></iframe>
@@ -143,9 +235,9 @@
         
         <tags>
             
-            <tag> Mastodon </tag>
-            
             <tag> ReactNative </tag>
+            
+            <tag> Mastodon </tag>
             
             <tag> App </tag>
             
@@ -200,7 +292,7 @@
       
         <categories>
             
-            <category> 碎碎念 </category>
+            <category> 一些思考 </category>
             
         </categories>
         
@@ -250,7 +342,7 @@
       
         <categories>
             
-            <category> 碎碎念 </category>
+            <category> 一些思考 </category>
             
         </categories>
         
@@ -340,7 +432,7 @@
       
         <categories>
             
-            <category> 碎碎念 </category>
+            <category> 一些思考 </category>
             
         </categories>
         
@@ -786,7 +878,7 @@
       
         <categories>
             
-            <category> 碎碎念 </category>
+            <category> 一些思考 </category>
             
         </categories>
         
@@ -859,9 +951,9 @@
         
         <tags>
             
-            <tag> 一些思考 </tag>
-            
             <tag> 选择 </tag>
+            
+            <tag> 一些思考 </tag>
             
             <tag> 人生经验 </tag>
             
@@ -1231,7 +1323,7 @@
       
         <categories>
             
-            <category> 碎碎念 </category>
+            <category> 一些思考 </category>
             
         </categories>
         
@@ -1254,7 +1346,7 @@
       
         <categories>
             
-            <category> 碎碎念 </category>
+            <category> 一些思考 </category>
             
         </categories>
         
