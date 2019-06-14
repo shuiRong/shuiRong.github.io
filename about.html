@@ -9,6 +9,10 @@
     <meta name="description" content="林水溶的博客，关于林水溶，shuiRong，前端学习经历">
     <title>前端学习经历</title>
     <style>
+        body {
+            scroll-behavior: smooth;
+        }
+
         *,
         *::before,
         *::after {
@@ -145,6 +149,12 @@
             opacity: 1;
         }
 
+        .jump_to_bottom {
+            position: fixed;
+            bottom: 10vh;
+            right: 5vw;
+        }
+
         @media screen and (max-width: 900px) {
             .timeline ul li div {
                 width: 250px;
@@ -190,7 +200,7 @@
 </head>
 
 <body>
-    <a class='home' href='https://linshuirong.cn/'>shuiRong</a>
+    <a class='home' href='https://linshuirong.cn/'>林水溶的博客</a>
     <section class="timeline">
         <ul>
             <li class='in-view'>
@@ -315,20 +325,20 @@
             </li>
             <li>
                 <div>
-                    <time>2018-3</time>
-                    <h4>开始远程兼职：GreenGargen在线教育（微信订阅号）</h4>
-                    <p>根据工作需要，现学<a href='https://angular.cn/' target="_blank">Angular</a></p>
-                    <img src='https://i.loli.net/2019/06/13/5d01b48e59a2166291.jpg'>
-                </div>
-            </li>
-            <li>
-                <div>
                     <time>2018-4-23</time>
                     <h4>完成微信小程序：<a href='https://github.com/shuiRong/WechatMusicPlayer' target="_blank">音乐播放器</a></h4>
                     <p>
                         <p>初次尝试微信小程序的开发</p>
                         <p>自行部署网易云API(Node.js)</p>
                     </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2018-3</time>
+                    <h4>开始远程兼职：GreenGargen在线教育（微信订阅号）</h4>
+                    <p>根据工作需要，现学<a href='https://angular.cn/' target="_blank">Angular</a></p>
+                    <img src='https://i.loli.net/2019/06/13/5d01b48e59a2166291.jpg'>
                 </div>
             </li>
             <li>
@@ -471,7 +481,7 @@
             <li>
                 <div>
                     <time>2016-12-19</time>
-                    <h4>通过<a href='https://github.com/shuiRong/baiduife' target="_blank">百度IFE</a>练习</h4>
+                    <h4>通过<a href='http://ife.baidu.com' target="_blank">百度IFE</a>练习</h4>
                     <p>
                         <p>与在FCC群里结识的<a href='https://github.com/Lynn081' target="_blank">@Lynn081</a>一起组队</p>
                         <p>
@@ -496,6 +506,9 @@
             </li>
         </ul>
     </section>
+    <p id="destination"></p>
+    <img class='jump_to_bottom' width="32" height="32"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABiklEQVRYR+2VQW7CMBBF/ygsiEBqNq2ypDdob0Bv0NygPVl7Ax8BjtAbwDJSN0EChQXgygmuTIidsYsElZJtPPazZ+YN4cofXfl89ACdL1CKdKrSFGf53Cdda3H/FCEq4ixfuuKcAGuRvhHoQ20gId/HWf7JgdBxEiiA3cs4+/6yxVkBSpFODqCFGciBMKFrcBQjlI+UFUUbhBVAiiTZyOGSiO64ECpdB9DsZL2UqxFtJ94AahOVR8hofg6xe24+a7UWgxkBiQaQUq5A+2lQCvQmbRDN3IYers7o7ALbSyiICDJT//cg4XtzfUEWgCsdzcLiPLsZwwbgQPgezk6BSWwtTEbBebWhSzhNiJCbs2tACemo4hOlaohqo5ZWU3FDbAtb/7MAdHvVi8+V6oTD4CikQBVXJkS80O3F8fpvoRpCuqiKuyBsQrqoim0QoTbs9MBNq1gVZl2g/kOI1QUcAfUq9pn9/1PFtpmwEQ+vQCT+MgeCpqEJZFOxa5A1/3V6wGezkLU9wNVf4AcQHlIw+oS9bAAAAABJRU5ErkJggg==">
 
     <script>
         var items = document.querySelectorAll(".timeline li");
@@ -521,6 +534,18 @@
                 }
             }
         }
+
+        var anchorLink = document.querySelector(".jump_to_bottom"),
+            target = document.getElementById("destination");
+        anchorLink.addEventListener("click", function (e) {
+            if (window.scrollTo) {
+                e.preventDefault();
+                window.scrollTo({
+                    "behavior": "smooth",
+                    "top": target.offsetTop
+                });
+            }
+        })
 
         window.addEventListener("load", callbackFunc);
         window.addEventListener("scroll", callbackFunc);
