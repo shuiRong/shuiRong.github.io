@@ -547,6 +547,15 @@
             }
         })
 
+        setTimeout(function () {
+            if (window.confirm("是否滚动到底部，从头开始看？")) {
+                window.scrollTo({
+                    "behavior": "smooth",
+                    "top": target.offsetTop
+                });
+            }
+        }, 3000)
+
         window.addEventListener("load", callbackFunc);
         window.addEventListener("scroll", callbackFunc);
     </script>
