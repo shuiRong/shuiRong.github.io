@@ -70,3 +70,9 @@ if (!os.isPc) {
     }
   }, 200)
 }
+
+
+console.log(window.confirm)
+if(window.confirm("总结了下我的前端学习经历：大事件表(2016-7至今)，要去看看吗？")){
+  document.location.href =  "https://linshuirong.cn/about.html"
+}
