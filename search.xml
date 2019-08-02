@@ -166,9 +166,9 @@
         
         <tags>
             
-            <tag> Github </tag>
-            
             <tag> 言论自由 </tag>
+            
+            <tag> Github </tag>
             
             <tag> 逻辑 </tag>
             
@@ -319,9 +319,9 @@
         
         <tags>
             
-            <tag> ReactNative </tag>
-            
             <tag> Mastodon </tag>
+            
+            <tag> ReactNative </tag>
             
             <tag> App </tag>
             
@@ -1035,9 +1035,9 @@
         
         <tags>
             
-            <tag> 一些思考 </tag>
-            
             <tag> 选择 </tag>
+            
+            <tag> 一些思考 </tag>
             
             <tag> 人生经验 </tag>
             
@@ -1591,7 +1591,7 @@
     
     <entry>
       <title></title>
-      <url>/about.html</url>
+      <url>/about2.html</url>
       <content type="html"><![CDATA[<!doctype html>
 <html>
 
