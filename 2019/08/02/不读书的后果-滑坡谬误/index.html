@@ -7,12 +7,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="" />
   
-  <title>Github Repository 的正确打开姿势</title>
+  <title>不读书的后果(滑坡谬误)</title>
   <meta name="author" content="shuiRongLin">
   <meta name="description" content="以前我没得选，现在我只想做个坏人">
   
   
-  <meta property="og:title" content="Github Repository 的正确打开姿势"/>
+  <meta property="og:title" content="不读书的后果(滑坡谬误)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="林水溶的博客"/>
   <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
@@ -44,7 +44,7 @@
       
   
     <h1 class="page-title center">
-        Github Repository 的正确打开姿势
+        不读书的后果(滑坡谬误)
     </h1>
   
 
@@ -52,12 +52,12 @@
     </div>
     <div class="meta center">
       
-<time datetime="2018-04-02T14:36:48.000Z">
+<time datetime="2019-08-02T08:53:45.000Z">
 <svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2018-04-02
+  2019-08-02
 </time>
 
 
@@ -69,7 +69,7 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href="/categories/编程/">编程</a>
+    <a href="/categories/碎碎念/">碎碎念</a>
 
 
 
@@ -81,65 +81,39 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href="/tags/Github/">Github</a>·<a href="/tags/Repository/">Repository</a>
+    <a href="/tags/滑坡谬误/">滑坡谬误</a>·<a href="/tags/读书/">读书</a>·<a href="/tags/好玩/">好玩</a>
 
 
     </div>
     <hr>
-    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#正文"><span class="toc-text">正文</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#扯点别的"><span class="toc-text">扯点别的</span></a></li></ol>
+    
     <div class="picture-container">
       
     </div>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26508186&auto=0&height=66"></iframe>
-
-
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22658523&auto=0&height=66"></iframe>
 
 <blockquote>
-<p>毫无疑问，开源是伟大的</p>
+<p>本文的创作灵感来自于<a href="https://www.bilibili.com/video/av38713206/" target="_blank" rel="noopener">美国创意广告－有线电视信号太烂的后果</a>。</p>
+<p>同时此广告/本文也是<a href="https://zh.wikipedia.org/zh/滑坡謬誤" target="_blank" rel="noopener">滑坡谬误</a>的典型示例。</p>
 </blockquote>
-<h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><hr>
-<p>作为一名前端开发者，日常编程完全离不开 “开源”。</p>
-<p>从编辑器（VSCode，Atom），到用来做开发的MVVM（Vue.js，React.js，Angular.js）框架，到用来构建项目的包管理器（npm，yarn），再到项目中用到的各种UI库，第三方工具，组件。基本全是开源的，源码都能在Github搜到。</p>
-<p><strong>假如没有了开源，这个世界会是什么样？</strong></p>
-<p>这个世界会是什么样不好说，但完全可以想象的到程序员开发一款同样产品的难度会增加到多么可怕的地步。</p>
-<p>我也经常在Github上开源一些东西，虽然不是一些什么难度很高，甚至还有些拙劣，可供优化的项目，但的确实实在在地帮到了一些人。他们通过阅读项目源码来学习新技术，在他们自己的项目中使用我的开源组件而省去了自己重新造轮子花费的大把时间，所以他们会给我的项目点Star，每一个Star都是对我项目的肯定。</p>
-<h5 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h5><hr>
-<p>但什么是一个<strong>正常的开源项目</strong>呢？我认为必须符合以下几点</p>
-<ul>
-<li>完整的文档（至少包含<strong>Preview</strong> 和 <strong>How To Use</strong> 两部分）<ul>
-<li>前者可以让开发者清晰明了的知道这是一个什么东西，是否符合他们的需求，而不是非得<code>Clone</code>下来亲自试试才知道这是什么鬼？<ul>
-<li>如果<code>Clone</code>下来后发现并不符合心中的需求，那将让人感到非常挫败，而且也浪费了本不该浪费的时间。</li>
-</ul>
-</li>
-<li>后者可以让开发者不必翻看你的源码而快速上手使用它。这也是开源的一大魅力，使用者不需要去阅读源码就能使用它。<ul>
-<li>开源项目的使用体验完全在于开发者。<strong>简单，优雅</strong> 应该是每一个开源项目开发者的信条。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>版本控制<ul>
-<li>关于版本控制的必要性，<a href="https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%85%B3%E4%BA%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6" target="_blank" rel="noopener">git文档</a>说的很清楚了，粘贴过来一段就不复述了</li>
-<li>有了它你就可以将某个文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态。你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。但额外增加的工作量却微乎其微。</li>
-</ul>
-</li>
-<li>注释<ul>
-<li>必要的注释不仅让其他人在阅读你的源码时明白你写下这段代码时的思路，也能让你不会在一段时间后看不懂自己写的代码。<ul>
-<li>卧槽，当初这个地方我为什么要这么写？这是最让人尴尬的事情。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>正确的代码<ul>
-<li>本来不打算说这个，但在接连<code>Clone</code>了差不多有10个项目都报错时…… 我觉得还有很有必要说的。</li>
-<li>既然咱都决定把代码开源出去了，为什么不能再费一点心，保证其他人<code>Clone</code>下来能正常运行呢？否则开源出去还有意义吗？</li>
-</ul>
-</li>
-</ul>
-<h5 id="扯点别的"><a href="#扯点别的" class="headerlink" title="扯点别的"></a>扯点别的</h5><hr>
-<p><strong>关于为什么要开源？</strong></p>
-<p>我的回答是：<strong>装逼</strong></p>
-<p>（我的一位室友有句口头禅，我觉得很有道理：“如果不是为了装逼，那将毫无意义！”）</p>
-<p>更多角度的答案看<a href="https://www.zhihu.com/question/33573424" target="_blank" rel="noopener">这里</a></p>
+<ol>
+<li>你不读书，你喜欢的女生问你”生命、宇宙以及一切事物的终极答案是什么？”时，你就回答不上来。你回答不上来，女生对你的好感就会大大降低。女生对你的好感就会大大降低，你在表白时就会遭到拒绝。为了能有女朋友，你应该读书。</li>
+<li>你不读书，你就会觉得精神无聊，然后开始去网吧玩英雄联盟。你开始去网吧玩英雄联盟，就会停不下来，一直玩下去。你一直玩下去，就会猝死。为了好好活下去，你应该读书。</li>
+<li>你不读书，就没人愿意和你做朋友。没人愿意和你做朋友，你就会不修边幅，宅在家里。你不修边幅，宅在家里，你父母就会嫌弃你。你父母嫌弃你，你就会备受打击。你备受打击，你就会觉得活着没有意思，最后决定跳楼。不要跳楼，你应该读书。</li>
+<li>你不读书，就会异想天开。你异想天开，就会觉得倒着走路去上班很有意思。你倒着走路去上班，就会被汽车撞断腿。不要一辈子坐在轮椅上，你应该去读书。</li>
+<li>你不读书，就会在批改学生的试卷时出错。你在批改学生的试卷时出错，就会遭到学生记恨。你遭到学生记恨，你的汽车车胎就会被扎破。不要让自己的汽车车胎被扎破，你应该去读书。</li>
+<li>你不读书，在看新闻联播时就会深信不疑。你在看新闻联播时就会深信不疑，你就会觉得国外人民都生活在水深火热之中。你觉得国外人民都生活在水深火热之中，你就会想支援国际共产主义。不要支援国际共产主义，你应该读书。</li>
+<li>你不读书，在和别人争论时就会争论不过别人。你争论不过别人，就会出手打他。你出手打他，就会被他的朋友围殴。不要被人围殴，你应该读书。</li>
+<li>你不读书，就不知道鲁迅是谁。你不知道鲁迅是谁，就会在文学课上听到老师讲鲁迅时提出这个愚蠢的问题。你提出这个愚蠢的问题，就会被全班人嘲笑。不要别人嘲笑，你应该读书。</li>
+<li>你不读书，就会觉得生活没有意义。你觉得生活没有意义，就会去女朋友家寻求安慰。你去女朋友家寻求安慰，就会发现让你痛不欲生的事。你发现让你痛不欲生的事，就会觉得生活更没有意义，然后你就会选择卧轨自杀。不要卧轨自杀，你应该读书。</li>
+<li>你不读书，就会经常性地觉得无助。你觉得无助，就会想要摆脱无助感。你想要摆脱无助感，你就会去学习跆拳道。你去学习跆拳道，你就会想学以致用。你想学以致用，你就会学习侠客，开始昼伏夜出。你昼伏夜出，你就会掉到下水道里。不要掉到下水道里，你应该读书。</li>
+</ol>
+<p><strong>欢迎大家贡献示例！期待大家的奇思妙想，我收集后会署名添加进来</strong></p>
+<blockquote>
+<p>通过邮件：shuirong1997@icloud.com    </p>
+<p>通过微博：<a href="https://www.weibo.com/6871008101/profile" target="_blank" rel="noopener">https://www.weibo.com/6871008101/profile</a></p>
+<p>通过Github Issues：<a href="https://github.com/shuiRong/shuiRong.github.io/issues" target="_blank" rel="noopener">https://github.com/shuiRong/shuiRong.github.io/issues</a></p>
+</blockquote>
 
 
   </article>
