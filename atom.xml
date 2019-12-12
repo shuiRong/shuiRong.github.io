@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-08-02T08:59:23.971Z</updated>
+  <updated>2019-12-12T15:51:04.729Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell</title>
+    <link href="/2019/12/12/%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95%E7%89%88%E6%9D%83%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%EF%BD%9C%E4%BD%BF%E7%94%A8Proxifier%EF%BD%9C%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8Shell/"/>
+    <id>/2019/12/12/解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell/</id>
+    <published>2019-12-12T05:37:40.000Z</published>
+    <updated>2019-12-12T15:51:04.729Z</updated>
+    
+    <content type="html"><![CDATA[<p>那天我像往常一样打开网易云音乐，点击首页那张之前创建的中岛美雪的歌单，然后看到了这个：</p><p><img src="https://i.imgur.com/OZClAAE.jpg" alt="中岛美雪、看图貌似得翻墙"></p><p>满屏的灰色打破了我镇定的情绪。</p><p>我决定开始行动。</p><hr><p>一顿搜索之后发现了这个解决方案：<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">UnblockNeteaseMusic </a>，赞美作者：<a href="https://github.com/nondanee" target="_blank" rel="noopener">nondanee</a> </p><p>它的思路是：</p><ol><li>使用 QQ / 虾米 / 百度 / 酷狗 / 酷我 / 咪咕 / JOOX 音源替换变灰歌曲链接</li><li>为请求增加 <code>X-Real-IP</code> 参数解锁海外版权限制。（因为有些歌曲在国外是可以正常听的）</li></ol><p>下面是教程正文</p><hr><h4 id="1、安装项目运行环境（Node-js）"><a href="#1、安装项目运行环境（Node-js）" class="headerlink" title="1、安装项目运行环境（Node.js）"></a>1、安装项目运行环境（Node.js）</h4><p><strong>Windows</strong></p><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Download | Node.js</a><br>下载 .msi 安装包并安装</p><p><strong>macOS</strong></p><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Download | Node.js</a><br>下载 .pkg 安装包并安装</p><p><strong>Linux</strong></p><p><a href="https://nodejs.org/en/download/package-manager/" target="_blank" rel="noopener">Installing Node.js via package manager | Node.js</a></p><blockquote><p>当然用 macOS 的 Homebrew，Windows 的 Scoop 等包管理器安装也可以，根据个人喜好选择即可。</p><p>Android 平台的终端模拟器如 Termux，NeoTerm 等也可以安装 Node.js，教程非常多，请善用搜索引擎。</p></blockquote><h4 id="2、下载项目｜两种方法"><a href="#2、下载项目｜两种方法" class="headerlink" title="2、下载项目｜两种方法"></a>2、下载项目｜两种方法</h4><ol><li>使用 Git 克隆</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/nondanee/UnblockNeteaseMusic.git #克隆项目仓库</span><br><span class="line">cd UnblockNeteaseMusic #进入项目根目录</span><br></pre></td></tr></table></figure><ol><li>手动下载源码压缩包：在<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">项目首页</a>点击 Clone or download 绿色按钮，选择 Download ZIP 并解压</li></ol><p>P.S. 项目不需要安装任何依赖（前端同学不要手快<code>npm install</code>或者<code>yarn</code>）。</p><p>使用此项目存在两种方法，或者说两种模式。下面分别介绍：</p><h4 id="3-1、方法1代理模式（亲测可用）"><a href="#3-1、方法1代理模式（亲测可用）" class="headerlink" title="3.1、方法1代理模式（亲测可用）"></a>3.1、方法1代理模式（亲测可用）</h4><p><strong>首先配置Proxifier</strong></p><p>添加一个后面用到的Proxies：只需要填<code>Addresss</code> <code>Port</code> <code>Protocol</code>，其他的空着。</p><p><img src="https://i.imgur.com/xMZ1L74.jpg" alt="1"></p><p>然后添加一个Rules：注意那个+按钮，点击后选择网易云音乐，然后Applications框里就会出现内容。我们的内容或许不同，没问题。其他地方和我这边保持一致即可。Action选择你在上一步添加的那个。</p><p><code>*.music.126.net;*.music.163.com;mam.netease.com;api.iplay.163.com</code></p><p><img src="https://i.imgur.com/KWdqjEc.jpg" alt="2"></p><p>接着Rules右边的 <code>DNS</code> 部分，选择<code>Resolve hostname through proxy</code>，其余地方默认即可。</p><p><strong>最后，在命令行启动作者的项目：</strong><code>node app.js</code></p><p>现在我们打开网易云客户端会发现，已经可以听因为版权而灰掉的音乐了～</p><p><img src="https://i.imgur.com/Cln5oQ4.jpg" alt="3"></p><h4 id="3-2、方法2Hosts模式（亲测失效）"><a href="#3-2、方法2Hosts模式（亲测失效）" class="headerlink" title="3.2、方法2Hosts模式（亲测失效）"></a>3.2、方法2Hosts模式（亲测失效）</h4><p>因此不做介绍，感兴趣点击<a href="https://github.com/nondanee/UnblockNeteaseMusic/issues/22#issuecomment-429514826" target="_blank" rel="noopener">这里</a>了解。</p><h4 id="4、设置开机自动运行程序"><a href="#4、设置开机自动运行程序" class="headerlink" title="4、设置开机自动运行程序"></a>4、设置开机自动运行程序</h4><p>有没有觉得每次开机都要跑到项目目录下，然后命令行运行<code>node app.js</code>，很烦人？</p><p>觉得“没有”的同学，可以关掉本页面了～</p><p>思路是写一个shell脚本，脚本里是运行项目的命令，然后在系统设置开机时自动运行此shell脚本。下面是过程：</p><ol><li>在作者项目目录下新建<code>launch.sh</code>文件，然后写下此脚本：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh </span><br><span class="line">cd /Users/xxxxxx/UnblockNeteaseMusic; # 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span><br><span class="line">nohup node ./app.js &amp;</span><br></pre></td></tr></table></figure><p>你会注意到上面有个<code>nohup</code>命令，它是让命令行程序可以运行在后台的工具（因为一般在终端运行脚本时，得保持终端开启。关掉终端意味着结束脚本运行。但nohup让脚本可以在终端关闭后可以持续运行。）</p><p>P.S. 貌似OSX系统自带有nohup命令，无需安装。</p><ol><li>赋予此脚本管理员权限：<code>sudo chmod 777 launch.sh</code></li><li>打开系统设置、用户与群组、登录项：添加上面那个脚本进来。<img src="https://i.imgur.com/UNUgdQP.jpg" alt="5"></li><li>右键此脚本文件，点击“显示简介”，设置“打开方式”为自己的终端程序（iTerm也行）。</li><li>重启测试。</li></ol><blockquote><p>所有的折腾（一晚上+中午两小时）都是值得的。（比如可以水一篇博客23333）</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;那天我像往常一样打开网易云音乐，点击首页那张之前创建的中岛美雪的歌单，然后看到了这个：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/OZClAAE.jpg&quot; alt=&quot;中岛美雪、看图貌似得翻墙&quot;&gt;&lt;/p&gt;
+&lt;p&gt;满屏的灰色打破了我镇定的情绪。&lt;
+      
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+      <category term="GFW" scheme="/tags/GFW/"/>
+    
+      <category term="碎碎念" scheme="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="翻墙" scheme="/tags/%E7%BF%BB%E5%A2%99/"/>
+    
+      <category term="科学上网" scheme="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>不读书的后果(滑坡谬误)</title>
     <link href="/2019/08/02/%E4%B8%8D%E8%AF%BB%E4%B9%A6%E7%9A%84%E5%90%8E%E6%9E%9C-%E6%BB%91%E5%9D%A1%E8%B0%AC%E8%AF%AF/"/>
     <id>/2019/08/02/不读书的后果-滑坡谬误/</id>
     <published>2019-08-02T08:53:45.000Z</published>
-    <updated>2019-08-02T08:59:23.971Z</updated>
+    <updated>2019-08-02T08:59:53.291Z</updated>
     
     <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22658523&auto=0&height=66"></iframe><blockquote><p>本文的创作灵感来自于<a href="https://www.bilibili.com/video/av38713206/" target="_blank" rel="noopener">美国创意广告－有线电视信号太烂的后果</a>。</p><p>同时此广告/本文也是<a href="https://zh.wikipedia.org/zh/滑坡謬誤" target="_blank" rel="noopener">滑坡谬误</a>的典型示例。</p></blockquote><ol><li>你不读书，你喜欢的女生问你”生命、宇宙以及一切事物的终极答案是什么？”时，你就回答不上来。你回答不上来，女生对你的好感就会大大降低。女生对你的好感就会大大降低，你在表白时就会遭到拒绝。为了能有女朋友，你应该读书。</li><li>你不读书，你就会觉得精神无聊，然后开始去网吧玩英雄联盟。你开始去网吧玩英雄联盟，就会停不下来，一直玩下去。你一直玩下去，就会猝死。为了好好活下去，你应该读书。</li><li>你不读书，就没人愿意和你做朋友。没人愿意和你做朋友，你就会不修边幅，宅在家里。你不修边幅，宅在家里，你父母就会嫌弃你。你父母嫌弃你，你就会备受打击。你备受打击，你就会觉得活着没有意思，最后决定跳楼。不要跳楼，你应该读书。</li><li>你不读书，就会异想天开。你异想天开，就会觉得倒着走路去上班很有意思。你倒着走路去上班，就会被汽车撞断腿。不要一辈子坐在轮椅上，你应该去读书。</li><li>你不读书，就会在批改学生的试卷时出错。你在批改学生的试卷时出错，就会遭到学生记恨。你遭到学生记恨，你的汽车车胎就会被扎破。不要让自己的汽车车胎被扎破，你应该去读书。</li><li>你不读书，在看新闻联播时就会深信不疑。你在看新闻联播时就会深信不疑，你就会觉得国外人民都生活在水深火热之中。你觉得国外人民都生活在水深火热之中，你就会想支援国际共产主义。不要支援国际共产主义，你应该读书。</li><li>你不读书，在和别人争论时就会争论不过别人。你争论不过别人，就会出手打他。你出手打他，就会被他的朋友围殴。不要被人围殴，你应该读书。</li><li>你不读书，就不知道鲁迅是谁。你不知道鲁迅是谁，就会在文学课上听到老师讲鲁迅时提出这个愚蠢的问题。你提出这个愚蠢的问题，就会被全班人嘲笑。不要别人嘲笑，你应该读书。</li><li>你不读书，就会觉得生活没有意义。你觉得生活没有意义，就会去女朋友家寻求安慰。你去女朋友家寻求安慰，就会发现让你痛不欲生的事。你发现让你痛不欲生的事，就会觉得生活更没有意义，然后你就会选择卧轨自杀。不要卧轨自杀，你应该读书。</li><li>你不读书，就会经常性地觉得无助。你觉得无助，就会想要摆脱无助感。你想要摆脱无助感，你就会去学习跆拳道。你去学习跆拳道，你就会想学以致用。你想学以致用，你就会学习侠客，开始昼伏夜出。你昼伏夜出，你就会掉到下水道里。不要掉到下水道里，你应该读书。</li></ol><p><strong>欢迎大家贡献示例！期待大家的奇思妙想，我收集后会署名添加进来</strong></p><blockquote><p>通过邮件：shuirong1997@icloud.com    </p><p>通过微博：<a href="https://www.weibo.com/6871008101/profile" target="_blank" rel="noopener">https://www.weibo.com/6871008101/profile</a></p><p>通过Github Issues：<a href="https://github.com/shuiRong/shuiRong.github.io/issues" target="_blank" rel="noopener">https://github.com/shuiRong/shuiRong.github.io/issues</a></p></blockquote>]]></content>
     
@@ -282,9 +315,9 @@
       <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="大前端" scheme="/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="翻译" scheme="/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="大前端" scheme="/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
       <category term="React" scheme="/tags/React/"/>
     
@@ -575,33 +608,6 @@
       <category term="Github" scheme="/tags/Github/"/>
     
       <category term="Repository" scheme="/tags/Repository/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>南京，我做了一个错误的决定</title>
-    <link href="/2018/03/18/%E5%8D%97%E4%BA%AC%EF%BC%8C%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E5%86%B3%E5%AE%9A/"/>
-    <id>/2018/03/18/南京，我做了一个错误的决定/</id>
-    <published>2018-03-18T10:46:20.000Z</published>
-    <updated>2019-05-10T10:51:33.655Z</updated>
-    
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26522011&auto=0&height=66"></iframe><blockquote><p>哪天下大雨，就把这篇补上…</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=
-      
-    
-    </summary>
-    
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
-    
-    
-      <category term="选择" scheme="/tags/%E9%80%89%E6%8B%A9/"/>
-    
-      <category term="职业" scheme="/tags/%E8%81%8C%E4%B8%9A/"/>
     
   </entry>
   
