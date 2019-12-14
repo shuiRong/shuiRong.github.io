@@ -54,9 +54,9 @@
 <ol>
 <li>在作者项目目录下新建<code>launch.sh</code>文件，然后写下此脚本：</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh </span><br><span class="line">cd /Users/xxxxxx/UnblockNeteaseMusic; # 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span><br><span class="line">nohup node ./app.js &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh </span><br><span class="line">cd /Users/xxxxxx/UnblockNeteaseMusic # 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span><br><span class="line">nohup node app.js -p 8080:8081 &amp;  # 注意有个 -p 8080:8081</span><br><span class="line">exit # 必须加上此命令，目的是正常退出当前shell。详情看这篇文章：https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html</span><br></pre></td></tr></table></figure>
 <p>你会注意到上面有个<code>nohup</code>命令，它是让命令行程序可以运行在后台的工具（因为一般在终端运行脚本时，得保持终端开启。关掉终端意味着结束脚本运行。但nohup让脚本可以在终端关闭后可以持续运行。）</p>
-<p>P.S. 貌似OSX系统自带有nohup命令，无需安装。</p>
+<p>P.S. 貌似OSX系统自带有<code>nohup</code>命令，无需安装。</p>
 <ol>
 <li>赋予此脚本管理员权限：<code>sudo chmod 777 launch.sh</code></li>
 <li>打开系统设置、用户与群组、登录项：添加上面那个脚本进来。<img src="https://i.imgur.com/UNUgdQP.jpg" alt="5"></li>
@@ -301,9 +301,9 @@
         
         <tags>
             
-            <tag> Github </tag>
-            
             <tag> 言论自由 </tag>
+            
+            <tag> Github </tag>
             
             <tag> 逻辑 </tag>
             
@@ -741,9 +741,9 @@
         
         <tags>
             
-            <tag> 翻译 </tag>
-            
             <tag> 大前端 </tag>
+            
+            <tag> 翻译 </tag>
             
             <tag> React </tag>
             
