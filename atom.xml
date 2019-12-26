@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-12-14T07:22:22.820Z</updated>
+  <updated>2019-12-26T15:41:21.390Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端埋点之曝光实现</title>
+    <link href="/2019/12/26/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E4%B9%8B%E6%9B%9D%E5%85%89%E5%AE%9E%E7%8E%B0/"/>
+    <id>/2019/12/26/前端埋点之曝光实现/</id>
+    <published>2019-12-26T13:55:37.000Z</published>
+    <updated>2019-12-26T15:41:21.390Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近有一个工作需求是曝光埋点，让我得以有机会接触相关的东西。之前实习时没有做过这方面的需求，个人项目更是和埋点扯不上关系。以至于上周开会讨论时听到“埋点”这个词就怂了。</p><p>不过后面听大佬分析了下后才意识到，原来“埋点”是这个意思。曝光埋点的思路也是很简单：无非是判断某个DOM是否出现在视窗中，出现了就收集数据上报给服务端。</p><blockquote><p>所谓“埋点”，是数据采集领域（尤其是用户行为数据采集领域）的术语，指的是针对特定用户行为或事件进行捕获、处理和发送的相关技术及其实施过程。比如用户某个文章点击次数、观看某个视频的时长等等。</p></blockquote><p>再说「曝光埋点」，它与「图片懒加载」「计算广告浏览量」这些需求一样，本质就是让你计算某一元素和另一元素（视窗）的相对可视状态/相对位置，然后进行一些操作（一般是上报给服务端）。</p><h4 id="思考如何实现"><a href="#思考如何实现" class="headerlink" title="思考如何实现"></a>思考如何实现</h4><p>最先出现在脑海里的方法是利用<code>getBoundingClientRect</code> / <code>offset类</code> + <code>onscroll</code>。即：注册滚动事件，然后在滚动的回调函数中利用<code>getBoundingClientRect</code> / <code>offset类</code>拿到每个元素的位置信息，然后经过判断确定是否元素处于曝光状态/视窗中。</p><p>但这种方式有很大的缺陷。如果你熟悉<a href="https://segmentfault.com/a/1190000017329980" target="_blank" rel="noopener">浏览器的渲染过程</a>的话，就会知道调用<code>getBoundingClientRect</code> / <code>offset类</code>会引起浏览器的回流重绘，影响网页表现/性能。频繁、大量调用更不是一个妥当的选择。</p><p>我开始尝试在社区找找看有没有其他更妥当的方法，还真被我找到了：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API" target="_blank" rel="noopener">Intersection Observer</a></p><h4 id="Intersection-Observer"><a href="#Intersection-Observer" class="headerlink" title="Intersection Observer"></a>Intersection Observer</h4><p>它提供了一种<strong>异步</strong>观察目标元素与祖先元素或顶级文档Viewport的<strong>交集变化</strong>的方法。也就是说，不仅可以用来获得相对于<strong>视窗</strong>的曝光，可以做得更多，这取决于“另一个元素”是什么。</p><p><code>Intersection Observer</code>将本来是开发者做的：监听滚动、遍历获取元素与另一个元素（或视窗）相对位置的工作给做了。这两块工作是页面性能损耗大户，现在交给浏览器来实现，会比我们开发者来做要妥当的多。开发者现在只需要关心其他业务逻辑即可 😁</p><p>那这么好用的API，它的兼容性状况如何呢？</p><p><img src="https://i.loli.net/2019/12/26/A8ol3H1xdsiXcwK.jpg" alt="兼容性"></p><p>还不错，但兼容性方面要求高的话还是不能让人放心使用。</p><p><strong>Polyfill</strong></p><p>但不用担心，我们有polyfill。W3C提供了一个<a href="https://github.com/w3c/IntersectionObserver" target="_blank" rel="noopener">polyfill</a>，当浏览器不支持时使用常规解决方案替代。它的思路就是在检测到当前浏览器不支持<code>Intersection Observer API</code>时，使用<a href="https://github.com/w3c/IntersectionObserver/blob/cd18b01234ae2dfbdee81af2c23885dd562e3e11/polyfill/intersection-observer.js#L329" target="_blank" rel="noopener"><code>getBoundingClientRect</code></a>去重新实现一遍<code>Intersection Observer API</code>。</p><p>那么使用了该Polyfill后，浏览器兼容性状况如何呢？</p><p>非常棒！ 😎（IE6都支持了，还想啥呢，大兄弟。）</p><p><img src="https://i.loli.net/2019/12/26/pogyaCLB4MVZehH.jpg" alt="Polyfill兼容性"></p><h4 id="曝光实现步骤"><a href="#曝光实现步骤" class="headerlink" title="曝光实现步骤"></a>曝光实现步骤</h4><p>思路就像上面一再提到的，很简单：</p><ol><li><code>new IntersectionObserver()</code>实例化一个全局<code>observer</code>，（结合Vue指令）让每个DOM自行把自己加入到<code>observer</code>的观察列表。</li><li>当某个DOM进入视窗，收集对应的信息，上报。</li><li>取消对该DOM的观察。</li></ol><h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>Exposure.ts 封装成类</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'intersection-observer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> Exposure &#123;</span><br><span class="line">    <span class="keyword">private</span> observer: IntersectionObserver | <span class="literal">undefined</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> init() &#123;</span><br><span class="line">        <span class="keyword">const</span> self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.observer = <span class="keyword">new</span> IntersectionObserver(</span><br><span class="line">            (entries, observer) =&gt; &#123;</span><br><span class="line">                entries.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (item.isIntersecting) &#123;</span><br><span class="line">                        <span class="keyword">const</span> data = item.target.getAttribute(<span class="string">'data-article'</span>);</span><br><span class="line">                        self.upload(data);</span><br><span class="line">                        observer!.unobserve(item.target);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                root: <span class="literal">null</span>,</span><br><span class="line">                rootMargin: <span class="string">'0'</span>,</span><br><span class="line">                threshold: <span class="number">0.1</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> add(el: Element) &#123;</span><br><span class="line">        <span class="keyword">this</span>.observer &amp;&amp; <span class="keyword">this</span>.observer.observe(el);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> upload(data: <span class="built_in">string</span> | <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (data) &#123;</span><br><span class="line">            <span class="comment">// ajax上报数据</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>directive/exposure.ts 封装Vue指令</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Exposure <span class="keyword">from</span> <span class="string">'@/lib/Exposure'</span>;</span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> exposure = <span class="keyword">new</span> Exposure();</span><br><span class="line"></span><br><span class="line">Vue.directive(<span class="string">'exposure'</span>, &#123;</span><br><span class="line">    bind(el) &#123;</span><br><span class="line">        exposure.add(el);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>*.vue 使用指令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-exposure :data-article=&apos;article&apos;&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近有一个工作需求是曝光埋点，让我得以有机会接触相关的东西。之前实习时没有做过这方面的需求，个人项目更是和埋点扯不上关系。以至于上周开会讨论时听到“埋点”这个词就怂了。&lt;/p&gt;
+&lt;p&gt;不过后面听大佬分析了下后才意识到，原来“埋点”是这个意思。曝光埋点的思路也是很简单：无非是
+      
+    
+    </summary>
+    
+      <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="埋点" scheme="/tags/%E5%9F%8B%E7%82%B9/"/>
+    
+      <category term="曝光" scheme="/tags/%E6%9B%9D%E5%85%89/"/>
+    
+      <category term="Intersection Observer" scheme="/tags/Intersection-Observer/"/>
+    
+  </entry>
   
   <entry>
     <title>解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell</title>
@@ -192,9 +224,9 @@
       <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Mastodon" scheme="/tags/Mastodon/"/>
-    
       <category term="ReactNative" scheme="/tags/ReactNative/"/>
+    
+      <category term="Mastodon" scheme="/tags/Mastodon/"/>
     
       <category term="App" scheme="/tags/App/"/>
     
@@ -581,33 +613,6 @@
       <category term="软件" scheme="/tags/%E8%BD%AF%E4%BB%B6/"/>
     
       <category term="Electron-Vue" scheme="/tags/Electron-Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Github Repository 的正确打开姿势</title>
-    <link href="/2018/04/02/Github-Repository-%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E5%A7%BF%E5%8A%BF/"/>
-    <id>/2018/04/02/Github-Repository-的正确打开姿势/</id>
-    <published>2018-04-02T14:36:48.000Z</published>
-    <updated>2018-04-02T16:43:46.002Z</updated>
-    
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26508186&auto=0&height=66"></iframe><blockquote><p>毫无疑问，开源是伟大的</p></blockquote><h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><hr><p>作为一名前端开发者，日常编程完全离不开 “开源”。</p><p>从编辑器（VSCode，Atom），到用来做开发的MVVM（Vue.js，React.js，Angular.js）框架，到用来构建项目的包管理器（npm，yarn），再到项目中用到的各种UI库，第三方工具，组件。基本全是开源的，源码都能在Github搜到。</p><p><strong>假如没有了开源，这个世界会是什么样？</strong></p><p>这个世界会是什么样不好说，但完全可以想象的到程序员开发一款同样产品的难度会增加到多么可怕的地步。</p><p>我也经常在Github上开源一些东西，虽然不是一些什么难度很高，甚至还有些拙劣，可供优化的项目，但的确实实在在地帮到了一些人。他们通过阅读项目源码来学习新技术，在他们自己的项目中使用我的开源组件而省去了自己重新造轮子花费的大把时间，所以他们会给我的项目点Star，每一个Star都是对我项目的肯定。</p><h5 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h5><hr><p>但什么是一个<strong>正常的开源项目</strong>呢？我认为必须符合以下几点</p><ul><li>完整的文档（至少包含<strong>Preview</strong> 和 <strong>How To Use</strong> 两部分）<ul><li>前者可以让开发者清晰明了的知道这是一个什么东西，是否符合他们的需求，而不是非得<code>Clone</code>下来亲自试试才知道这是什么鬼？<ul><li>如果<code>Clone</code>下来后发现并不符合心中的需求，那将让人感到非常挫败，而且也浪费了本不该浪费的时间。</li></ul></li><li>后者可以让开发者不必翻看你的源码而快速上手使用它。这也是开源的一大魅力，使用者不需要去阅读源码就能使用它。<ul><li>开源项目的使用体验完全在于开发者。<strong>简单，优雅</strong> 应该是每一个开源项目开发者的信条。</li></ul></li></ul></li><li>版本控制<ul><li>关于版本控制的必要性，<a href="https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%85%B3%E4%BA%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6" target="_blank" rel="noopener">git文档</a>说的很清楚了，粘贴过来一段就不复述了</li><li>有了它你就可以将某个文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态。你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。但额外增加的工作量却微乎其微。</li></ul></li><li>注释<ul><li>必要的注释不仅让其他人在阅读你的源码时明白你写下这段代码时的思路，也能让你不会在一段时间后看不懂自己写的代码。<ul><li>卧槽，当初这个地方我为什么要这么写？这是最让人尴尬的事情。</li></ul></li></ul></li><li>正确的代码<ul><li>本来不打算说这个，但在接连<code>Clone</code>了差不多有10个项目都报错时…… 我觉得还有很有必要说的。</li><li>既然咱都决定把代码开源出去了，为什么不能再费一点心，保证其他人<code>Clone</code>下来能正常运行呢？否则开源出去还有意义吗？</li></ul></li></ul><h5 id="扯点别的"><a href="#扯点别的" class="headerlink" title="扯点别的"></a>扯点别的</h5><hr><p><strong>关于为什么要开源？</strong></p><p>我的回答是：<strong>装逼</strong></p><p>（我的一位室友有句口头禅，我觉得很有道理：“如果不是为了装逼，那将毫无意义！”）</p><p>更多角度的答案看<a href="https://www.zhihu.com/question/33573424" target="_blank" rel="noopener">这里</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=
-      
-    
-    </summary>
-    
-      <category term="编程" scheme="/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Github" scheme="/tags/Github/"/>
-    
-      <category term="Repository" scheme="/tags/Repository/"/>
     
   </entry>
   

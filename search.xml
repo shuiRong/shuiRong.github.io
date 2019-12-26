@@ -3,6 +3,63 @@
   
     
     <entry>
+      <title><![CDATA[前端埋点之曝光实现]]></title>
+      <url>/2019/12/26/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E4%B9%8B%E6%9B%9D%E5%85%89%E5%AE%9E%E7%8E%B0/</url>
+      <content type="html"><![CDATA[<p>最近有一个工作需求是曝光埋点，让我得以有机会接触相关的东西。之前实习时没有做过这方面的需求，个人项目更是和埋点扯不上关系。以至于上周开会讨论时听到“埋点”这个词就怂了。</p>
+<p>不过后面听大佬分析了下后才意识到，原来“埋点”是这个意思。曝光埋点的思路也是很简单：无非是判断某个DOM是否出现在视窗中，出现了就收集数据上报给服务端。</p>
+<blockquote>
+<p>所谓“埋点”，是数据采集领域（尤其是用户行为数据采集领域）的术语，指的是针对特定用户行为或事件进行捕获、处理和发送的相关技术及其实施过程。比如用户某个文章点击次数、观看某个视频的时长等等。</p>
+</blockquote>
+<p>再说「曝光埋点」，它与「图片懒加载」「计算广告浏览量」这些需求一样，本质就是让你计算某一元素和另一元素（视窗）的相对可视状态/相对位置，然后进行一些操作（一般是上报给服务端）。</p>
+<h4 id="思考如何实现"><a href="#思考如何实现" class="headerlink" title="思考如何实现"></a>思考如何实现</h4><p>最先出现在脑海里的方法是利用<code>getBoundingClientRect</code> / <code>offset类</code> + <code>onscroll</code>。即：注册滚动事件，然后在滚动的回调函数中利用<code>getBoundingClientRect</code> / <code>offset类</code>拿到每个元素的位置信息，然后经过判断确定是否元素处于曝光状态/视窗中。</p>
+<p>但这种方式有很大的缺陷。如果你熟悉<a href="https://segmentfault.com/a/1190000017329980" target="_blank" rel="noopener">浏览器的渲染过程</a>的话，就会知道调用<code>getBoundingClientRect</code> / <code>offset类</code>会引起浏览器的回流重绘，影响网页表现/性能。频繁、大量调用更不是一个妥当的选择。</p>
+<p>我开始尝试在社区找找看有没有其他更妥当的方法，还真被我找到了：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API" target="_blank" rel="noopener">Intersection Observer</a></p>
+<h4 id="Intersection-Observer"><a href="#Intersection-Observer" class="headerlink" title="Intersection Observer"></a>Intersection Observer</h4><p>它提供了一种<strong>异步</strong>观察目标元素与祖先元素或顶级文档Viewport的<strong>交集变化</strong>的方法。也就是说，不仅可以用来获得相对于<strong>视窗</strong>的曝光，可以做得更多，这取决于“另一个元素”是什么。</p>
+<p><code>Intersection Observer</code>将本来是开发者做的：监听滚动、遍历获取元素与另一个元素（或视窗）相对位置的工作给做了。这两块工作是页面性能损耗大户，现在交给浏览器来实现，会比我们开发者来做要妥当的多。开发者现在只需要关心其他业务逻辑即可 😁</p>
+<p>那这么好用的API，它的兼容性状况如何呢？</p>
+<p><img src="https://i.loli.net/2019/12/26/A8ol3H1xdsiXcwK.jpg" alt="兼容性"></p>
+<p>还不错，但兼容性方面要求高的话还是不能让人放心使用。</p>
+<p><strong>Polyfill</strong></p>
+<p>但不用担心，我们有polyfill。W3C提供了一个<a href="https://github.com/w3c/IntersectionObserver" target="_blank" rel="noopener">polyfill</a>，当浏览器不支持时使用常规解决方案替代。它的思路就是在检测到当前浏览器不支持<code>Intersection Observer API</code>时，使用<a href="https://github.com/w3c/IntersectionObserver/blob/cd18b01234ae2dfbdee81af2c23885dd562e3e11/polyfill/intersection-observer.js#L329" target="_blank" rel="noopener"><code>getBoundingClientRect</code></a>去重新实现一遍<code>Intersection Observer API</code>。</p>
+<p>那么使用了该Polyfill后，浏览器兼容性状况如何呢？</p>
+<p>非常棒！ 😎（IE6都支持了，还想啥呢，大兄弟。）</p>
+<p><img src="https://i.loli.net/2019/12/26/pogyaCLB4MVZehH.jpg" alt="Polyfill兼容性"></p>
+<h4 id="曝光实现步骤"><a href="#曝光实现步骤" class="headerlink" title="曝光实现步骤"></a>曝光实现步骤</h4><p>思路就像上面一再提到的，很简单：</p>
+<ol>
+<li><code>new IntersectionObserver()</code>实例化一个全局<code>observer</code>，（结合Vue指令）让每个DOM自行把自己加入到<code>observer</code>的观察列表。</li>
+<li>当某个DOM进入视窗，收集对应的信息，上报。</li>
+<li>取消对该DOM的观察。</li>
+</ol>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>Exposure.ts 封装成类</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'intersection-observer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> Exposure &#123;</span><br><span class="line">    <span class="keyword">private</span> observer: IntersectionObserver | <span class="literal">undefined</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> init() &#123;</span><br><span class="line">        <span class="keyword">const</span> self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.observer = <span class="keyword">new</span> IntersectionObserver(</span><br><span class="line">            (entries, observer) =&gt; &#123;</span><br><span class="line">                entries.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (item.isIntersecting) &#123;</span><br><span class="line">                        <span class="keyword">const</span> data = item.target.getAttribute(<span class="string">'data-article'</span>);</span><br><span class="line">                        self.upload(data);</span><br><span class="line">                        observer!.unobserve(item.target);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                root: <span class="literal">null</span>,</span><br><span class="line">                rootMargin: <span class="string">'0'</span>,</span><br><span class="line">                threshold: <span class="number">0.1</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> add(el: Element) &#123;</span><br><span class="line">        <span class="keyword">this</span>.observer &amp;&amp; <span class="keyword">this</span>.observer.observe(el);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> upload(data: <span class="built_in">string</span> | <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (data) &#123;</span><br><span class="line">            <span class="comment">// ajax上报数据</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>directive/exposure.ts 封装Vue指令</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Exposure <span class="keyword">from</span> <span class="string">'@/lib/Exposure'</span>;</span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> exposure = <span class="keyword">new</span> Exposure();</span><br><span class="line"></span><br><span class="line">Vue.directive(<span class="string">'exposure'</span>, &#123;</span><br><span class="line">    bind(el) &#123;</span><br><span class="line">        exposure.add(el);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>*.vue 使用指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-exposure :data-article=&apos;article&apos;&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> 大前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 埋点 </tag>
+            
+            <tag> 曝光 </tag>
+            
+            <tag> Intersection Observer </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell]]></title>
       <url>/2019/12/12/%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95%E7%89%88%E6%9D%83%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%EF%BD%9C%E4%BD%BF%E7%94%A8Proxifier%EF%BD%9C%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8Shell/</url>
       <content type="html"><![CDATA[<p>那天我像往常一样打开网易云音乐，点击首页那张之前创建的中岛美雪的歌单，然后看到了这个：</p>
@@ -454,9 +511,9 @@
         
         <tags>
             
-            <tag> Mastodon </tag>
-            
             <tag> ReactNative </tag>
+            
+            <tag> Mastodon </tag>
             
             <tag> App </tag>
             
