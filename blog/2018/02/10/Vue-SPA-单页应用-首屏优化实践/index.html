@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <base href="/blog/" />
+  
+  <title>Vue SPA(单页应用)首屏优化实践</title>
+  
+  <meta name="author" content="shuiRongLin">
+  
+  <meta name="description" content="以前我没得选，现在我只想做个坏人">
+  
+  
+  
+  <meta property="og:title" content="Vue SPA(单页应用)首屏优化实践" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="林水溶的博客" />
+  <link href="./apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml"
+    title="林水溶的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/m.min.css">
+  <link rel="stylesheet" href="css/notosans.css">
+  <link rel="icon" type="image/x-icon" href=".//favicon.ico">
+</head>
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="javascript:void(history.back())" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;以前我没得选，现在我只想做个坏人
+      </div>
+    </div>
+    <div class="main-ctnr">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        Vue SPA(单页应用)首屏优化实践
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2018-02-10T09:11:35.000Z">
+<svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2018-02-10
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href=".//categories/大前端/">大前端</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href=".//tags/Vue/">Vue</a>·<a href=".//tags/SPA/">SPA</a>
+
+
+    </div>
+    <hr>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-代码压缩-gzip"><span class="toc-text">1.代码压缩(gzip)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#２-外部文件按需引入-不用外部文件，自己造轮子"><span class="toc-text">２. 外部文件按需引入||不用外部文件，自己造轮子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3．代码分块-Code-Splitting"><span class="toc-text">3．代码分块/Code Splitting</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-路由组件懒加载"><span class="toc-text">4. 路由组件懒加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Webpack2-Tree-shaking"><span class="toc-text">4. Webpack2 Tree-shaking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-减少-XHR-中不必要的数据．"><span class="toc-text">5. 减少 XHR 中不必要的数据．</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-SSR-Server-Side-Render-服务端渲染"><span class="toc-text">6. SSR(Server Side Render/服务端渲染)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．"><span class="toc-text">7. 其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．</span></a></li></ol>
+    <div class="picture-container">
+      
+    </div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=450567505&auto=0&height=66"></iframe>
+
+<h4 id="1-代码压缩-gzip"><a href="#1-代码压缩-gzip" class="headerlink" title="1.代码压缩(gzip)"></a>1.代码压缩(gzip)</h4><p>如果你用的是<code>nginx</code>服务器，请修改配置文件(其他 web server 类似)：</p>
+<p><code>sudo nano /etc/nginx/nginx.conf</code></p>
+<p>在 Gzip Settings 里加入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gzip on;</span><br><span class="line">gzip_min_length 1k;</span><br><span class="line">gzip_buffers 4 16k;</span><br><span class="line">gzip_comp_level 5;</span><br><span class="line">gzip_types text/plain application/javascript text/css application/xml text/javascript application/x-httpd-php;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>gzip<ul>
+<li>开启或者关闭 gzip 模块，这里使用 on 表示启动</li>
+</ul>
+</li>
+<li>gzip_min_length<ul>
+<li>设置允许压缩的页面最小字节数．默认值是 0，不管页面多大都压缩．</li>
+</ul>
+</li>
+<li>gzip_buffers<ul>
+<li>设置系统获取几个单位的缓存用于存储 gzip 的压缩结果数据流．4 16k 代表以 16k 为单位，按照原始数据大小以 16k 为单位的 4 倍申请内存</li>
+</ul>
+</li>
+<li>gzip_comp_level<ul>
+<li>压缩比，压缩比１最小处理速度最快，压缩比 9 最大但处理最慢（传输快但比较消耗 cpu）</li>
+</ul>
+</li>
+<li>gzip_types<ul>
+<li>匹配 MIME 类型进行压缩，（无论是否指定）”text/html” 类型总是会被压缩</li>
+</ul>
+</li>
+</ul>
+<p><code>我这样配置，把首页一个需要下载的文件由716KB压缩到了246KB．优化比66%．</code></p>
+<p><strong>如果你没有开启服务器端的 gzip，也可以开启前后端代码的压缩</strong></p>
+<p>如果你后端用的是 Express.js 框架来提供 Web 服务，那么可以使用压缩中间件进行<a href="https://expressjs.com/zh-cn/advanced/best-practice-performance.html" target="_blank" rel="noopener">gzip 压缩</a>．</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> compression = <span class="built_in">require</span>(<span class="string">'compression'</span>);</span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line">app.use(compression());</span><br></pre></td></tr></table></figure>
+<p>如果你前端是用<code>vue-cli</code>生成的项目，那么在 Webpack 配置文件（生产环境）中已经开启了代码的压缩．</p>
+<h4 id="２-外部文件按需引入-不用外部文件，自己造轮子"><a href="#２-外部文件按需引入-不用外部文件，自己造轮子" class="headerlink" title="２. 外部文件按需引入||不用外部文件，自己造轮子"></a>２. 外部文件按需引入||不用外部文件，自己造轮子</h4><p><strong>在项目中使用<code>Element</code>的话，按需引入：</strong></p>
+<p>首先安装 <a href="https://github.com/QingWei-Li/babel-plugin-component" target="_blank" rel="noopener">babel-plugin-component</a>：</p>
+<p><code>npm install babel-plugin-component -D</code></p>
+<p>它让我们可以只引入需要的组件，以达到减小项目体积的目的.</p>
+<p>PS: 如果这时报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: post install error, please remove node_modules before retry</span><br></pre></td></tr></table></figure>
+<p>这是<code>cnpm</code>的锅．原因不详．解决办法是换用 npm 安装此模块．(我试过移除 node_modules 文件，报错依旧)</p>
+<p><strong>如果你用了 Ajax 相关的库，比如 vue-resource/axios 的话</strong></p>
+<p>去掉它，自己实现一个 Ajax 库吧．</p>
+<p>比如我的项目中只涉及了<code>get</code>,<code>post</code>，那么 vue-resource/axios 对我来说就很没必要了．</p>
+<p>所以我就封装个库（支持 Promise,不支持 IE）在 Vue 中当作插件使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* xhr.js */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XHR</span> </span>&#123;</span><br><span class="line">    get(url) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">            xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (</span><br><span class="line">                        xhr.status &gt;= <span class="number">200</span> &amp;&amp;</span><br><span class="line">                        (xhr.status &lt; <span class="number">300</span> || xhr.status === <span class="number">304</span>)</span><br><span class="line">                    ) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (xhr.responseText) &#123;</span><br><span class="line">                            resolve(<span class="built_in">JSON</span>.parse(xhr.responseText));</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            resolve(xhr.responseText);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        reject(<span class="string">`XHR unsuccessful:<span class="subst">$&#123;xhr.status&#125;</span>`</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            xhr.open(<span class="string">'get'</span>, url, <span class="literal">true</span>);</span><br><span class="line">            xhr.setRequestHeader(<span class="string">'content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">            xhr.send(<span class="literal">null</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    post(url, data) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">            xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (</span><br><span class="line">                        xhr.status &gt;= <span class="number">200</span> &amp;&amp;</span><br><span class="line">                        (xhr.status &lt; <span class="number">300</span> || xhr.status === <span class="number">304</span>)</span><br><span class="line">                    ) &#123;</span><br><span class="line">                        resolve(<span class="built_in">JSON</span>.parse(xhr.responseText));</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        reject(<span class="string">`XHR unsuccessful:<span class="subst">$&#123;xhr.status&#125;</span>`</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            xhr.open(<span class="string">'post'</span>, url, <span class="literal">true</span>);</span><br><span class="line">            xhr.setRequestHeader(<span class="string">'content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">            xhr.send(<span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Vue插件要求提供install方法：https://cn.vuejs.org/v2/guide/plugins.html */</span></span><br><span class="line">XHR.install = <span class="function"><span class="params">Vue</span> =&gt;</span> &#123;</span><br><span class="line">    Vue.prototype.$get = <span class="keyword">new</span> XHR().get;</span><br><span class="line">    Vue.prototype.$post = <span class="keyword">new</span> XHR().post;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> XHR;</span><br></pre></td></tr></table></figure>
+<p><code>这种方法一般能缩小文件几十KB．比如vue-resource有35KB,我的这个xhr.js只有1.9KB．</code></p>
+<h4 id="3．代码分块-Code-Splitting"><a href="#3．代码分块-Code-Splitting" class="headerlink" title="3．代码分块/Code Splitting"></a>3．代码分块/Code Splitting</h4><p>顾名思义，就是讲代码分成块，按需加载．这样，如果首屏不需要的块，就不用加载了．</p>
+<p>对于大型项目可能更有用，因为在我的这个项目中首页需要的文件和其他页面需要的基本一样，所以代码分块对我这个项目而言，就没必要了．</p>
+<h4 id="4-路由组件懒加载"><a href="#4-路由组件懒加载" class="headerlink" title="4. 路由组件懒加载"></a>4. 路由组件懒加载</h4><p>当打包构建应用时，Javascript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了</p>
+<p>结合 Vue 的 <a href="http://vuejs.org/guide/components.html#Async-Components" target="_blank" rel="noopener">异步组件</a> 和 Webpack 的 <a href="https://webpack.js.org/guides/code-splitting-require/" target="_blank" rel="noopener">code splitting feature</a>,可以轻松实现路由组件的懒加载．</p>
+<p>我们要做的就是把路由对应的组件定义成异步组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">/* require.ensure 是 Webpack 的特殊语法，用来设置 code-split point</span></span><br><span class="line"><span class="comment">                      （代码分块）*/</span></span><br><span class="line">    <span class="built_in">require</span>.ensure([<span class="string">'./Foo.vue'</span>], () =&gt; &#123;</span><br><span class="line">        resolve(<span class="built_in">require</span>(<span class="string">'./Foo.vue'</span>));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/* 另一种写法 */</span></span><br><span class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'./Foo.vue'</span>], resolve);</span><br></pre></td></tr></table></figure>
+<p>不需要改变任何路由配置，跟之前一样使用 <code>Foo</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes: [&#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo &#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="4-Webpack2-Tree-shaking"><a href="#4-Webpack2-Tree-shaking" class="headerlink" title="4. Webpack2 Tree-shaking"></a>4. Webpack2 Tree-shaking</h4><p><code>Tree-shaking</code> 用来消除没有用到的代码．</p>
+<p><code>个人小项目一般用不到tree-shaking．因为你不会写没用到的代码．规模很大的项目或许可以尝试使用它．</code></p>
+<h4 id="5-减少-XHR-中不必要的数据．"><a href="#5-减少-XHR-中不必要的数据．" class="headerlink" title="5. 减少 XHR 中不必要的数据．"></a>5. 减少 XHR 中不必要的数据．</h4><p>比如我的项目中，首页只需要博客 Title,id 和 Tags．Time 和 Content 不需要了，况且 Content 一般还很大(一般一篇 10KB 左右)．</p>
+<h4 id="6-SSR-Server-Side-Render-服务端渲染"><a href="#6-SSR-Server-Side-Render-服务端渲染" class="headerlink" title="6. SSR(Server Side Render/服务端渲染)"></a>6. SSR(Server Side Render/服务端渲染)</h4><p>这个有点难搞．但效果貌似挺不错．我之前在<a href="https://cn.vuejs.org/v2/guide/ssr.html" target="_blank" rel="noopener">Vue 文档中</a>简单看了一边，打算以后有需求了再搞不迟．</p>
+<h4 id="7-其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．"><a href="#7-其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．" class="headerlink" title="7. 其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．"></a>7. 其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．</h4>
+
+  </article>
+  </script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Hexo Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="js/jquery.min.js"></script>
+<script src="js/search.min.js"></script>
+<script type="text/javascript">
+
+  // disqus scripts
+  
+
+    // dropdown scripts
+    $(".dropdown").click(function (event) {
+      var current = $(this);
+      event.stopPropagation();
+      $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open")) ? 'removeClass' : 'addClass']("open")
+    });
+  $(document).click(function () {
+    $(".dropdown-content").removeClass("open");
+  })
+
+  var path = "/search.xml";
+  searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
+<div id="updown">
+  <div class="sidebar_wo" id="leimu">
+    <img src="img/leimu.png" alt="雷姆" onmouseover="this.src='/img/leimu.png'" onmouseout="this.src='/img/leimu.png'"
+      id="audioBtn" />
+  </div>
+  <div class="sidebar_wo" id="lamu">
+    <img src="img/lamu_2.png" alt="拉姆" onmouseover="this.src='/img/lamu_1.png'" onmouseout="this.src='/img/lamu_2.png'"
+      id="audioBtn" />
+  </div>
+</div>
+
+<style>
+  .sidebar_wo {
+    position: fixed;
+    line-height: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  #leimu {
+    left: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: translate(-7px, 7px);
+    -ms-transform: translate(-7px, 7px);
+    transform: translate(-7px, 7px);
+  }
+
+  #lamu {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: translate(7px, 7px);
+    -ms-transform: translate(7px, 7px);
+    transform: translate(7px, 7px);
+    right: 0;
+  }
+
+  #leimu:hover {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  #lamu:hover {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+</style>
+
+<script src="js/click.js"></script>
+<script src="js/anti-baidu.js"></script>
+<style>
+  .cc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+</style>
+<div class="cc">
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0"
+      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />本作品采用<a rel="license"
+    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haru@1.0.5/01/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
