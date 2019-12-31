@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/robots.txt"
   },
   {
-    "revision": "d0fcd6f76cf26ab2ac41a753abc48c2d",
-    "url": "/img/JavaScript.d0fcd6f7.svg"
+    "revision": "3fba5d549b47ed2f47f828544cdda5fb",
+    "url": "/index.html"
   },
   {
     "revision": "669f1046f5f784cf205cdf6a67869394",
@@ -24,36 +24,32 @@ self.__precacheManifest = [
     "url": "/img/Vue.1be5a9a5.svg"
   },
   {
-    "revision": "2633e4bcbf624ca32437930cc6fbf51e",
-    "url": "/links.html"
-  },
-  {
     "revision": "ebf8eb374b9496ba6a4dc56632c92019",
     "url": "/img/envelope.ebf8eb37.svg"
   },
   {
-    "revision": "f0ea1fc7a4fdd975bc03",
-    "url": "/js/app.d2452aa9.js"
+    "revision": "71442041dc416c41cd88",
+    "url": "/js/app.d55155e4.js"
+  },
+  {
+    "revision": "2633e4bcbf624ca32437930cc6fbf51e",
+    "url": "/links.html"
   },
   {
     "revision": "6f1d7b2d2c3bcab6c7ede355cc7004f1",
     "url": "/img/Swift.6f1d7b2d.svg"
   },
   {
-    "revision": "6932bd03c2312058953beb7560b51de6",
-    "url": "/index.html"
-  },
-  {
     "revision": "aa39f20b7462fa441075",
     "url": "/js/chunk-vendors.a3feed7e.js"
   },
   {
-    "revision": "9ff7cf4a8c53e28293f90c2d6c5ad3e8",
-    "url": "/img/Flutter.9ff7cf4a.png"
+    "revision": "d0fcd6f76cf26ab2ac41a753abc48c2d",
+    "url": "/img/JavaScript.d0fcd6f7.svg"
   },
   {
-    "revision": "f0ea1fc7a4fdd975bc03",
-    "url": "/css/app.d641feb0.css"
+    "revision": "71442041dc416c41cd88",
+    "url": "/css/app.7374e8d2.css"
   },
   {
     "revision": "ca37d01d037c8b8436d97ef7ddf410ba",
