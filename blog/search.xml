@@ -455,7 +455,7 @@
 <li><a href="">ReactNative实战之社交网络客户端（三：优化篇）</a>（正在写）</li>
 <li><a href="">ReactNative实战之社交网络客户端（四：踩坑篇）</a>（正在写）</li>
 </ul>
-<p>对了，<a href="https://linshuirong.cn/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/">这里</a>有一篇介绍Mastodon (长毛象)的文章，毕竟我是在为它开发客户端🤣</p>
+<p>对了，<a href="https://linshuirong.cn/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">这里</a>有一篇介绍Mastodon (长毛象)的文章，毕竟我是在为它开发客户端🤣</p>
 <h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── App.js	// 项目路由配置，因为我这个项目需要登陆，所以我就根据登陆/未登陆，定义了两个路由入口</span><br><span class="line">├── LICENSE	// 证书</span><br><span class="line">├── README.md	// 介绍文档</span><br><span class="line">├── android	// 原生Android工程</span><br><span class="line">├── app.json // 用来配置原生App需要的基本信息</span><br><span class="line">├── index.js // 入口文件</span><br><span class="line">├── ios // 原生iOS工程</span><br><span class="line">├── node_modules // 依赖项目的源代码</span><br><span class="line">├── package.json // 定义项目所需要的各种依赖/模块，以及项目的配置信息</span><br><span class="line">├── preview // App预览图</span><br><span class="line">├── rn-cli.config.js // 顾名思义，是命令行工具：react-native的配置信息</span><br><span class="line">├── src // 项目源代码。你写的业务代码基本都在这里</span><br><span class="line">    ├── Main.js // 配置了“登陆”状态下各页面的路由信息</span><br><span class="line">    ├── SignedOutNavigator.js // 配置了“未登陆”状态下各页面的路由信息</span><br><span class="line">    ├── assets // 会被RN打包工具打包的静态资源</span><br><span class="line">    ├── pages // App的页面级文件</span><br><span class="line">    │   ├── About.js // 关于页面</span><br><span class="line">    │   ├── Auth.js // 授权认证页面（Mastodon客户端登录时不是常规的账号密码登录，而是输入账号密码然后弹出授权认证，想想微信的授权认证）</span><br><span class="line">    │   ├── BlockedUsers.js // 被屏蔽用户页面</span><br><span class="line">    │   ├── Envelope.js // 私信页面</span><br><span class="line">    │   ├── FollowRequestList.js // 关注请求页面</span><br><span class="line">    │   ├── Followers.js // 关注者页面</span><br><span class="line">    │   ├── Following.js // 关注页面</span><br><span class="line">    │   ├── Home.js // 首页</span><br><span class="line">    │   ├── Launcher.js // 启动页面，从存储系统中加载主题、用户Token等基础数据</span><br><span class="line">    │   ├── Login.js // 登陆页面，即输入账号密码的地方</span><br><span class="line">    │   ├── MutedUsers.js // 被隐藏用户页面</span><br><span class="line">    │   ├── Notifications.js // 消息通知页面</span><br><span class="line">    │   ├── OpenSource.js // 开源声明页面，列出了项目所有用到的开源软件及开源协议</span><br><span class="line">    │   ├── Profile.js // 个人详情页面</span><br><span class="line">    │   ├── Search.js // 搜索页面</span><br><span class="line">    │   ├── SendToot.js // 发送嘟文（类似于微博的博文）的页面</span><br><span class="line">    │   ├── SideBar.js // 主页侧栏组件</span><br><span class="line">    │   ├── Tag.js // 标签页面</span><br><span class="line">    │   ├── Test.js // 测试页面，开发项目时需要测试某模块时可以在这个页面单独测试</span><br><span class="line">    │   ├── TootDetail.js // 嘟文详情页面</span><br><span class="line">    │   ├── common // 项目中会多处使用的公共组件</span><br><span class="line">    │   │   ├── Context.js // 评论组件</span><br><span class="line">    │   │   ├── DefaultTabBar.js // Tab组件的顶部Bar组件</span><br><span class="line">    │   │   ├── Divider.js // 分割线组件</span><br><span class="line">    │   │   ├── Fab.js // Floating Action Button (FAB)组件，一般是漂浮在右下角的那个圆形按钮</span><br><span class="line">    │   │   ├── HTMLView.js // 把渲染HTML的部分提取出来，自成一个组件</span><br><span class="line">    │   │   ├── Header.js // 顶部的Header组件</span><br><span class="line">    │   │   ├── ListFooterComponent.js FlatList组件的尾部组件</span><br><span class="line">    │   │   ├── Loading.js // Loading加载效果组件</span><br><span class="line">    │   │   ├── MediaBox.js // 媒体文件（图片、视频）展示组件</span><br><span class="line">    │   │   ├── Notice.js // 提示框、确认框等组件</span><br><span class="line">    │   │   ├── ReplyInput.js // 封装的单行、多行输入框组件</span><br><span class="line">    │   │   ├── Spruce.js // 骨架屏组件，自定了几个常用骨架屏</span><br><span class="line">    │   │   ├── TootBox.js // 嘟文组件</span><br><span class="line">    │   │   ├── UserItem.js // 用户列组件</span><br><span class="line">    │   └── screen // Tab组件下的页面</span><br><span class="line">    │       ├── HomeScreen.js // 主页时间轴Tab下的组件</span><br><span class="line">    │       ├── LocalScreen.js // 本站时间轴Tab下的组件</span><br><span class="line">    │       ├── MediaScreen.js // 媒体文件Tab下的组件</span><br><span class="line">    │       ├── PublicScreen.js // 跨站公共时间轴Tab下的组件</span><br><span class="line">    │       └── TootScreen.js // （个人详情页面下）个人嘟文Tab下的组件</span><br><span class="line">    └── utils // 放置一些公共方法</span><br><span class="line">        ├── api.js // 定义用到的所有接口</span><br><span class="line">        ├── color.js // 统一管理项目颜色</span><br><span class="line">        ├── config.js // 配置信息，如开发时使用的Token</span><br><span class="line">        ├── locale.js // 国际化文件，目前只有中文的时间字符，未来会集成所有的国际化数据</span><br><span class="line">        ├── mobx.js // 项目全局状态管理中心</span><br><span class="line">        ├── request.js // 封装axios，增加全局请求、响应拦截器</span><br><span class="line">        └── store.js // 封装AsyncStorage：本地存储系统</span><br><span class="line">└── yarn.lock // yarn为了跨机器安装得到一致的结果而生成的文件</span><br></pre></td></tr></table></figure>
 <h4 id="介绍下目录规划"><a href="#介绍下目录规划" class="headerlink" title="介绍下目录规划"></a>介绍下目录规划</h4><p>使用<code>react-native-cli</code>工具初始化完项目的时候，你就会发现，它生成的所谓源码文件只有<code>index.js</code>、<code>App.js</code>，而这基本不足以支持任何复杂点的项目。所以就需要自己来：先新建一个<code>src</code>文件夹，然后规划文件。</p>
@@ -511,9 +511,9 @@
         
         <tags>
             
-            <tag> Mastodon </tag>
-            
             <tag> ReactNative </tag>
+            
+            <tag> Mastodon </tag>
             
             <tag> App </tag>
             
@@ -637,7 +637,7 @@
       <title><![CDATA[相声：一个休学实习生的被裁经历]]></title>
       <url>/2019/01/30/%E7%9B%B8%E5%A3%B0%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BC%91%E5%AD%A6%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E8%A2%AB%E8%A3%81%E7%BB%8F%E5%8E%86/</url>
       <content type="html"><![CDATA[<p><strong>作者：</strong>林水溶</p>
-<p><strong>博客：</strong><a href="https://linshuirong.cn/">https://linshuirong.cn</a></p>
+<p><strong>博客：</strong><a href="https://linshuirong.cn/" target="_blank" rel="noopener">https://linshuirong.cn</a></p>
 <blockquote>
 <p><strong>为了大家都能看懂相声中我想表达的东西，先声明下：</strong></p>
 <ol>
@@ -966,7 +966,7 @@
 <blockquote>
 <p>她听到妮可拉正在和两名不过十五、六岁的初阶生说 话。艾雯几乎不记得自己这么小的时候是什么样子了，那彷彿都已经是另外一个人 生。这两个女孩分别是矮胖的莫兰迪人麦拉爱，她有着一双调皮的蓝眼睛；还有高瘦的阿拉多曼人娜梅恩，她总是在 「咯咯」地笑着。 <strong>「去问问吾母。」妮可拉说。已经有几个初阶生在这样称呼艾雯了。</strong>当然，她们绝不会在有外人在场的时候这样说。她们都是傻女孩，不过总算还不是愚不可及。 <strong>「她会给妳们建议的。」</strong> 娜梅恩紧张地笑着，绞动着手指（P.S.：非常有画面感的描述！）， <strong>「我不想打扰她。」</strong></p>
 </blockquote>
-<p>艾雯有太多精彩的表现了，比如：<a href="https://linshuirong.cn/2018/07/16/%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E7%B2%BE%E5%BD%A9%E7%89%87%E6%AE%B5/">艾雯与爱莉达的对决（精彩辩论）</a></p>
+<p>艾雯有太多精彩的表现了，比如：<a href="https://linshuirong.cn/2018/07/16/%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E7%B2%BE%E5%BD%A9%E7%89%87%E6%AE%B5/" target="_blank" rel="noopener">艾雯与爱莉达的对决（精彩辩论）</a></p>
 <p>（省略五千字艾雯是如何一步步赢得其他艾塞达依尊敬的…） </p>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><hr>
 <p><strong>作者对男人、女人的态度一度让我很震惊（也觉得很好玩）～</strong></p>
@@ -1227,9 +1227,9 @@
         
         <tags>
             
-            <tag> 一些思考 </tag>
-            
             <tag> 选择 </tag>
+            
+            <tag> 一些思考 </tag>
             
             <tag> 人生经验 </tag>
             
@@ -1653,7 +1653,7 @@
 <li>QQ空间或者微博数据的爬取</li>
 </ol>
 <p>这五只爬虫从简到难，涉及到静动态页，从接口获取数据，模拟登录，验证码识别．还可能涉及到模拟浏览器环境，数据的可视化(4，５)．总而言之，这五只爬虫写完，Python爬虫的技能就点的差不多了．</p>
-<p>然后在写完第一只爬虫之后，去我的<a href="http://linshuirong.cn">博客</a>上写说明时，发现上传图片功能出问题了．</p>
+<p>然后在写完第一只爬虫之后，去我的<a href="http://linshuirong.cn" target="_blank" rel="noopener">博客</a>上写说明时，发现上传图片功能出问题了．</p>
 <p><img src="http://linshuirong.cn:3000/images/202017115018.png" alt="图片"><br><img src="http://linshuirong.cn:3000/images/202017115021.png" alt="图片"></p>
 <p>注意这句：<code>provisional headers are shown</code></p>
 <p>同时这个post请求是<code>pedding</code>状态，在几分钟之后显示<code>failed</code>.</p>
