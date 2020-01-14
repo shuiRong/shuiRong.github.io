@@ -44,9 +44,9 @@
     <div class="main-ctnr">
       
 
-  <article class="standard post">
-    <div class="title">
-      
+<article class="standard post">
+  <div class="title">
+    
   
     <h1 class="page-title center">
         Vue SPA(单页应用)首屏优化实践
@@ -54,9 +54,9 @@
   
 
 
-    </div>
-    <div class="meta center">
-      
+  </div>
+  <div class="meta center">
+    
 <time datetime="2018-02-10T09:11:35.000Z">
 <svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
@@ -74,7 +74,7 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href=".//blog/categories/大前端/">大前端</a>
+    <a href="/blog/categories/大前端/">大前端</a>
 
 
 
@@ -86,16 +86,16 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href=".//blog/tags/Vue/">Vue</a>·<a href=".//blog/tags/SPA/">SPA</a>
+    <a href="/blog/tags/Vue/">Vue</a>·<a href="/blog/tags/SPA/">SPA</a>
 
 
-    </div>
-    <hr>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-代码压缩-gzip"><span class="toc-text">1.代码压缩(gzip)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#２-外部文件按需引入-不用外部文件，自己造轮子"><span class="toc-text">２. 外部文件按需引入||不用外部文件，自己造轮子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3．代码分块-Code-Splitting"><span class="toc-text">3．代码分块/Code Splitting</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-路由组件懒加载"><span class="toc-text">4. 路由组件懒加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Webpack2-Tree-shaking"><span class="toc-text">4. Webpack2 Tree-shaking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-减少-XHR-中不必要的数据．"><span class="toc-text">5. 减少 XHR 中不必要的数据．</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-SSR-Server-Side-Render-服务端渲染"><span class="toc-text">6. SSR(Server Side Render/服务端渲染)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．"><span class="toc-text">7. 其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．</span></a></li></ol>
-    <div class="picture-container">
-      
-    </div>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=450567505&auto=0&height=66"></iframe>
+  </div>
+  <hr>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-代码压缩-gzip"><span class="toc-text">1.代码压缩(gzip)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#２-外部文件按需引入-不用外部文件，自己造轮子"><span class="toc-text">２. 外部文件按需引入||不用外部文件，自己造轮子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3．代码分块-Code-Splitting"><span class="toc-text">3．代码分块/Code Splitting</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-路由组件懒加载"><span class="toc-text">4. 路由组件懒加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Webpack2-Tree-shaking"><span class="toc-text">4. Webpack2 Tree-shaking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-减少-XHR-中不必要的数据．"><span class="toc-text">5. 减少 XHR 中不必要的数据．</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-SSR-Server-Side-Render-服务端渲染"><span class="toc-text">6. SSR(Server Side Render/服务端渲染)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．"><span class="toc-text">7. 其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．</span></a></li></ol>
+  <div class="picture-container">
+    
+  </div>
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=450567505&auto=0&height=66"></iframe>
 
 <h4 id="1-代码压缩-gzip"><a href="#1-代码压缩-gzip" class="headerlink" title="1.代码压缩(gzip)"></a>1.代码压缩(gzip)</h4><p>如果你用的是<code>nginx</code>服务器，请修改配置文件(其他 web server 类似)：</p>
 <p><code>sudo nano /etc/nginx/nginx.conf</code></p>
@@ -155,16 +155,15 @@
 <h4 id="6-SSR-Server-Side-Render-服务端渲染"><a href="#6-SSR-Server-Side-Render-服务端渲染" class="headerlink" title="6. SSR(Server Side Render/服务端渲染)"></a>6. SSR(Server Side Render/服务端渲染)</h4><p>这个有点难搞．但效果貌似挺不错．我之前在<a href="https://cn.vuejs.org/v2/guide/ssr.html" target="_blank" rel="noopener">Vue 文档中</a>简单看了一边，打算以后有需求了再搞不迟．</p>
 <h4 id="7-其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．"><a href="#7-其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．" class="headerlink" title="7. 其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．"></a>7. 其他诸如图片懒加载就不赘述了，前端开发者应该有的常识．</h4>
 
-  </article>
-  </script>
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <div class="busuanzi center">
-    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
-  </div>
-
+</article>
+</script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+  page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+  site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+  site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
 
 
 

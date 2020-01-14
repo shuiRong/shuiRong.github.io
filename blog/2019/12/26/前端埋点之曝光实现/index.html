@@ -44,9 +44,9 @@
     <div class="main-ctnr">
       
 
-  <article class="standard post">
-    <div class="title">
-      
+<article class="standard post">
+  <div class="title">
+    
   
     <h1 class="page-title center">
         实习好忙｜前端埋点之曝光实现
@@ -54,9 +54,9 @@
   
 
 
-    </div>
-    <div class="meta center">
-      
+  </div>
+  <div class="meta center">
+    
 <time datetime="2019-12-26T13:55:37.000Z">
 <svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
@@ -74,7 +74,7 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href=".//blog/categories/大前端/">大前端</a>
+    <a href="/blog/categories/大前端/">大前端</a>
 
 
 
@@ -86,16 +86,16 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href=".//blog/tags/前端/">前端</a>·<a href=".//blog/tags/埋点/">埋点</a>·<a href=".//blog/tags/曝光/">曝光</a>·<a href=".//blog/tags/Intersection-Observer/">Intersection Observer</a>
+    <a href="/blog/tags/前端/">前端</a>·<a href="/blog/tags/埋点/">埋点</a>·<a href="/blog/tags/曝光/">曝光</a>·<a href="/blog/tags/Intersection-Observer/">Intersection Observer</a>
 
 
-    </div>
-    <hr>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#思考如何实现"><span class="toc-text">思考如何实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Intersection-Observer"><span class="toc-text">Intersection Observer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#曝光实现步骤"><span class="toc-text">曝光实现步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a></li></ol>
-    <div class="picture-container">
-      
-    </div>
-    <p>最近有一个工作需求是曝光埋点，让我得以有机会接触相关的东西。之前实习时没有做过这方面的需求，个人项目更是和埋点扯不上关系。以至于上周开会讨论时听到“埋点”这个词就怂了。</p>
+  </div>
+  <hr>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#思考如何实现"><span class="toc-text">思考如何实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Intersection-Observer"><span class="toc-text">Intersection Observer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#曝光实现步骤"><span class="toc-text">曝光实现步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a></li></ol>
+  <div class="picture-container">
+    
+  </div>
+  <p>最近有一个工作需求是曝光埋点，让我得以有机会接触相关的东西。之前实习时没有做过这方面的需求，个人项目更是和埋点扯不上关系。以至于上周开会讨论时听到“埋点”这个词就怂了。</p>
 <p>不过后面听大佬分析了下后才意识到，原来“埋点”是这个意思。曝光埋点的思路也是很简单：无非是判断某个DOM是否出现在视窗中，出现了就收集数据上报给服务端。</p>
 <blockquote>
 <p>所谓“埋点”，是数据采集领域（尤其是用户行为数据采集领域）的术语，指的是针对特定用户行为或事件进行捕获、处理和发送的相关技术及其实施过程。比如用户某个文章点击次数、观看某个视频的时长等等。</p>
@@ -128,16 +128,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-exposure :data-article=&apos;article&apos;&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 
-  </article>
-  </script>
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <div class="busuanzi center">
-    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
-  </div>
-
+</article>
+</script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+  page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+  site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+  site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
 
 
 

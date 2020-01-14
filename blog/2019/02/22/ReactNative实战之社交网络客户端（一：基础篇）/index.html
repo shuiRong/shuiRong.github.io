@@ -44,9 +44,9 @@
     <div class="main-ctnr">
       
 
-  <article class="standard post">
-    <div class="title">
-      
+<article class="standard post">
+  <div class="title">
+    
   
     <h1 class="page-title center">
         ReactNative实战之社交网络客户端（一：基础篇）
@@ -54,9 +54,9 @@
   
 
 
-    </div>
-    <div class="meta center">
-      
+  </div>
+  <div class="meta center">
+    
 <time datetime="2019-02-22T09:42:12.000Z">
 <svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
@@ -74,7 +74,7 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href=".//blog/categories/大前端/">大前端</a>
+    <a href="/blog/categories/大前端/">大前端</a>
 
 
 
@@ -86,16 +86,16 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href=".//blog/tags/Mastodon/">Mastodon</a>·<a href=".//blog/tags/ReactNative/">ReactNative</a>·<a href=".//blog/tags/App/">App</a>·<a href=".//blog/tags/Android/">Android</a>
+    <a href="/blog/tags/Mastodon/">Mastodon</a>·<a href="/blog/tags/ReactNative/">ReactNative</a>·<a href="/blog/tags/App/">App</a>·<a href="/blog/tags/Android/">Android</a>
 
 
-    </div>
-    <hr>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#介绍下目录规划"><span class="toc-text">介绍下目录规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UI库的选择"><span class="toc-text">UI库的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件重用"><span class="toc-text">组件重用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装请求"><span class="toc-text">封装请求</span></a></li></ol>
-    <div class="picture-container">
-      
-    </div>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5350947&auto=0&height=66"></iframe>
+  </div>
+  <hr>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#介绍下目录规划"><span class="toc-text">介绍下目录规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UI库的选择"><span class="toc-text">UI库的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件重用"><span class="toc-text">组件重用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装请求"><span class="toc-text">封装请求</span></a></li></ol>
+  <div class="picture-container">
+    
+  </div>
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5350947&auto=0&height=66"></iframe>
 
 <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
 <p>完整项目地址：<a href="https://github.com/shuiRong/Gakki" target="_blank" rel="noopener">https://github.com/shuiRong/Gakki</a> 🌟🌟🌟</p>
@@ -152,16 +152,15 @@
 <p>代码贴出来了，简单，都能看懂：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">import &#123; Toast &#125; from &apos;teaset&apos;</span><br><span class="line"></span><br><span class="line">const service = axios.create(&#123;</span><br><span class="line">  baseURL: &apos;https://cmx.im&apos;, // 统一Host</span><br><span class="line">  timeout: 10000 // 请求超时时间限制</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 请求拦截器</span><br><span class="line">service.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    // 如果未来需要增加统一Header，加在这里</span><br><span class="line">    return config</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    Promise.reject(err)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 响应拦截器</span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    // 如果你需要对接口返回的数据特殊处理一下的话，写在这里  </span><br><span class="line">    return response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    console.log(&apos;拦截器err:&apos;, err)</span><br><span class="line">    if (err &amp;&amp; err.error) &#123;</span><br><span class="line">      // 服务器异常，统一展示出来</span><br><span class="line">      Toast.message(err.error)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">export default service</span><br></pre></td></tr></table></figure>
 
-  </article>
-  </script>
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <div class="busuanzi center">
-    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
-  </div>
-
+</article>
+</script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+  page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+  site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+  site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
 
 
 
