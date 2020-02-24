@@ -144,7 +144,7 @@
 <ol>
 <li>在作者项目目录下新建<code>launch.sh</code>文件，然后写下此脚本：</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh </span><br><span class="line">cd /Users/xxxxxx/UnblockNeteaseMusic # 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span><br><span class="line">nohup node app.js -p 8080:8081 &amp;  # 注意有个 -p 8080:8081</span><br><span class="line">exit # 必须加上此命令，目的是正常退出当前shell。详情看这篇文章：https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh </span><br><span class="line">cd /Users/xxxxxx/UnblockNeteaseMusic # 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span><br><span class="line">nohup node app.js -p 8080:8081 &amp;  # 注意有个 -p 8080:8081</span><br><span class="line">exit # 必须加上此命令，目的是正常退出当前shell。原因请看这篇文章：https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html</span><br></pre></td></tr></table></figure>
 <p>你会注意到上面有个<code>nohup</code>命令，它是让命令行程序可以运行在后台的工具（因为一般在终端运行脚本时，得保持终端开启。关掉终端意味着结束脚本运行。但nohup让脚本可以在终端关闭后可以持续运行。）</p>
 <p>P.S. 貌似OSX系统自带有<code>nohup</code>命令，无需安装。</p>
 <ol>
@@ -156,6 +156,20 @@
 <blockquote>
 <p>所有的折腾（一晚上+中午两小时）都是值得的。（比如可以水一篇博客23333）</p>
 </blockquote>
+<p><strong>更新</strong></p>
+<blockquote>
+<p>2020-2-24：此更新仅建议开发者浏览，因为对普通用户来说这其实有点折腾。</p>
+</blockquote>
+<p>对于「4」，现在有了更优雅的解决方法，那就是神奇的命令行工具：<code>pm2</code>。</p>
+<ol>
+<li>使用<code>npm</code>（开头安装完<code>Node.js</code>后就已经有了）安装<code>pm2</code>：<code>npm install pm2 -g</code></li>
+<li>命令行<code>cd</code>到插件根目录（比如我的）：<code>cd /Users/shuirong/UnblockNeteaseMusic</code></li>
+<li>使用<code>pm2</code>来控制该解锁插件：<code>pm2 start node app.js -p 8082:8081</code></li>
+<li>启动<code>pm2</code>的钩子：<code>pm2 startup</code></li>
+<li>将状态保存起来：<code>pm2 save</code></li>
+<li>ok</li>
+</ol>
+<p>现在可以关掉终端，甚至重启电脑测试下了。（对了，使用此方法时别忘了将步骤「4」在系统设置的东西取消掉哦～）</p>
 
 
 </article>
