@@ -178,6 +178,7 @@
 }
 .post-item {
   padding: 10px 0;
+  list-style: none;
 }
 .index-title {
   font-size: 34px;
