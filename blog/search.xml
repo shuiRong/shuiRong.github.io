@@ -188,11 +188,12 @@
 <p>Android 平台的终端模拟器如 Termux，NeoTerm 等也可以安装 Node.js，教程非常多，请善用搜索引擎。</p>
 </blockquote>
 <h4 id="2、下载项目｜两种方法"><a href="#2、下载项目｜两种方法" class="headerlink" title="2、下载项目｜两种方法"></a>2、下载项目｜两种方法</h4><ol>
-<li>使用 Git 克隆</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/nondanee/UnblockNeteaseMusic.git #克隆项目仓库</span><br><span class="line">cd UnblockNeteaseMusic #进入项目根目录</span><br></pre></td></tr></table></figure>
-<ol>
-<li>手动下载源码压缩包：在<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">项目首页</a>点击 Clone or download 绿色按钮，选择 Download ZIP 并解压</li>
+<li><p>使用 Git 克隆</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/nondanee/UnblockNeteaseMusic.git #克隆项目仓库</span><br><span class="line">cd UnblockNeteaseMusic #进入项目根目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手动下载源码压缩包：在<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">项目首页</a>点击 Clone or download 绿色按钮，选择 Download ZIP 并解压</p>
+</li>
 </ol>
 <p>P.S. 项目不需要安装任何依赖（前端同学不要手快<code>npm install</code>或者<code>yarn</code>）。</p>
 <p>使用此项目存在两种方法，或者说两种模式。下面分别介绍：</p>
@@ -211,16 +212,18 @@
 <p>觉得“没有”的同学，可以关掉本页面了～</p>
 <p>思路是写一个shell脚本，脚本里是运行项目的命令，然后在系统设置开机时自动运行此shell脚本。下面是过程：</p>
 <ol>
-<li>在作者项目目录下新建<code>launch.sh</code>文件，然后写下此脚本：</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh </span><br><span class="line">cd /Users/xxxxxx/UnblockNeteaseMusic # 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span><br><span class="line">nohup node app.js -p 8080:8081 &amp;  # 注意有个 -p 8080:8081</span><br><span class="line">exit # 必须加上此命令，目的是正常退出当前shell。原因请看这篇文章：https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html</span><br></pre></td></tr></table></figure>
-<p>你会注意到上面有个<code>nohup</code>命令，它是让命令行程序可以运行在后台的工具（因为一般在终端运行脚本时，得保持终端开启。关掉终端意味着结束脚本运行。但nohup让脚本可以在终端关闭后可以持续运行。）</p>
-<p>P.S. 貌似OSX系统自带有<code>nohup</code>命令，无需安装。</p>
-<ol>
-<li>赋予此脚本管理员权限：<code>sudo chmod 777 launch.sh</code></li>
-<li>打开系统设置、用户与群组、登录项：添加上面那个脚本进来。<img src="https://i.imgur.com/UNUgdQP.jpg" alt="5"></li>
-<li>右键此脚本文件，点击“显示简介”，设置“打开方式”为自己的终端程序（iTerm也行）。</li>
-<li>重启测试。</li>
+<li><p>在作者项目目录下新建<code>launch.sh</code>文件，然后写下此脚本：</p>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh </span></span><br><span class="line"><span class="built_in">cd</span> /Users/xxxxxx/UnblockNeteaseMusic <span class="comment"># 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span></span><br><span class="line">nohup node app.js -p 8080:8081 &amp;  <span class="comment"># 注意有个 -p 8080:8081</span></span><br><span class="line"><span class="built_in">exit</span> <span class="comment"># 必须加上此命令，目的是正常退出当前shell。原因请看这篇文章：https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你会注意到上面有个nohup命令，它是让命令行程序可以运行在后台的工具（因为一般在终端运行脚本时，得保持终端开启。关掉终端意味着结束脚本运行。但nohup让脚本可以在终端关闭后可以持续运行。）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#P.S. 貌似OSX系统自带有nohup命令，无需安装。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>赋予此脚本管理员权限：<code>sudo chmod 777 launch.sh</code></p>
+</li>
+<li><p>打开系统设置、用户与群组、登录项：添加上面那个脚本进来。<img src="https://i.imgur.com/UNUgdQP.jpg" alt="5"></p>
+</li>
+<li><p>右键此脚本文件，点击“显示简介”，设置“打开方式”为自己的终端程序（iTerm也行）。</p>
+</li>
+<li><p>重启测试。</p>
+</li>
 </ol>
 <blockquote>
 <p>所有的折腾（一晚上+中午两小时）都是值得的。（比如可以水一篇博客23333）</p>
@@ -239,7 +242,7 @@
 </li>
 <li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh </span></span><br><span class="line"><span class="built_in">cd</span> /Users/shuirong/More/UnblockNeteaseMusic  <span class="comment">#这个路径换成你自己的</span></span><br><span class="line">node app.js -p 8082:8081</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>使用<code>pm2</code>来控制该解锁插件：<code>pm2 start bash ./launch.sh</code></p>
+<li><p>使用<code>pm2</code>来启动它：<code>pm2 start bash ./launch.sh</code></p>
 </li>
 <li><p>启动<code>pm2</code>的钩子：<code>pm2 startup</code></p>
 </li>

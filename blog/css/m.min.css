@@ -594,12 +594,8 @@ p {
   color: #6f6f6f;
 }
 .post li:before {
-  content: '•';
-  margin-right: 0.6em;
-}
-li {
-  list-style-type: none;
-  list-style: none;
+  /* content: '•'; */
+  /* margin-right: 0.6em; */
 }
 ol,
 ul {
