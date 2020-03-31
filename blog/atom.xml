@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-01-25T12:56:14.739Z</updated>
+  <updated>2020-03-31T15:34:36.814Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于折腾博客这件事儿</title>
+    <link href="/2020/03/31/%E5%85%B3%E4%BA%8E%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E8%BF%99%E4%BB%B6%E4%BA%8B%E5%84%BF/"/>
+    <id>/2020/03/31/关于折腾博客这件事儿/</id>
+    <published>2020-03-31T15:33:33.000Z</published>
+    <updated>2020-03-31T15:34:36.814Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>前段时间，一个室友在我的“影响”（用这个词的理由是我认为“假如我不认识他，他可能就不会搞自己的博客”）下也开始搞自己的博客了。我从他折腾博客身上看到了当初自己的影子。很有感触。此博客的灵感即始于此。</p></blockquote><h4 id="第一个博客"><a href="#第一个博客" class="headerlink" title="第一个博客"></a>第一个博客</h4><p><strong>2016-08-28 16:38</strong>，我发布了人生中第一篇博客，它的标题是<a href="https://www.zybuluo.com/Clay/note/470830" target="_blank" rel="noopener">《比较全面的 科学上网/FQ教程》</a>。</p><p>这是我学完Python框架Flask后看着教程开发的论坛程序，我稍微改造下，当成了自己的博客平台。它长这样：<img src="https://i.loli.net/2020/03/31/swB7znpyf62kb5M.jpg" alt="博客"></p><p>现在看来真是丑极了，肯定也不会有人看（除了自己）。但当时的我可是兴奋极了，偷偷地把博客地址更新在了QQ签名栏，然后在心里琢磨谁会先注意到它。我还给博客加了个“访客统计”，并且一天登陆到统计后台好几次，看看今天有几个人访问我的博客。</p><p>如果没有亲身经历，我不觉得别人能理解我那时的心情：自己创造了一个博客论坛，并且把它放到万维网上，任何一个人通过链接就可以看到我写的文字。它不是QQ空间、不是微博，而是完全属于我自己。想象一下，浩瀚如星辰的网络空间里，有这么一块地方，是完全属于我自己的。这种感觉在我后来的两次迁移博客（更好看、功能更多）中再也没有出现过。甚至在我19年耗时四个月开发了一个App时也没有出现。</p><h4 id="第二个博客"><a href="#第二个博客" class="headerlink" title="第二个博客"></a>第二个博客</h4><p>后来随着我学习编程的深入，同时接触了很多大佬们的博客之后，我终于意识到一个事实：<strong>我的博客是真的丑。</strong></p><p>所以我考虑自己开发一个博客，同时也当成对前端技术的练习。这就有了<a href="https://github.com/shuiRong/hexo-theme-Ada" target="_blank" rel="noopener">Ada</a>，准确的说，它不是一个完整的博客项目，而只是一个<a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>的主题。它长这样：</p><p><img src="https://i.loli.net/2020/03/31/CadF4Kz7j2rRHhL.jpg" alt="第二个博客"></p><p>的确比第一个好看多了，但现在看来似乎也有些丑。但苍天可鉴，我当时觉得它可真漂亮。我还记得在群里分享时，有人吐槽说时间图标不好看，我都没有改，因为我觉得挺好看的 😂。这些都是2017年3月左右的事。</p><h4 id="第三个博客"><a href="#第三个博客" class="headerlink" title="第三个博客"></a>第三个博客</h4><p>几个月后，我就又开始造博客的轮子了。同样是因为编程学习。那段时间我学习了Node.js和数据库的东西，也学习了下流行的前端框架Vue.js。决定写一个项目把这些技术都用上。不知怎的，就又盯上了博客。</p><p>埋头苦写一段时间后，博客<a href="https://github.com/shuiRong/Eva" target="_blank" rel="noopener">Eva</a>上线，它长这样：（当时在看王垠的博客，因此就把他的几篇博客塞到了数据库中当成了测试数据）。</p><p><img src="https://i.loli.net/2020/03/31/3coCMmXHyARhTSG.jpg" alt="第三个博客"></p><p><img src="https://i.loli.net/2020/03/31/IvPZWkguoqFneL6.jpg" alt="详情"></p><p>这个画风，似乎很中二。对✅，这就是2017年的我。</p><h4 id="第四个博客"><a href="#第四个博客" class="headerlink" title="第四个博客"></a>第四个博客</h4><p>一次搜索技术问题的时候，看到了<a href="https://gaoryrt.com/" target="_blank" rel="noopener">gaoryrt</a>的博客，给我的第一感觉就是：<strong>我的博客是真的丑</strong>。遂生出了再次更换博客的念头，又发现原来他的博客也使用了<a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>，并且我看到的其实是一款Hexo Theme：<a href="https://github.com/gaoryrt/hexo-theme-pln" target="_blank" rel="noopener">Pln</a>。我立刻把Eva丢了，换上了Pln。所以我现在的博客长这样：</p><p><img src="https://i.loli.net/2020/03/31/C5fAIYphiU6QGRW.jpg" alt="第四个博客"></p><p>（咦，我的看板娘怎么没了？哦，原来是搞错了个东西…晚些时候再解决）</p><p>现在博客看上去漂亮多了。再次感谢该主题的作者。</p><blockquote><p>先写到这里，我去把看板娘折腾出来…</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;前段时间，一个室友在我的“影响”（用这个词的理由是我认为“假如我不认识他，他可能就不会搞自己的博客”）下也开始搞自己的博客了。我从他折腾博客身上看到了当初自己的影子。很有感触。此博客的灵感即始于此。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id
+      
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+      <category term="博客" scheme="/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="折腾" scheme="/tags/%E6%8A%98%E8%85%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>〈我不要听英雄的故事〉郭可盼</title>
@@ -556,9 +586,9 @@
       <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="选择" scheme="/tags/%E9%80%89%E6%8B%A9/"/>
-    
       <category term="一些思考" scheme="/tags/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="选择" scheme="/tags/%E9%80%89%E6%8B%A9/"/>
     
       <category term="人生经验" scheme="/tags/%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/"/>
     
@@ -590,33 +620,6 @@
       <category term="碎碎念" scheme="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
       <category term="反驳" scheme="/tags/%E5%8F%8D%E9%A9%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018：聊聊正常的恋人关系</title>
-    <link href="/2018/06/09/2018-%E8%81%8A%E8%81%8A%E6%AD%A3%E5%B8%B8%E7%9A%84%E6%81%8B%E4%BA%BA%E5%85%B3%E7%B3%BB/"/>
-    <id>/2018/06/09/2018-聊聊正常的恋人关系/</id>
-    <published>2018-06-08T17:15:59.000Z</published>
-    <updated>2018-08-27T06:45:05.122Z</updated>
-    
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34200932&auto=0&height=66"></iframe><p>和朋友聊天时聊到<strong>“相亲”</strong>.</p><p>让我想起来了高中时的一件事: 学《氓》那篇文言文后, 我思考过一个问题: </p><p><strong>“农村那些经媒人介绍的婚姻, 是如何(数十年如一日地)维持下去的?”</strong></p><p>我百思不得解, 两个之前从没见过面的人怎么可能在短时间内了解彼此, 然后结婚, 然后一起生活一辈子呢?</p><p>我就在某一节课后问了我的语文老师这个问题.</p><p>结果…没有得到答案, 我当时似乎也意识到了什么, 觉得有些尴尬, 就忘掉了这个问题.</p><p>昨天朋友“谈相亲”时说的一句话, 正好解决了我这个几年前思考过的问题: <strong>“两个人没什么想法，没有独立思考的能力，那就凑合着过吧！”</strong></p><blockquote><p>“凑合着过”，真他喵让人害怕！</p></blockquote><p>那么，<strong>“在双方都比较有想法的情况下，「正常的」恋人关系是该怎样的？”</strong></p><h4 id="三观一致"><a href="#三观一致" class="headerlink" title="三观一致"></a>三观一致</h4><hr><p>相较于性格、外表、经济、学历，<strong>三观是否一致才是恋爱关系中最重要的一环！</strong></p><blockquote><p>三观：<a href="https://zh.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E8%A7%82" target="_blank" rel="noopener">世界观</a>、<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6" target="_blank" rel="noopener">人生观</a>、<a href="https://zh.wikipedia.org/wiki/%E5%83%B9%E5%80%BC%E8%A7%80" target="_blank" rel="noopener">价值观</a>。</p><p>一致：当然是指大体一致。</p><p>不一致：同理，指大体不一致。</p></blockquote><p>三观不一致的感情不可能长久，而且可能因为“任何事情”比如说一顿饭，而最终分手。</p><h4 id="互相独立（物质-精神）"><a href="#互相独立（物质-精神）" class="headerlink" title="互相独立（物质/精神）"></a>互相独立（物质/精神）</h4><hr><p>这个好像没有说的必要…</p><h4 id="互相信任、包容"><a href="#互相信任、包容" class="headerlink" title="互相信任、包容"></a>互相信任、包容</h4><hr><p>互相信任也没什么可聊的，聊聊“包容”。</p><p>人会犯错误，信息会被误传与曲解，真相又常常解释不清，所以误解是难以避免的。不过还好，包容会抵消误解对信任的影响。</p><p>但是注意：<strong>太多</strong>的误解却会带来大面积的不信任！</p><blockquote><p>跑个题：</p><p>人何时能进化到可以直接进行思想上的交流就好了…（就像基地系列里的盖亚或者三体里的三体人）</p></blockquote><h4 id="不要放低姿态"><a href="#不要放低姿态" class="headerlink" title="不要放低姿态"></a>不要放低姿态</h4><hr><p>任何一方的低姿态都可能导致发展成“畸形关系”，而“畸形关系”往往意味着“危险”。</p><p><strong>“以斗争求和平则和平存，以妥协求和平则和平亡”</strong> </p><p>这句话适用于任何人际关系，当然也包括恋人关系。</p><blockquote><p>为什么会这样？</p><p>人性使然！</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=
-      
-    
-    </summary>
-    
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
-    
-    
-      <category term="思考" scheme="/tags/%E6%80%9D%E8%80%83/"/>
-    
-      <category term="恋人" scheme="/tags/%E6%81%8B%E4%BA%BA/"/>
     
   </entry>
   
