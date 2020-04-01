@@ -1,52 +1,47 @@
 <!DOCTYPE HTML>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="" />
-  <base href="/blog/" />
   
   <title>ReactNative实战之社交网络客户端（一：基础篇）</title>
-  
   <meta name="author" content="shuiRongLin">
-  
   <meta name="description" content="以前我没得选，现在我只想做个坏人">
   
   
-  
-  <meta property="og:title" content="ReactNative实战之社交网络客户端（一：基础篇）" />
+  <meta property="og:title" content="ReactNative实战之社交网络客户端（一：基础篇）"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:site_name" content="林水溶的博客" />
-  <link href="./apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
-  <link rel="alternate" href="/blog/atom.xml"
-    title="林水溶的博客" type="application/atom+xml">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/m.min.css">
-  <link rel="stylesheet" href="css/notosans.css">
-  <link rel="icon" type="image/x-icon" href=".//blog/favicon.ico">
+  <meta property="og:site_name" content="林水溶的博客"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/blog/atom.xml" title="林水溶的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/blog/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/blog/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
 </head>
+
 <body>
   <a id="top"></a>
   <div id="main">
-    <div class="behind">
-      <a href="javascript:void(history.back())" class="back black-color">
-        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M2 30 L30 2 M30 30 L2 2"></path>
-        </svg>
-      </a>
-      <div class="description">
-        &nbsp;以前我没得选，现在我只想做个坏人
-      </div>
-    </div>
     <div class="main-ctnr">
-      
+      <div class="behind">
+  <a href="/blog/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  <div class="description">
+    &nbsp;以前我没得选，现在我只想做个坏人
+  </div>
+</div>
 
-<article class="standard post">
-  <div class="title">
-    
+  <link rel="stylesheet" href="/blog/css/attach.post.css">
+  <article class="standard post">
+    <div class="title">
+      
   
     <h1 class="page-title center">
         ReactNative实战之社交网络客户端（一：基础篇）
@@ -54,11 +49,10 @@
   
 
 
-  </div>
-  <div class="meta center">
-    
-<time datetime="2019-02-22T09:42:12.000Z">
-<svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    </div>
+    <div class="meta center">
+      <time datetime="2019-02-22T09:42:12.000Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
@@ -66,10 +60,9 @@
 </time>
 
 
-
     
     &nbsp;
-    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
       <circle cx="24" cy="8" r="2"></circle>
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
@@ -81,7 +74,7 @@
 
     
     &nbsp;
-    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
       <circle cx="24" cy="8" r="2"></circle>
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
@@ -89,13 +82,15 @@
     <a href="/blog/tags/Mastodon/">Mastodon</a>·<a href="/blog/tags/ReactNative/">ReactNative</a>·<a href="/blog/tags/App/">App</a>·<a href="/blog/tags/Android/">Android</a>
 
 
-  </div>
-  <hr>
-  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#介绍下目录规划"><span class="toc-text">介绍下目录规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UI库的选择"><span class="toc-text">UI库的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件重用"><span class="toc-text">组件重用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装请求"><span class="toc-text">封装请求</span></a></li></ol>
-  <div class="picture-container">
+    </div>
+    <hr>
     
-  </div>
-  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5350947&auto=0&height=66"></iframe>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#介绍下目录规划"><span class="toc-text">介绍下目录规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UI库的选择"><span class="toc-text">UI库的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件重用"><span class="toc-text">组件重用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装请求"><span class="toc-text">封装请求</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5350947&auto=0&height=66"></iframe>
 
 <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
 <p>完整项目地址：<a href="https://github.com/shuiRong/Gakki" target="_blank" rel="noopener">https://github.com/shuiRong/Gakki</a> 🌟🌟🌟</p>
@@ -152,15 +147,20 @@
 <p>代码贴出来了，简单，都能看懂：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">import &#123; Toast &#125; from &apos;teaset&apos;</span><br><span class="line"></span><br><span class="line">const service = axios.create(&#123;</span><br><span class="line">  baseURL: &apos;https://cmx.im&apos;, // 统一Host</span><br><span class="line">  timeout: 10000 // 请求超时时间限制</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 请求拦截器</span><br><span class="line">service.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    // 如果未来需要增加统一Header，加在这里</span><br><span class="line">    return config</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    Promise.reject(err)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 响应拦截器</span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    // 如果你需要对接口返回的数据特殊处理一下的话，写在这里  </span><br><span class="line">    return response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    console.log(&apos;拦截器err:&apos;, err)</span><br><span class="line">    if (err &amp;&amp; err.error) &#123;</span><br><span class="line">      // 服务器异常，统一展示出来</span><br><span class="line">      Toast.message(err.error)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">export default service</span><br></pre></td></tr></table></figure>
 
-</article>
-</script>
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<div class="busuanzi center">
-  page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-  site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-  site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
-</div>
+  </article>
+  </script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
 
 
 
@@ -179,98 +179,40 @@
     </div>
     <div class="secondrow">
         <a href="https://github.com/gaoryrt/hexo-theme-pln">
-        Hexo Theme Pln
+        Theme Pln
         </a>
     </div>
 </div>
 <div class="clearfix">
 </div>
+
+<script src='https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/dinbror/bpopup@0.11.0/jquery.bpopup.min.js''></script>
+<script src="/blog/js/attach.js"></script>
+
+
 </footer>
-  <script src="js/jquery.min.js"></script>
-<script src="js/search.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/blog/js/search.min.js"></script>
 <script type="text/javascript">
 
-  // disqus scripts
-  
+// disqus scripts
 
-    // dropdown scripts
-    $(".dropdown").click(function (event) {
-      var current = $(this);
-      event.stopPropagation();
-      $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open")) ? 'removeClass' : 'addClass']("open")
-    });
-  $(document).click(function () {
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
     $(".dropdown-content").removeClass("open");
-  })
+})
 
-  var path = "/blog/search.xml";
-  searchFunc(path, 'local-search-input', 'local-search-result');
+var path = "/blog/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
 
-<div id="updown">
-  <div class="sidebar_wo" id="leimu">
-    <img src="img/leimu.png" alt="雷姆" onmouseover="this.src='/img/leimu.png'" onmouseout="this.src='/img/leimu.png'"
-      id="audioBtn" />
-  </div>
-  <div class="sidebar_wo" id="lamu">
-    <img src="img/lamu_2.png" alt="拉姆" onmouseover="this.src='/img/lamu_1.png'" onmouseout="this.src='/img/lamu_2.png'"
-      id="audioBtn" />
-  </div>
-</div>
-
-<style>
-  .sidebar_wo {
-    position: fixed;
-    line-height: 0;
-    bottom: 0;
-    z-index: 1000;
-  }
-
-  #leimu {
-    left: 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    -webkit-transform: translate(-7px, 7px);
-    -ms-transform: translate(-7px, 7px);
-    transform: translate(-7px, 7px);
-  }
-
-  #lamu {
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    -webkit-transform: translate(7px, 7px);
-    -ms-transform: translate(7px, 7px);
-    transform: translate(7px, 7px);
-    right: 0;
-  }
-
-  #leimu:hover {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
-  #lamu:hover {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-</style>
-
-<script src="js/click.js"></script>
-<script src="js/anti-baidu.js"></script>
-<style>
-  .cc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem;
-  }
-</style>
-<div class="cc">
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0"
-      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />本作品采用<a rel="license"
-    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可
-</div>
-<script src="/blog/blog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"blog/live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haru@1.0.5/01/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haru@1.0.5/01/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>

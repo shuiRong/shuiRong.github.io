@@ -1,0 +1,12 @@
+blockquote {
+    border-left: 4px solid #2570a1;
+    margin: 1em 0;
+    padding: 10px 0px 10px 15px;
+    background-color: rgba(37,112,161, 0.1)
+}
+
+blockquote p {
+    font-style: normal;
+    color: #555;
+    font-size: 1em;
+}
