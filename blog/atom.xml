@@ -5,21 +5,21 @@
   <subtitle>以前我没得选，现在我只想做个坏人</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="/"/>
+  <link href="/blog/"/>
   <updated>2020-03-31T15:34:36.814Z</updated>
-  <id>/</id>
+  <id>/blog/</id>
   
   <author>
     <name>shuiRongLin</name>
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>关于折腾博客这件事儿</title>
-    <link href="/2020/03/31/%E5%85%B3%E4%BA%8E%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E8%BF%99%E4%BB%B6%E4%BA%8B%E5%84%BF/"/>
-    <id>/2020/03/31/关于折腾博客这件事儿/</id>
+    <link href="/blog/2020/03/31/%E5%85%B3%E4%BA%8E%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E8%BF%99%E4%BB%B6%E4%BA%8B%E5%84%BF/"/>
+    <id>/blog/2020/03/31/%E5%85%B3%E4%BA%8E%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E8%BF%99%E4%BB%B6%E4%BA%8B%E5%84%BF/</id>
     <published>2020-03-31T15:33:33.000Z</published>
     <updated>2020-03-31T15:34:36.814Z</updated>
     
@@ -37,19 +37,20 @@
     
     </summary>
     
-      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="碎碎念" scheme="/blog/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-      <category term="博客" scheme="/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="折腾" scheme="/tags/%E6%8A%98%E8%85%BE/"/>
+      <category term="折腾" scheme="/blog/tags/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
   <entry>
     <title>〈我不要听英雄的故事〉郭可盼</title>
-    <link href="/2020/01/25/%E3%80%88%E6%88%91%E4%B8%8D%E8%A6%81%E5%90%AC%E8%8B%B1%E9%9B%84%E7%9A%84%E6%95%85%E4%BA%8B%E3%80%89%E9%83%AD%E5%8F%AF%E7%9B%BC/"/>
-    <id>/2020/01/25/〈我不要听英雄的故事〉郭可盼/</id>
+    <link href="/blog/2020/01/25/%E3%80%88%E6%88%91%E4%B8%8D%E8%A6%81%E5%90%AC%E8%8B%B1%E9%9B%84%E7%9A%84%E6%95%85%E4%BA%8B%E3%80%89%E9%83%AD%E5%8F%AF%E7%9B%BC/"/>
+    <id>/blog/2020/01/25/%E3%80%88%E6%88%91%E4%B8%8D%E8%A6%81%E5%90%AC%E8%8B%B1%E9%9B%84%E7%9A%84%E6%95%85%E4%BA%8B%E3%80%89%E9%83%AD%E5%8F%AF%E7%9B%BC/</id>
     <published>2020-01-25T12:14:50.000Z</published>
     <updated>2020-01-25T12:56:14.739Z</updated>
     
@@ -70,21 +71,22 @@
     
     </summary>
     
-      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="碎碎念" scheme="/blog/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-      <category term="诗歌" scheme="/tags/%E8%AF%97%E6%AD%8C/"/>
+      <category term="诗歌" scheme="/blog/tags/%E8%AF%97%E6%AD%8C/"/>
     
-      <category term="现代诗" scheme="/tags/%E7%8E%B0%E4%BB%A3%E8%AF%97/"/>
+      <category term="现代诗" scheme="/blog/tags/%E7%8E%B0%E4%BB%A3%E8%AF%97/"/>
     
-      <category term="郭可盼" scheme="/tags/%E9%83%AD%E5%8F%AF%E7%9B%BC/"/>
+      <category term="郭可盼" scheme="/blog/tags/%E9%83%AD%E5%8F%AF%E7%9B%BC/"/>
     
   </entry>
   
   <entry>
     <title>我和小猫的故事</title>
-    <link href="/2020/01/14/%E6%88%91%E5%92%8C%E5%B0%8F%E7%8C%AB%E7%9A%84%E6%95%85%E4%BA%8B/"/>
-    <id>/2020/01/14/我和小猫的故事/</id>
+    <link href="/blog/2020/01/14/%E6%88%91%E5%92%8C%E5%B0%8F%E7%8C%AB%E7%9A%84%E6%95%85%E4%BA%8B/"/>
+    <id>/blog/2020/01/14/%E6%88%91%E5%92%8C%E5%B0%8F%E7%8C%AB%E7%9A%84%E6%95%85%E4%BA%8B/</id>
     <published>2020-01-14T14:42:29.000Z</published>
     <updated>2020-01-15T01:32:52.025Z</updated>
     
@@ -101,19 +103,20 @@
     
     </summary>
     
-      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="碎碎念" scheme="/blog/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-      <category term="猫" scheme="/tags/%E7%8C%AB/"/>
+      <category term="猫" scheme="/blog/tags/%E7%8C%AB/"/>
     
-      <category term="校园" scheme="/tags/%E6%A0%A1%E5%9B%AD/"/>
+      <category term="校园" scheme="/blog/tags/%E6%A0%A1%E5%9B%AD/"/>
     
   </entry>
   
   <entry>
     <title>实习好忙｜前端埋点之曝光实现</title>
-    <link href="/2019/12/26/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E4%B9%8B%E6%9B%9D%E5%85%89%E5%AE%9E%E7%8E%B0/"/>
-    <id>/2019/12/26/前端埋点之曝光实现/</id>
+    <link href="/blog/2019/12/26/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E4%B9%8B%E6%9B%9D%E5%85%89%E5%AE%9E%E7%8E%B0/"/>
+    <id>/blog/2019/12/26/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E4%B9%8B%E6%9B%9D%E5%85%89%E5%AE%9E%E7%8E%B0/</id>
     <published>2019-12-26T13:55:37.000Z</published>
     <updated>2019-12-31T11:49:39.054Z</updated>
     
@@ -129,23 +132,24 @@
     
     </summary>
     
-      <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="/blog/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="埋点" scheme="/tags/%E5%9F%8B%E7%82%B9/"/>
+      <category term="埋点" scheme="/blog/tags/%E5%9F%8B%E7%82%B9/"/>
     
-      <category term="曝光" scheme="/tags/%E6%9B%9D%E5%85%89/"/>
+      <category term="曝光" scheme="/blog/tags/%E6%9B%9D%E5%85%89/"/>
     
-      <category term="Intersection Observer" scheme="/tags/Intersection-Observer/"/>
+      <category term="Intersection Observer" scheme="/blog/tags/Intersection-Observer/"/>
     
   </entry>
   
   <entry>
     <title>解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell</title>
-    <link href="/2019/12/12/%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95%E7%89%88%E6%9D%83%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%EF%BD%9C%E4%BD%BF%E7%94%A8Proxifier%EF%BD%9C%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8Shell/"/>
-    <id>/2019/12/12/解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell/</id>
+    <link href="/blog/2019/12/12/%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95%E7%89%88%E6%9D%83%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%EF%BD%9C%E4%BD%BF%E7%94%A8Proxifier%EF%BD%9C%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8Shell/"/>
+    <id>/blog/2019/12/12/%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95%E7%89%88%E6%9D%83%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%EF%BD%9C%E4%BD%BF%E7%94%A8Proxifier%EF%BD%9C%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8Shell/</id>
     <published>2019-12-12T05:37:40.000Z</published>
     <updated>2020-02-29T13:29:54.747Z</updated>
     
@@ -162,27 +166,28 @@
     
     </summary>
     
-      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="碎碎念" scheme="/blog/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-      <category term="GFW" scheme="/tags/GFW/"/>
+      <category term="GFW" scheme="/blog/tags/GFW/"/>
     
-      <category term="碎碎念" scheme="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
-      <category term="翻墙" scheme="/tags/%E7%BF%BB%E5%A2%99/"/>
+      <category term="翻墙" scheme="/blog/tags/%E7%BF%BB%E5%A2%99/"/>
     
-      <category term="科学上网" scheme="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+      <category term="科学上网" scheme="/blog/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
   </entry>
   
   <entry>
     <title>不读书的后果(滑坡谬误)</title>
-    <link href="/2019/08/02/%E4%B8%8D%E8%AF%BB%E4%B9%A6%E7%9A%84%E5%90%8E%E6%9E%9C-%E6%BB%91%E5%9D%A1%E8%B0%AC%E8%AF%AF/"/>
-    <id>/2019/08/02/不读书的后果-滑坡谬误/</id>
+    <link href="/blog/2019/08/02/%E4%B8%8D%E8%AF%BB%E4%B9%A6%E7%9A%84%E5%90%8E%E6%9E%9C-%E6%BB%91%E5%9D%A1%E8%B0%AC%E8%AF%AF/"/>
+    <id>/blog/2019/08/02/%E4%B8%8D%E8%AF%BB%E4%B9%A6%E7%9A%84%E5%90%8E%E6%9E%9C-%E6%BB%91%E5%9D%A1%E8%B0%AC%E8%AF%AF/</id>
     <published>2019-08-02T08:53:45.000Z</published>
     <updated>2019-08-02T08:59:53.291Z</updated>
     
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22658523&auto=0&height=66"></iframe><blockquote><p>本文的创作灵感来自于<a href="https://www.bilibili.com/video/av38713206/" target="_blank" rel="noopener">美国创意广告－有线电视信号太烂的后果</a>。</p><p>同时此广告/本文也是<a href="https://zh.wikipedia.org/zh/滑坡謬誤" target="_blank" rel="noopener">滑坡谬误</a>的典型示例。</p></blockquote><ol><li>你不读书，你喜欢的女生问你”生命、宇宙以及一切事物的终极答案是什么？”时，你就回答不上来。你回答不上来，女生对你的好感就会大大降低。女生对你的好感就会大大降低，你在表白时就会遭到拒绝。为了能有女朋友，你应该读书。</li><li>你不读书，你就会觉得精神无聊，然后开始去网吧玩英雄联盟。你开始去网吧玩英雄联盟，就会停不下来，一直玩下去。你一直玩下去，就会猝死。为了好好活下去，你应该读书。</li><li>你不读书，就没人愿意和你做朋友。没人愿意和你做朋友，你就会不修边幅，宅在家里。你不修边幅，宅在家里，你父母就会嫌弃你。你父母嫌弃你，你就会备受打击。你备受打击，你就会觉得活着没有意思，最后决定跳楼。不要跳楼，你应该读书。</li><li>你不读书，就会异想天开。你异想天开，就会觉得倒着走路去上班很有意思。你倒着走路去上班，就会被汽车撞断腿。不要一辈子坐在轮椅上，你应该去读书。</li><li>你不读书，就会在批改学生的试卷时出错。你在批改学生的试卷时出错，就会遭到学生记恨。你遭到学生记恨，你的汽车车胎就会被扎破。不要让自己的汽车车胎被扎破，你应该去读书。</li><li>你不读书，在看新闻联播时就会深信不疑。你在看新闻联播时就会深信不疑，你就会觉得国外人民都生活在水深火热之中。你觉得国外人民都生活在水深火热之中，你就会想支援国际共产主义。不要支援国际共产主义，你应该读书。</li><li>你不读书，在和别人争论时就会争论不过别人。你争论不过别人，就会出手打他。你出手打他，就会被他的朋友围殴。不要被人围殴，你应该读书。</li><li>你不读书，就不知道鲁迅是谁。你不知道鲁迅是谁，就会在文学课上听到老师讲鲁迅时提出这个愚蠢的问题。你提出这个愚蠢的问题，就会被全班人嘲笑。不要别人嘲笑，你应该读书。</li><li>你不读书，就会觉得生活没有意义。你觉得生活没有意义，就会去女朋友家寻求安慰。你去女朋友家寻求安慰，就会发现让你痛不欲生的事。你发现让你痛不欲生的事，就会觉得生活更没有意义，然后你就会选择卧轨自杀。不要卧轨自杀，你应该读书。</li><li>你不读书，就会经常性地觉得无助。你觉得无助，就会想要摆脱无助感。你想要摆脱无助感，你就会去学习跆拳道。你去学习跆拳道，你就会想学以致用。你想学以致用，你就会学习侠客，开始昼伏夜出。你昼伏夜出，你就会掉到下水道里。不要掉到下水道里，你应该读书。</li></ol><p><strong>欢迎大家贡献示例！期待大家的奇思妙想，我收集后会署名添加进来</strong></p><blockquote><p>通过邮件：shuirong1997@icloud.com    </p><p>通过微博：<a href="https://www.weibo.com/6871008101/profile" target="_blank" rel="noopener">https://www.weibo.com/6871008101/profile</a></p><p>通过Github Issues：<a href="https://github.com/shuiRong/shuiRong.github.io/issues" target="_blank" rel="noopener">https://github.com/shuiRong/shuiRong.github.io/issues</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22658523&auto=0&height=66"></iframe><blockquote><p>本文的创作灵感来自于<a href="https://www.bilibili.com/video/av38713206/" target="_blank" rel="noopener">美国创意广告－有线电视信号太烂的后果</a>。</p><p>同时此广告/本文也是<a href="https://zh.wikipedia.org/zh/滑坡謬誤" target="_blank" rel="noopener">滑坡谬误</a>的典型示例。</p></blockquote><ol><li>你不读书，你喜欢的女生问你”生命、宇宙以及一切事物的终极答案是什么？”时，你就回答不上来。你回答不上来，女生对你的好感就会大大降低。女生对你的好感就会大大降低，你在表白时就会遭到拒绝。为了能有女朋友，你应该读书。</li><li>你不读书，你就会觉得精神无聊，然后开始去网吧玩英雄联盟。你开始去网吧玩英雄联盟，就会停不下来，一直玩下去。你一直玩下去，就会猝死。为了好好活下去，你应该读书。</li><li>你不读书，就没人愿意和你做朋友。没人愿意和你做朋友，你就会不修边幅，宅在家里。你不修边幅，宅在家里，你父母就会嫌弃你。你父母嫌弃你，你就会备受打击。你备受打击，你就会觉得活着没有意思，最后决定跳楼。不要跳楼，你应该读书。</li><li>你不读书，就会异想天开。你异想天开，就会觉得倒着走路去上班很有意思。你倒着走路去上班，就会被汽车撞断腿。不要一辈子坐在轮椅上，你应该去读书。</li><li>你不读书，就会在批改学生的试卷时出错。你在批改学生的试卷时出错，就会遭到学生记恨。你遭到学生记恨，你的汽车车胎就会被扎破。不要让自己的汽车车胎被扎破，你应该去读书。</li><li>你不读书，在看新闻联播时就会深信不疑。你在看新闻联播时就会深信不疑，你就会觉得国外人民都生活在水深火热之中。你觉得国外人民都生活在水深火热之中，你就会想支援国际共产主义。不要支援国际共产主义，你应该读书。</li><li>你不读书，在和别人争论时就会争论不过别人。你争论不过别人，就会出手打他。你出手打他，就会被他的朋友围殴。不要被人围殴，你应该读书。</li><li>你不读书，就不知道鲁迅是谁。你不知道鲁迅是谁，就会在文学课上听到老师讲鲁迅时提出这个愚蠢的问题。你提出这个愚蠢的问题，就会被全班人嘲笑。不要别人嘲笑，你应该读书。</li><li>你不读书，就会觉得生活没有意义。你觉得生活没有意义，就会去女朋友家寻求安慰。你去女朋友家寻求安慰，就会发现让你痛不欲生的事。你发现让你痛不欲生的事，就会觉得生活更没有意义，然后你就会选择卧轨自杀。不要卧轨自杀，你应该读书。</li><li>你不读书，就会经常性地觉得无助。你觉得无助，就会想要摆脱无助感。你想要摆脱无助感，你就会去学习跆拳道。你去学习跆拳道，你就会想学以致用。你想学以致用，你就会学习侠客，开始昼伏夜出。你昼伏夜出，你就会掉到下水道里。不要掉到下水道里，你应该读书。</li></ol><p><strong>欢迎大家贡献示例！期待大家的奇思妙想，我收集后会署名添加进来</strong></p><blockquote><p>通过邮件：<a href="mailto:shuirong1997@icloud.com" target="_blank" rel="noopener">shuirong1997@icloud.com</a>    </p><p>通过微博：<a href="https://www.weibo.com/6871008101/profile" target="_blank" rel="noopener">https://www.weibo.com/6871008101/profile</a></p><p>通过Github Issues：<a href="https://github.com/shuiRong/shuiRong.github.io/issues" target="_blank" rel="noopener">https://github.com/shuiRong/shuiRong.github.io/issues</a></p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -193,21 +198,22 @@
     
     </summary>
     
-      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="碎碎念" scheme="/blog/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-      <category term="滑坡谬误" scheme="/tags/%E6%BB%91%E5%9D%A1%E8%B0%AC%E8%AF%AF/"/>
+      <category term="滑坡谬误" scheme="/blog/tags/%E6%BB%91%E5%9D%A1%E8%B0%AC%E8%AF%AF/"/>
     
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书" scheme="/blog/tags/%E8%AF%BB%E4%B9%A6/"/>
     
-      <category term="好玩" scheme="/tags/%E5%A5%BD%E7%8E%A9/"/>
+      <category term="好玩" scheme="/blog/tags/%E5%A5%BD%E7%8E%A9/"/>
     
   </entry>
   
   <entry>
     <title>我也谈翻墙经历</title>
-    <link href="/2019/08/01/%E6%88%91%E4%B9%9F%E8%B0%88%E7%BF%BB%E5%A2%99%E7%BB%8F%E5%8E%86/"/>
-    <id>/2019/08/01/我也谈翻墙经历/</id>
+    <link href="/blog/2019/08/01/%E6%88%91%E4%B9%9F%E8%B0%88%E7%BF%BB%E5%A2%99%E7%BB%8F%E5%8E%86/"/>
+    <id>/blog/2019/08/01/%E6%88%91%E4%B9%9F%E8%B0%88%E7%BF%BB%E5%A2%99%E7%BB%8F%E5%8E%86/</id>
     <published>2019-08-01T12:39:22.000Z</published>
     <updated>2019-08-01T12:43:07.860Z</updated>
     
@@ -222,23 +228,24 @@
     
     </summary>
     
-      <category term="碎碎念" scheme="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="碎碎念" scheme="/blog/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
-      <category term="GFW" scheme="/tags/GFW/"/>
+      <category term="GFW" scheme="/blog/tags/GFW/"/>
     
-      <category term="碎碎念" scheme="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
-      <category term="翻墙" scheme="/tags/%E7%BF%BB%E5%A2%99/"/>
+      <category term="翻墙" scheme="/blog/tags/%E7%BF%BB%E5%A2%99/"/>
     
-      <category term="科学上网" scheme="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+      <category term="科学上网" scheme="/blog/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
   </entry>
   
   <entry>
     <title>Github：最后的言论自由之地</title>
-    <link href="/2019/05/10/Github%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9A%84%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E4%B9%8B%E5%9C%B0/"/>
-    <id>/2019/05/10/Github：最后的言论自由之地/</id>
+    <link href="/blog/2019/05/10/Github%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9A%84%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E4%B9%8B%E5%9C%B0/"/>
+    <id>/blog/2019/05/10/Github%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9A%84%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E4%B9%8B%E5%9C%B0/</id>
     <published>2019-05-10T10:21:02.000Z</published>
     <updated>2019-05-17T13:49:14.276Z</updated>
     
@@ -253,23 +260,24 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="Github" scheme="/tags/Github/"/>
+      <category term="Github" scheme="/blog/tags/Github/"/>
     
-      <category term="言论自由" scheme="/tags/%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1/"/>
+      <category term="言论自由" scheme="/blog/tags/%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1/"/>
     
-      <category term="逻辑" scheme="/tags/%E9%80%BB%E8%BE%91/"/>
+      <category term="逻辑" scheme="/blog/tags/%E9%80%BB%E8%BE%91/"/>
     
-      <category term="GFW" scheme="/tags/GFW/"/>
+      <category term="GFW" scheme="/blog/tags/GFW/"/>
     
   </entry>
   
   <entry>
     <title>对抗假消息：虚假截图制作工具</title>
-    <link href="/2019/03/24/%E5%AF%B9%E6%8A%97%E5%81%87%E6%B6%88%E6%81%AF%EF%BC%9A%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/"/>
-    <id>/2019/03/24/对抗假消息：虚假截图制作工具/</id>
+    <link href="/blog/2019/03/24/%E5%AF%B9%E6%8A%97%E5%81%87%E6%B6%88%E6%81%AF%EF%BC%9A%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/"/>
+    <id>/blog/2019/03/24/%E5%AF%B9%E6%8A%97%E5%81%87%E6%B6%88%E6%81%AF%EF%BC%9A%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</id>
     <published>2019-03-24T07:46:14.000Z</published>
     <updated>2019-05-09T15:16:19.648Z</updated>
     
@@ -284,27 +292,28 @@
     
     </summary>
     
-      <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="项目" scheme="/tags/%E9%A1%B9%E7%9B%AE/"/>
+      <category term="项目" scheme="/blog/tags/%E9%A1%B9%E7%9B%AE/"/>
     
-      <category term="截图制作" scheme="/tags/%E6%88%AA%E5%9B%BE%E5%88%B6%E4%BD%9C/"/>
+      <category term="截图制作" scheme="/blog/tags/%E6%88%AA%E5%9B%BE%E5%88%B6%E4%BD%9C/"/>
     
-      <category term="虚假截图" scheme="/tags/%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE/"/>
+      <category term="虚假截图" scheme="/blog/tags/%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE/"/>
     
-      <category term="开源" scheme="/tags/%E5%BC%80%E6%BA%90/"/>
+      <category term="开源" scheme="/blog/tags/%E5%BC%80%E6%BA%90/"/>
     
   </entry>
   
   <entry>
     <title>ReactNative实战之社交网络客户端（一：基础篇）</title>
-    <link href="/2019/02/22/ReactNative%E5%AE%9E%E6%88%98%E4%B9%8B%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%88%E4%B8%80%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%AF%87%EF%BC%89/"/>
-    <id>/2019/02/22/ReactNative实战之社交网络客户端（一：基础篇）/</id>
+    <link href="/blog/2019/02/22/ReactNative%E5%AE%9E%E6%88%98%E4%B9%8B%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%88%E4%B8%80%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%AF%87%EF%BC%89/"/>
+    <id>/blog/2019/02/22/ReactNative%E5%AE%9E%E6%88%98%E4%B9%8B%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%88%E4%B8%80%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%AF%87%EF%BC%89/</id>
     <published>2019-02-22T09:42:12.000Z</published>
     <updated>2019-02-22T09:56:28.729Z</updated>
     
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5350947&auto=0&height=66"></iframe><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr><p>完整项目地址：<a href="https://github.com/shuiRong/Gakki" target="_blank" rel="noopener">https://github.com/shuiRong/Gakki</a> 🌟🌟🌟</p><p>系列文章：</p><ul><li><a href="">ReactNative实战之社交网络客户端（二：进阶篇）</a>（正在写）</li><li><a href="">ReactNative实战之社交网络客户端（三：优化篇）</a>（正在写）</li><li><a href="">ReactNative实战之社交网络客户端（四：踩坑篇）</a>（正在写）</li></ul><p>对了，<a href="https://linshuirong.cn/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">这里</a>有一篇介绍Mastodon (长毛象)的文章，毕竟我是在为它开发客户端🤣</p><h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── App.js// 项目路由配置，因为我这个项目需要登陆，所以我就根据登陆/未登陆，定义了两个路由入口</span><br><span class="line">├── LICENSE// 证书</span><br><span class="line">├── README.md// 介绍文档</span><br><span class="line">├── android// 原生Android工程</span><br><span class="line">├── app.json // 用来配置原生App需要的基本信息</span><br><span class="line">├── index.js // 入口文件</span><br><span class="line">├── ios // 原生iOS工程</span><br><span class="line">├── node_modules // 依赖项目的源代码</span><br><span class="line">├── package.json // 定义项目所需要的各种依赖/模块，以及项目的配置信息</span><br><span class="line">├── preview // App预览图</span><br><span class="line">├── rn-cli.config.js // 顾名思义，是命令行工具：react-native的配置信息</span><br><span class="line">├── src // 项目源代码。你写的业务代码基本都在这里</span><br><span class="line">    ├── Main.js // 配置了“登陆”状态下各页面的路由信息</span><br><span class="line">    ├── SignedOutNavigator.js // 配置了“未登陆”状态下各页面的路由信息</span><br><span class="line">    ├── assets // 会被RN打包工具打包的静态资源</span><br><span class="line">    ├── pages // App的页面级文件</span><br><span class="line">    │   ├── About.js // 关于页面</span><br><span class="line">    │   ├── Auth.js // 授权认证页面（Mastodon客户端登录时不是常规的账号密码登录，而是输入账号密码然后弹出授权认证，想想微信的授权认证）</span><br><span class="line">    │   ├── BlockedUsers.js // 被屏蔽用户页面</span><br><span class="line">    │   ├── Envelope.js // 私信页面</span><br><span class="line">    │   ├── FollowRequestList.js // 关注请求页面</span><br><span class="line">    │   ├── Followers.js // 关注者页面</span><br><span class="line">    │   ├── Following.js // 关注页面</span><br><span class="line">    │   ├── Home.js // 首页</span><br><span class="line">    │   ├── Launcher.js // 启动页面，从存储系统中加载主题、用户Token等基础数据</span><br><span class="line">    │   ├── Login.js // 登陆页面，即输入账号密码的地方</span><br><span class="line">    │   ├── MutedUsers.js // 被隐藏用户页面</span><br><span class="line">    │   ├── Notifications.js // 消息通知页面</span><br><span class="line">    │   ├── OpenSource.js // 开源声明页面，列出了项目所有用到的开源软件及开源协议</span><br><span class="line">    │   ├── Profile.js // 个人详情页面</span><br><span class="line">    │   ├── Search.js // 搜索页面</span><br><span class="line">    │   ├── SendToot.js // 发送嘟文（类似于微博的博文）的页面</span><br><span class="line">    │   ├── SideBar.js // 主页侧栏组件</span><br><span class="line">    │   ├── Tag.js // 标签页面</span><br><span class="line">    │   ├── Test.js // 测试页面，开发项目时需要测试某模块时可以在这个页面单独测试</span><br><span class="line">    │   ├── TootDetail.js // 嘟文详情页面</span><br><span class="line">    │   ├── common // 项目中会多处使用的公共组件</span><br><span class="line">    │   │   ├── Context.js // 评论组件</span><br><span class="line">    │   │   ├── DefaultTabBar.js // Tab组件的顶部Bar组件</span><br><span class="line">    │   │   ├── Divider.js // 分割线组件</span><br><span class="line">    │   │   ├── Fab.js // Floating Action Button (FAB)组件，一般是漂浮在右下角的那个圆形按钮</span><br><span class="line">    │   │   ├── HTMLView.js // 把渲染HTML的部分提取出来，自成一个组件</span><br><span class="line">    │   │   ├── Header.js // 顶部的Header组件</span><br><span class="line">    │   │   ├── ListFooterComponent.js FlatList组件的尾部组件</span><br><span class="line">    │   │   ├── Loading.js // Loading加载效果组件</span><br><span class="line">    │   │   ├── MediaBox.js // 媒体文件（图片、视频）展示组件</span><br><span class="line">    │   │   ├── Notice.js // 提示框、确认框等组件</span><br><span class="line">    │   │   ├── ReplyInput.js // 封装的单行、多行输入框组件</span><br><span class="line">    │   │   ├── Spruce.js // 骨架屏组件，自定了几个常用骨架屏</span><br><span class="line">    │   │   ├── TootBox.js // 嘟文组件</span><br><span class="line">    │   │   ├── UserItem.js // 用户列组件</span><br><span class="line">    │   └── screen // Tab组件下的页面</span><br><span class="line">    │       ├── HomeScreen.js // 主页时间轴Tab下的组件</span><br><span class="line">    │       ├── LocalScreen.js // 本站时间轴Tab下的组件</span><br><span class="line">    │       ├── MediaScreen.js // 媒体文件Tab下的组件</span><br><span class="line">    │       ├── PublicScreen.js // 跨站公共时间轴Tab下的组件</span><br><span class="line">    │       └── TootScreen.js // （个人详情页面下）个人嘟文Tab下的组件</span><br><span class="line">    └── utils // 放置一些公共方法</span><br><span class="line">        ├── api.js // 定义用到的所有接口</span><br><span class="line">        ├── color.js // 统一管理项目颜色</span><br><span class="line">        ├── config.js // 配置信息，如开发时使用的Token</span><br><span class="line">        ├── locale.js // 国际化文件，目前只有中文的时间字符，未来会集成所有的国际化数据</span><br><span class="line">        ├── mobx.js // 项目全局状态管理中心</span><br><span class="line">        ├── request.js // 封装axios，增加全局请求、响应拦截器</span><br><span class="line">        └── store.js // 封装AsyncStorage：本地存储系统</span><br><span class="line">└── yarn.lock // yarn为了跨机器安装得到一致的结果而生成的文件</span><br></pre></td></tr></table></figure><h4 id="介绍下目录规划"><a href="#介绍下目录规划" class="headerlink" title="介绍下目录规划"></a>介绍下目录规划</h4><p>使用<code>react-native-cli</code>工具初始化完项目的时候，你就会发现，它生成的所谓源码文件只有<code>index.js</code>、<code>App.js</code>，而这基本不足以支持任何复杂点的项目。所以就需要自己来：先新建一个<code>src</code>文件夹，然后规划文件。</p><p>首先需要一个入口/路由文件（我这里根据“登陆”和“未登陆”两种状态，规划了两个入口文件：<code>Main.js</code>、<code>SignedOutNavigator.js</code>），然后还需要一个 <code>pages</code>文件夹放置所有的“页级”文件，一个<code>common</code>用来放置那些会被引用多次的组件，比如<code>Header</code>组件（基本每个页面都要用到<code>Heeader</code>组件）。然后我还建了一个<code>screen</code>组件用来放置每个Tab对应的文件，因为严格来说，一个Tab并不属于一个页面。首页的Tab是这样的：</p><p><img src="https://ww1.sinaimg.cn/large/007i4MEmgy1g0c4dnl4ntj30go0rmgnq.jpg" alt="首页Tab"></p><p>然后介绍下<code>utils</code>文件夹。</p><p><img src="http://wx1.sinaimg.cn/large/006fVPCvly1g0fcmzwveij30ce070jrn.jpg" alt="utils"></p><p><strong>统一管理很重要！</strong>所以我接口、本地存储、国际化、颜色搭配、状态管理都封装到了单独文件中，任何组件需要使用的时候都可以自行调用。</p><p>最开始开发的时候，其实我并没有把颜色这一块给封装成单个文件，这导致后面我要实现夜间模式时直接懵逼，颜色写死在项目中的各处，完全没法实现夜间模式！因此希望大家谨记我的教训，<strong>任何重复两次以上的代码都要考虑下是否可以声明成变量或者封装成组件！</strong></p><h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><hr><p>我在项目开发初期并没有使用状态管理工具，因为当时项目复杂度还没有上来，使用<code>state</code>足矣。</p><blockquote><p>就像React社区中流传甚广的一句话：don’t use Redux until you have problems with vanilla React.</p><p>意思是：除非你遇到了只使用React解决不了的问题，不要使用Redux。</p><p>P.S. React Native将会在下一个稳定版本中支持<a href="https://react.docschina.org/docs/hooks-overview.html#-%E7%8A%B6%E6%80%81%E9%92%A9%E5%AD%90%EF%BC%88state-hook%EF%BC%89" target="_blank" rel="noopener">Hooks</a>：是一个用起来非常舒服的功能，建议了解一下。</p></blockquote><p>直到我遇到了“主题切换功能”，非引入一个状态管理功能不能解决，然后我就引入了<a href="https://cn.mobx.js.org/" target="_blank" rel="noopener">Mobx</a>（上手快）</p><p>关于<code>Redux</code>和<code>Mobx</code>我们应该如何选择的问题，这里推荐一篇文章：<a href="https://www.robinwieruch.de/redux-mobx-confusion/" target="_blank" rel="noopener">Redux or MobX: An attempt to dissolve the Confusion</a>，<a href="https://segmentfault.com/a/1190000011148981" target="_blank" rel="noopener">中译文</a>。</p><p>作者观点比较中立，并没有偏向任何一方。（所以看完之后，你的选择也没必要非要和我一样）</p><h4 id="UI库的选择"><a href="#UI库的选择" class="headerlink" title="UI库的选择"></a>UI库的选择</h4><hr><p>首先你需要知道的是，<strong>你不能奢求某一款UI库能完全满足你的需求。</strong>实际也不会存在这么一款UI库。</p><p>因此项目开发时基本是这样：一个流行组件库 + N个“单UI”组件（根据需要自行Google） + 自行实现Style</p><p>常见的流行UI库我基本都看过，包括不限于：</p><ul><li><a href="https://github.com/react-native-training/react-native-elements" target="_blank" rel="noopener">react-native-elements</a></li><li><a href="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="noopener">NativeBase</a></li><li><a href="https://github.com/xotahal/react-native-material-ui" target="_blank" rel="noopener">react-native-material-ui</a></li><li><a href="https://github.com/rilyu/teaset" target="_blank" rel="noopener">Teaset</a></li></ul><p>最后选择了Teaset，理由简单实在（笑）：它由“纯JS”实现，不含任何原生代码。（这意味着，如果遇到问题需要去看源码的话，我能看懂🤣）</p><h4 id="组件重用"><a href="#组件重用" class="headerlink" title="组件重用"></a>组件重用</h4><hr><p>路由我用的是[react navigation]</p><p>设想下这样的场景：在水溶的个人主页点击小明的头像。我们预期的是页面会跳转到小明的个人主页，但实际呢？实际是页面不会有任何变化（当然，如果你没有针对这种情况做处理的话。）</p><p><img src="https://github.com/shuiRong/Gakki/raw/master/preview/14.png" alt="个人详情页面"></p><p>这是因为当跳转前后的两个路由相同（也即组件复用）的话，默认不会重新渲染组件。那么<code>componentDidMount</code>钩子（一般我们在这个钩子里面请求接口数据）就不会触发，那么页面就不会有任何变化。</p><p>P.S. 如果你在开发ReactNative之前曾写过Vue/React/Angular项目的话，可能就会遇到过这样的问题。</p><p><strong>解决方法</strong>就是在<code>componentWillReceiveProps</code>钩子里重新请求接口数据，因为前后两个路由相同会触发此钩子。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">this.init(this.props.navigation.getParam(&apos;data&apos;))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillReceiveProps(&#123; navigation &#125;) &#123;</span><br><span class="line">this.init(navigation.getParam(&apos;data&apos;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="封装请求"><a href="#封装请求" class="headerlink" title="封装请求"></a>封装请求</h4><hr><blockquote><p>用来请求接口数据的HTTP库，我是用的是<a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a>，因为之前在写Vue、React项目时就有在用，已经比较熟悉了。如果你是用了其他的库也无妨，思想都是想通的，可以借鉴。</p></blockquote><p>为了开发测试方便，有必要将axios封装一下，加上请求、响应拦截等逻辑。这样的话，未来增加特定Header或增加接口错误时提示信息也方便，在这里加就可以了。</p><p>代码贴出来了，简单，都能看懂：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">import &#123; Toast &#125; from &apos;teaset&apos;</span><br><span class="line"></span><br><span class="line">const service = axios.create(&#123;</span><br><span class="line">  baseURL: &apos;https://cmx.im&apos;, // 统一Host</span><br><span class="line">  timeout: 10000 // 请求超时时间限制</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 请求拦截器</span><br><span class="line">service.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    // 如果未来需要增加统一Header，加在这里</span><br><span class="line">    return config</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    Promise.reject(err)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 响应拦截器</span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    // 如果你需要对接口返回的数据特殊处理一下的话，写在这里  </span><br><span class="line">    return response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    console.log(&apos;拦截器err:&apos;, err)</span><br><span class="line">    if (err &amp;&amp; err.error) &#123;</span><br><span class="line">      // 服务器异常，统一展示出来</span><br><span class="line">      Toast.message(err.error)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">export default service</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5350947&auto=0&height=66"></iframe><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr><p>完整项目地址：<a href="https://github.com/shuiRong/Gakki" target="_blank" rel="noopener">https://github.com/shuiRong/Gakki</a> 🌟🌟🌟</p><p>系列文章：</p><ul><li><a href>ReactNative实战之社交网络客户端（二：进阶篇）</a>（正在写）</li><li><a href>ReactNative实战之社交网络客户端（三：优化篇）</a>（正在写）</li><li><a href>ReactNative实战之社交网络客户端（四：踩坑篇）</a>（正在写）</li></ul><p>对了，<a href="https://linshuirong.cn/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">这里</a>有一篇介绍Mastodon (长毛象)的文章，毕竟我是在为它开发客户端🤣</p><h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── App.js// 项目路由配置，因为我这个项目需要登陆，所以我就根据登陆/未登陆，定义了两个路由入口</span><br><span class="line">├── LICENSE// 证书</span><br><span class="line">├── README.md// 介绍文档</span><br><span class="line">├── android// 原生Android工程</span><br><span class="line">├── app.json // 用来配置原生App需要的基本信息</span><br><span class="line">├── index.js // 入口文件</span><br><span class="line">├── ios // 原生iOS工程</span><br><span class="line">├── node_modules // 依赖项目的源代码</span><br><span class="line">├── package.json // 定义项目所需要的各种依赖/模块，以及项目的配置信息</span><br><span class="line">├── preview // App预览图</span><br><span class="line">├── rn-cli.config.js // 顾名思义，是命令行工具：react-native的配置信息</span><br><span class="line">├── src // 项目源代码。你写的业务代码基本都在这里</span><br><span class="line">    ├── Main.js // 配置了“登陆”状态下各页面的路由信息</span><br><span class="line">    ├── SignedOutNavigator.js // 配置了“未登陆”状态下各页面的路由信息</span><br><span class="line">    ├── assets // 会被RN打包工具打包的静态资源</span><br><span class="line">    ├── pages // App的页面级文件</span><br><span class="line">    │   ├── About.js // 关于页面</span><br><span class="line">    │   ├── Auth.js // 授权认证页面（Mastodon客户端登录时不是常规的账号密码登录，而是输入账号密码然后弹出授权认证，想想微信的授权认证）</span><br><span class="line">    │   ├── BlockedUsers.js // 被屏蔽用户页面</span><br><span class="line">    │   ├── Envelope.js // 私信页面</span><br><span class="line">    │   ├── FollowRequestList.js // 关注请求页面</span><br><span class="line">    │   ├── Followers.js // 关注者页面</span><br><span class="line">    │   ├── Following.js // 关注页面</span><br><span class="line">    │   ├── Home.js // 首页</span><br><span class="line">    │   ├── Launcher.js // 启动页面，从存储系统中加载主题、用户Token等基础数据</span><br><span class="line">    │   ├── Login.js // 登陆页面，即输入账号密码的地方</span><br><span class="line">    │   ├── MutedUsers.js // 被隐藏用户页面</span><br><span class="line">    │   ├── Notifications.js // 消息通知页面</span><br><span class="line">    │   ├── OpenSource.js // 开源声明页面，列出了项目所有用到的开源软件及开源协议</span><br><span class="line">    │   ├── Profile.js // 个人详情页面</span><br><span class="line">    │   ├── Search.js // 搜索页面</span><br><span class="line">    │   ├── SendToot.js // 发送嘟文（类似于微博的博文）的页面</span><br><span class="line">    │   ├── SideBar.js // 主页侧栏组件</span><br><span class="line">    │   ├── Tag.js // 标签页面</span><br><span class="line">    │   ├── Test.js // 测试页面，开发项目时需要测试某模块时可以在这个页面单独测试</span><br><span class="line">    │   ├── TootDetail.js // 嘟文详情页面</span><br><span class="line">    │   ├── common // 项目中会多处使用的公共组件</span><br><span class="line">    │   │   ├── Context.js // 评论组件</span><br><span class="line">    │   │   ├── DefaultTabBar.js // Tab组件的顶部Bar组件</span><br><span class="line">    │   │   ├── Divider.js // 分割线组件</span><br><span class="line">    │   │   ├── Fab.js // Floating Action Button (FAB)组件，一般是漂浮在右下角的那个圆形按钮</span><br><span class="line">    │   │   ├── HTMLView.js // 把渲染HTML的部分提取出来，自成一个组件</span><br><span class="line">    │   │   ├── Header.js // 顶部的Header组件</span><br><span class="line">    │   │   ├── ListFooterComponent.js FlatList组件的尾部组件</span><br><span class="line">    │   │   ├── Loading.js // Loading加载效果组件</span><br><span class="line">    │   │   ├── MediaBox.js // 媒体文件（图片、视频）展示组件</span><br><span class="line">    │   │   ├── Notice.js // 提示框、确认框等组件</span><br><span class="line">    │   │   ├── ReplyInput.js // 封装的单行、多行输入框组件</span><br><span class="line">    │   │   ├── Spruce.js // 骨架屏组件，自定了几个常用骨架屏</span><br><span class="line">    │   │   ├── TootBox.js // 嘟文组件</span><br><span class="line">    │   │   ├── UserItem.js // 用户列组件</span><br><span class="line">    │   └── screen // Tab组件下的页面</span><br><span class="line">    │       ├── HomeScreen.js // 主页时间轴Tab下的组件</span><br><span class="line">    │       ├── LocalScreen.js // 本站时间轴Tab下的组件</span><br><span class="line">    │       ├── MediaScreen.js // 媒体文件Tab下的组件</span><br><span class="line">    │       ├── PublicScreen.js // 跨站公共时间轴Tab下的组件</span><br><span class="line">    │       └── TootScreen.js // （个人详情页面下）个人嘟文Tab下的组件</span><br><span class="line">    └── utils // 放置一些公共方法</span><br><span class="line">        ├── api.js // 定义用到的所有接口</span><br><span class="line">        ├── color.js // 统一管理项目颜色</span><br><span class="line">        ├── config.js // 配置信息，如开发时使用的Token</span><br><span class="line">        ├── locale.js // 国际化文件，目前只有中文的时间字符，未来会集成所有的国际化数据</span><br><span class="line">        ├── mobx.js // 项目全局状态管理中心</span><br><span class="line">        ├── request.js // 封装axios，增加全局请求、响应拦截器</span><br><span class="line">        └── store.js // 封装AsyncStorage：本地存储系统</span><br><span class="line">└── yarn.lock // yarn为了跨机器安装得到一致的结果而生成的文件</span><br></pre></td></tr></table></figure><h4 id="介绍下目录规划"><a href="#介绍下目录规划" class="headerlink" title="介绍下目录规划"></a>介绍下目录规划</h4><p>使用<code>react-native-cli</code>工具初始化完项目的时候，你就会发现，它生成的所谓源码文件只有<code>index.js</code>、<code>App.js</code>，而这基本不足以支持任何复杂点的项目。所以就需要自己来：先新建一个<code>src</code>文件夹，然后规划文件。</p><p>首先需要一个入口/路由文件（我这里根据“登陆”和“未登陆”两种状态，规划了两个入口文件：<code>Main.js</code>、<code>SignedOutNavigator.js</code>），然后还需要一个 <code>pages</code>文件夹放置所有的“页级”文件，一个<code>common</code>用来放置那些会被引用多次的组件，比如<code>Header</code>组件（基本每个页面都要用到<code>Heeader</code>组件）。然后我还建了一个<code>screen</code>组件用来放置每个Tab对应的文件，因为严格来说，一个Tab并不属于一个页面。首页的Tab是这样的：</p><p><img src="https://ww1.sinaimg.cn/large/007i4MEmgy1g0c4dnl4ntj30go0rmgnq.jpg" alt="首页Tab"></p><p>然后介绍下<code>utils</code>文件夹。</p><p><img src="http://wx1.sinaimg.cn/large/006fVPCvly1g0fcmzwveij30ce070jrn.jpg" alt="utils"></p><p><strong>统一管理很重要！</strong>所以我接口、本地存储、国际化、颜色搭配、状态管理都封装到了单独文件中，任何组件需要使用的时候都可以自行调用。</p><p>最开始开发的时候，其实我并没有把颜色这一块给封装成单个文件，这导致后面我要实现夜间模式时直接懵逼，颜色写死在项目中的各处，完全没法实现夜间模式！因此希望大家谨记我的教训，<strong>任何重复两次以上的代码都要考虑下是否可以声明成变量或者封装成组件！</strong></p><h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><hr><p>我在项目开发初期并没有使用状态管理工具，因为当时项目复杂度还没有上来，使用<code>state</code>足矣。</p><blockquote><p>就像React社区中流传甚广的一句话：don’t use Redux until you have problems with vanilla React.</p><p>意思是：除非你遇到了只使用React解决不了的问题，不要使用Redux。</p><p>P.S. React Native将会在下一个稳定版本中支持<a href="https://react.docschina.org/docs/hooks-overview.html#-%E7%8A%B6%E6%80%81%E9%92%A9%E5%AD%90%EF%BC%88state-hook%EF%BC%89" target="_blank" rel="noopener">Hooks</a>：是一个用起来非常舒服的功能，建议了解一下。</p></blockquote><p>直到我遇到了“主题切换功能”，非引入一个状态管理功能不能解决，然后我就引入了<a href="https://cn.mobx.js.org/" target="_blank" rel="noopener">Mobx</a>（上手快）</p><p>关于<code>Redux</code>和<code>Mobx</code>我们应该如何选择的问题，这里推荐一篇文章：<a href="https://www.robinwieruch.de/redux-mobx-confusion/" target="_blank" rel="noopener">Redux or MobX: An attempt to dissolve the Confusion</a>，<a href="https://segmentfault.com/a/1190000011148981" target="_blank" rel="noopener">中译文</a>。</p><p>作者观点比较中立，并没有偏向任何一方。（所以看完之后，你的选择也没必要非要和我一样）</p><h4 id="UI库的选择"><a href="#UI库的选择" class="headerlink" title="UI库的选择"></a>UI库的选择</h4><hr><p>首先你需要知道的是，<strong>你不能奢求某一款UI库能完全满足你的需求。</strong>实际也不会存在这么一款UI库。</p><p>因此项目开发时基本是这样：一个流行组件库 + N个“单UI”组件（根据需要自行Google） + 自行实现Style</p><p>常见的流行UI库我基本都看过，包括不限于：</p><ul><li><a href="https://github.com/react-native-training/react-native-elements" target="_blank" rel="noopener">react-native-elements</a></li><li><a href="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="noopener">NativeBase</a></li><li><a href="https://github.com/xotahal/react-native-material-ui" target="_blank" rel="noopener">react-native-material-ui</a></li><li><a href="https://github.com/rilyu/teaset" target="_blank" rel="noopener">Teaset</a></li></ul><p>最后选择了Teaset，理由简单实在（笑）：它由“纯JS”实现，不含任何原生代码。（这意味着，如果遇到问题需要去看源码的话，我能看懂🤣）</p><h4 id="组件重用"><a href="#组件重用" class="headerlink" title="组件重用"></a>组件重用</h4><hr><p>路由我用的是[react navigation]</p><p>设想下这样的场景：在水溶的个人主页点击小明的头像。我们预期的是页面会跳转到小明的个人主页，但实际呢？实际是页面不会有任何变化（当然，如果你没有针对这种情况做处理的话。）</p><p><img src="https://github.com/shuiRong/Gakki/raw/master/preview/14.png" alt="个人详情页面"></p><p>这是因为当跳转前后的两个路由相同（也即组件复用）的话，默认不会重新渲染组件。那么<code>componentDidMount</code>钩子（一般我们在这个钩子里面请求接口数据）就不会触发，那么页面就不会有任何变化。</p><p>P.S. 如果你在开发ReactNative之前曾写过Vue/React/Angular项目的话，可能就会遇到过这样的问题。</p><p><strong>解决方法</strong>就是在<code>componentWillReceiveProps</code>钩子里重新请求接口数据，因为前后两个路由相同会触发此钩子。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">this.init(this.props.navigation.getParam(&apos;data&apos;))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillReceiveProps(&#123; navigation &#125;) &#123;</span><br><span class="line">this.init(navigation.getParam(&apos;data&apos;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="封装请求"><a href="#封装请求" class="headerlink" title="封装请求"></a>封装请求</h4><hr><blockquote><p>用来请求接口数据的HTTP库，我是用的是<a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a>，因为之前在写Vue、React项目时就有在用，已经比较熟悉了。如果你是用了其他的库也无妨，思想都是想通的，可以借鉴。</p></blockquote><p>为了开发测试方便，有必要将axios封装一下，加上请求、响应拦截等逻辑。这样的话，未来增加特定Header或增加接口错误时提示信息也方便，在这里加就可以了。</p><p>代码贴出来了，简单，都能看懂：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">import &#123; Toast &#125; from &apos;teaset&apos;</span><br><span class="line"></span><br><span class="line">const service = axios.create(&#123;</span><br><span class="line">  baseURL: &apos;https://cmx.im&apos;, // 统一Host</span><br><span class="line">  timeout: 10000 // 请求超时时间限制</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 请求拦截器</span><br><span class="line">service.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    // 如果未来需要增加统一Header，加在这里</span><br><span class="line">    return config</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    Promise.reject(err)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 响应拦截器</span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    // 如果你需要对接口返回的数据特殊处理一下的话，写在这里  </span><br><span class="line">    return response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    console.log(&apos;拦截器err:&apos;, err)</span><br><span class="line">    if (err &amp;&amp; err.error) &#123;</span><br><span class="line">      // 服务器异常，统一展示出来</span><br><span class="line">      Toast.message(err.error)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">export default service</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -315,23 +324,24 @@
     
     </summary>
     
-      <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Mastodon" scheme="/tags/Mastodon/"/>
+      <category term="Mastodon" scheme="/blog/tags/Mastodon/"/>
     
-      <category term="ReactNative" scheme="/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="/blog/tags/ReactNative/"/>
     
-      <category term="App" scheme="/tags/App/"/>
+      <category term="App" scheme="/blog/tags/App/"/>
     
-      <category term="Android" scheme="/tags/Android/"/>
+      <category term="Android" scheme="/blog/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>安利Mastodon：属于未来的社交网络</title>
-    <link href="/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/"/>
-    <id>/2019/02/17/Mastodon：属于未来的社交网络/</id>
+    <link href="/blog/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/"/>
+    <id>/blog/2019/02/17/Mastodon%EF%BC%9A%E5%B1%9E%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/</id>
     <published>2019-02-17T15:53:06.000Z</published>
     <updated>2019-05-27T15:53:41.347Z</updated>
     
@@ -346,23 +356,24 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="Mastodon" scheme="/tags/Mastodon/"/>
+      <category term="Mastodon" scheme="/blog/tags/Mastodon/"/>
     
-      <category term="长毛象" scheme="/tags/%E9%95%BF%E6%AF%9B%E8%B1%A1/"/>
+      <category term="长毛象" scheme="/blog/tags/%E9%95%BF%E6%AF%9B%E8%B1%A1/"/>
     
-      <category term="Fediverse" scheme="/tags/Fediverse/"/>
+      <category term="Fediverse" scheme="/blog/tags/Fediverse/"/>
     
-      <category term="社交网络" scheme="/tags/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/"/>
+      <category term="社交网络" scheme="/blog/tags/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>海伯利安：梅伊娜·悦石和技术内核顾问的对决（一）</title>
-    <link href="/2019/02/05/%E6%B5%B7%E4%BC%AF%E5%88%A9%E5%AE%89%EF%BC%9A%E6%82%A6%E7%9F%B3%E5%92%8C%E6%8A%80%E6%9C%AF%E5%86%85%E6%A0%B8%E9%A1%BE%E9%97%AE%E7%9A%84%E5%AF%B9%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>/2019/02/05/海伯利安：悦石和技术内核顾问的对决（一）/</id>
+    <link href="/blog/2019/02/05/%E6%B5%B7%E4%BC%AF%E5%88%A9%E5%AE%89%EF%BC%9A%E6%82%A6%E7%9F%B3%E5%92%8C%E6%8A%80%E6%9C%AF%E5%86%85%E6%A0%B8%E9%A1%BE%E9%97%AE%E7%9A%84%E5%AF%B9%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>/blog/2019/02/05/%E6%B5%B7%E4%BC%AF%E5%88%A9%E5%AE%89%EF%BC%9A%E6%82%A6%E7%9F%B3%E5%92%8C%E6%8A%80%E6%9C%AF%E5%86%85%E6%A0%B8%E9%A1%BE%E9%97%AE%E7%9A%84%E5%AF%B9%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/</id>
     <published>2019-02-05T09:01:27.000Z</published>
     <updated>2019-05-10T10:51:33.655Z</updated>
     
@@ -379,19 +390,20 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书" scheme="/blog/tags/%E8%AF%BB%E4%B9%A6/"/>
     
-      <category term="海伯利安" scheme="/tags/%E6%B5%B7%E4%BC%AF%E5%88%A9%E5%AE%89/"/>
+      <category term="海伯利安" scheme="/blog/tags/%E6%B5%B7%E4%BC%AF%E5%88%A9%E5%AE%89/"/>
     
   </entry>
   
   <entry>
     <title>相声：一个休学实习生的被裁经历</title>
-    <link href="/2019/01/30/%E7%9B%B8%E5%A3%B0%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BC%91%E5%AD%A6%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E8%A2%AB%E8%A3%81%E7%BB%8F%E5%8E%86/"/>
-    <id>/2019/01/30/相声：一个休学实习生的被裁经历/</id>
+    <link href="/blog/2019/01/30/%E7%9B%B8%E5%A3%B0%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BC%91%E5%AD%A6%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E8%A2%AB%E8%A3%81%E7%BB%8F%E5%8E%86/"/>
+    <id>/blog/2019/01/30/%E7%9B%B8%E5%A3%B0%EF%BC%9A%E4%B8%80%E4%B8%AA%E4%BC%91%E5%AD%A6%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E8%A2%AB%E8%A3%81%E7%BB%8F%E5%8E%86/</id>
     <published>2019-01-30T08:39:22.000Z</published>
     <updated>2019-05-10T10:51:33.655Z</updated>
     
@@ -407,23 +419,24 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="碎碎念" scheme="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
-      <category term="相声" scheme="/tags/%E7%9B%B8%E5%A3%B0/"/>
+      <category term="相声" scheme="/blog/tags/%E7%9B%B8%E5%A3%B0/"/>
     
-      <category term="咪蒙" scheme="/tags/%E5%92%AA%E8%92%99/"/>
+      <category term="咪蒙" scheme="/blog/tags/%E5%92%AA%E8%92%99/"/>
     
-      <category term="吐槽" scheme="/tags/%E5%90%90%E6%A7%BD/"/>
+      <category term="吐槽" scheme="/blog/tags/%E5%90%90%E6%A7%BD/"/>
     
   </entry>
   
   <entry>
     <title>「译」setState如何知道它该做什么？</title>
-    <link href="/2019/01/09/%E3%80%8C%E8%AF%91%E3%80%8DsetState%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E5%AE%83%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
-    <id>/2019/01/09/「译」setState如何知道它该做什么？/</id>
+    <link href="/blog/2019/01/09/%E3%80%8C%E8%AF%91%E3%80%8DsetState%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E5%AE%83%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
+    <id>/blog/2019/01/09/%E3%80%8C%E8%AF%91%E3%80%8DsetState%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E5%AE%83%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F/</id>
     <published>2019-01-09T08:37:23.000Z</published>
     <updated>2019-01-09T08:40:20.612Z</updated>
     
@@ -438,21 +451,22 @@
     
     </summary>
     
-      <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="大前端" scheme="/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+      <category term="大前端" scheme="/blog/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="翻译" scheme="/tags/%E7%BF%BB%E8%AF%91/"/>
+      <category term="翻译" scheme="/blog/tags/%E7%BF%BB%E8%AF%91/"/>
     
-      <category term="React" scheme="/tags/React/"/>
+      <category term="React" scheme="/blog/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>ReactNative: 使用Animted API实现向上滚动时隐藏Header组件</title>
-    <link href="/2018/12/25/ReactNative-%E4%BD%BF%E7%94%A8Animted-API%E5%AE%9E%E7%8E%B0%E5%90%91%E4%B8%8A%E6%BB%9A%E5%8A%A8%E6%97%B6%E9%9A%90%E8%97%8FHeader%E7%BB%84%E4%BB%B6/"/>
-    <id>/2018/12/25/ReactNative-使用Animted-API实现向上滚动时隐藏Header组件/</id>
+    <link href="/blog/2018/12/25/ReactNative-%E4%BD%BF%E7%94%A8Animted-API%E5%AE%9E%E7%8E%B0%E5%90%91%E4%B8%8A%E6%BB%9A%E5%8A%A8%E6%97%B6%E9%9A%90%E8%97%8FHeader%E7%BB%84%E4%BB%B6/"/>
+    <id>/blog/2018/12/25/ReactNative-%E4%BD%BF%E7%94%A8Animted-API%E5%AE%9E%E7%8E%B0%E5%90%91%E4%B8%8A%E6%BB%9A%E5%8A%A8%E6%97%B6%E9%9A%90%E8%97%8FHeader%E7%BB%84%E4%BB%B6/</id>
     <published>2018-12-25T07:13:43.000Z</published>
     <updated>2019-01-07T14:32:15.007Z</updated>
     
@@ -467,21 +481,22 @@
     
     </summary>
     
-      <category term="大前端" scheme="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="ReactNative" scheme="/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="/blog/tags/ReactNative/"/>
     
-      <category term="AnimtedAPI" scheme="/tags/AnimtedAPI/"/>
+      <category term="AnimtedAPI" scheme="/blog/tags/AnimtedAPI/"/>
     
-      <category term="动画" scheme="/tags/%E5%8A%A8%E7%94%BB/"/>
+      <category term="动画" scheme="/blog/tags/%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
   <entry>
     <title>写在读完《时光之轮》之后</title>
-    <link href="/2018/08/07/%E5%86%99%E5%9C%A8%E8%AF%BB%E5%AE%8C%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E4%B9%8B%E5%90%8E/"/>
-    <id>/2018/08/07/写在读完《时光之轮》之后/</id>
+    <link href="/blog/2018/08/07/%E5%86%99%E5%9C%A8%E8%AF%BB%E5%AE%8C%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E4%B9%8B%E5%90%8E/"/>
+    <id>/blog/2018/08/07/%E5%86%99%E5%9C%A8%E8%AF%BB%E5%AE%8C%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E4%B9%8B%E5%90%8E/</id>
     <published>2018-08-07T10:16:11.000Z</published>
     <updated>2018-10-07T11:17:52.335Z</updated>
     
@@ -500,19 +515,20 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="时光之轮" scheme="/tags/%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE/"/>
+      <category term="时光之轮" scheme="/blog/tags/%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE/"/>
     
-      <category term="书评" scheme="/tags/%E4%B9%A6%E8%AF%84/"/>
+      <category term="书评" scheme="/blog/tags/%E4%B9%A6%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>我眼中的权威</title>
-    <link href="/2018/07/25/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%9D%83%E5%A8%81/"/>
-    <id>/2018/07/25/我眼中的权威/</id>
+    <link href="/blog/2018/07/25/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%9D%83%E5%A8%81/"/>
+    <id>/blog/2018/07/25/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%9D%83%E5%A8%81/</id>
     <published>2018-07-25T15:51:43.000Z</published>
     <updated>2018-07-26T14:10:18.732Z</updated>
     
@@ -527,19 +543,20 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="权威" scheme="/tags/%E6%9D%83%E5%A8%81/"/>
+      <category term="权威" scheme="/blog/tags/%E6%9D%83%E5%A8%81/"/>
     
-      <category term="独立思考" scheme="/tags/%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83/"/>
+      <category term="独立思考" scheme="/blog/tags/%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83/"/>
     
   </entry>
   
   <entry>
     <title>时光之轮：艾雯与爱莉达的对决（精彩辩论）</title>
-    <link href="/2018/07/16/%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E7%B2%BE%E5%BD%A9%E7%89%87%E6%AE%B5/"/>
-    <id>/2018/07/16/《时光之轮》精彩片段/</id>
+    <link href="/blog/2018/07/16/%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E7%B2%BE%E5%BD%A9%E7%89%87%E6%AE%B5/"/>
+    <id>/blog/2018/07/16/%E3%80%8A%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE%E3%80%8B%E7%B2%BE%E5%BD%A9%E7%89%87%E6%AE%B5/</id>
     <published>2018-07-16T08:24:55.000Z</published>
     <updated>2019-05-10T11:42:59.256Z</updated>
     
@@ -556,19 +573,20 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="时光之轮" scheme="/tags/%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE/"/>
+      <category term="时光之轮" scheme="/blog/tags/%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE/"/>
     
-      <category term="摘抄" scheme="/tags/%E6%91%98%E6%8A%84/"/>
+      <category term="摘抄" scheme="/blog/tags/%E6%91%98%E6%8A%84/"/>
     
   </entry>
   
   <entry>
     <title>你选择了生活，不是生活选择了你</title>
-    <link href="/2018/06/24/%E4%BD%A0%E9%80%89%E6%8B%A9%E4%BA%86%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%8D%E6%98%AF%E7%94%9F%E6%B4%BB%E9%80%89%E6%8B%A9%E4%BA%86%E4%BD%A0/"/>
-    <id>/2018/06/24/你选择了生活，不是生活选择了你/</id>
+    <link href="/blog/2018/06/24/%E4%BD%A0%E9%80%89%E6%8B%A9%E4%BA%86%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%8D%E6%98%AF%E7%94%9F%E6%B4%BB%E9%80%89%E6%8B%A9%E4%BA%86%E4%BD%A0/"/>
+    <id>/blog/2018/06/24/%E4%BD%A0%E9%80%89%E6%8B%A9%E4%BA%86%E7%94%9F%E6%B4%BB%EF%BC%8C%E4%B8%8D%E6%98%AF%E7%94%9F%E6%B4%BB%E9%80%89%E6%8B%A9%E4%BA%86%E4%BD%A0/</id>
     <published>2018-06-23T17:14:50.000Z</published>
     <updated>2018-06-23T17:31:57.452Z</updated>
     
@@ -583,21 +601,22 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="一些思考" scheme="/tags/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+      <category term="一些思考" scheme="/blog/tags/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
-      <category term="选择" scheme="/tags/%E9%80%89%E6%8B%A9/"/>
+      <category term="选择" scheme="/blog/tags/%E9%80%89%E6%8B%A9/"/>
     
-      <category term="人生经验" scheme="/tags/%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/"/>
+      <category term="人生经验" scheme="/blog/tags/%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   
   <entry>
     <title>当有人反驳你: “你有资格评价XXX吗？”</title>
-    <link href="/2018/06/12/%E5%BD%93%E6%9C%89%E4%BA%BA%E5%8F%8D%E9%A9%B3%E4%BD%A0-%E2%80%9C%E4%BD%A0%E6%9C%89%E8%B5%84%E6%A0%BC%E8%AF%84%E4%BB%B7XXX%E5%90%97%EF%BC%9F%E2%80%9D/"/>
-    <id>/2018/06/12/当有人反驳你-“你有资格评价XXX吗？”/</id>
+    <link href="/blog/2018/06/12/%E5%BD%93%E6%9C%89%E4%BA%BA%E5%8F%8D%E9%A9%B3%E4%BD%A0-%E2%80%9C%E4%BD%A0%E6%9C%89%E8%B5%84%E6%A0%BC%E8%AF%84%E4%BB%B7XXX%E5%90%97%EF%BC%9F%E2%80%9D/"/>
+    <id>/blog/2018/06/12/%E5%BD%93%E6%9C%89%E4%BA%BA%E5%8F%8D%E9%A9%B3%E4%BD%A0-%E2%80%9C%E4%BD%A0%E6%9C%89%E8%B5%84%E6%A0%BC%E8%AF%84%E4%BB%B7XXX%E5%90%97%EF%BC%9F%E2%80%9D/</id>
     <published>2018-06-12T06:27:31.000Z</published>
     <updated>2018-06-12T06:31:05.075Z</updated>
     
@@ -612,14 +631,15 @@
     
     </summary>
     
-      <category term="一些思考" scheme="/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    
+      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="思考" scheme="/tags/%E6%80%9D%E8%80%83/"/>
+      <category term="思考" scheme="/blog/tags/%E6%80%9D%E8%80%83/"/>
     
-      <category term="碎碎念" scheme="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
-      <category term="反驳" scheme="/tags/%E5%8F%8D%E9%A9%B3/"/>
+      <category term="反驳" scheme="/blog/tags/%E5%8F%8D%E9%A9%B3/"/>
     
   </entry>
   

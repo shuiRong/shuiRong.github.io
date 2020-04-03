@@ -32,16 +32,16 @@ self.__precacheManifest = [
     "url": "/js/app.114742a2.js"
   },
   {
-    "revision": "b8115e2362e6beca5b9d804c9cbd0277",
-    "url": "/links.html"
+    "revision": "aa39f20b7462fa441075",
+    "url": "/js/chunk-vendors.a3feed7e.js"
   },
   {
     "revision": "6f1d7b2d2c3bcab6c7ede355cc7004f1",
     "url": "/img/Swift.6f1d7b2d.svg"
   },
   {
-    "revision": "aa39f20b7462fa441075",
-    "url": "/js/chunk-vendors.a3feed7e.js"
+    "revision": "b8115e2362e6beca5b9d804c9cbd0277",
+    "url": "/links.html"
   },
   {
     "revision": "d0fcd6f76cf26ab2ac41a753abc48c2d",

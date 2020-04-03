@@ -233,7 +233,7 @@ jQuery(document).ready(function($) {
     id="audioBtn" />
 </div>
 <div class="sidebar_wo" id="lamu">
-    <img src="https://i.loli.net/2020/04/01/JcOdM8HxsZSDY57.jpg" alt="拉姆" onmouseover="this.src='https://i.loli.net/2020/04/01/VldCJzo62ReO7MZ.jpg'" onmouseout="this.src='https://i.loli.net/2020/04/01/JcOdM8HxsZSDY57.jpg'"
+    <img src="https://i.imgur.com/jRAQATb.jpg" alt="拉姆" onmouseover="this.src='https://i.loli.net/2020/04/01/VldCJzo62ReO7MZ.jpg'" onmouseout="this.src='https://i.imgur.com/jRAQATb.jpg'"
     id="audioBtn" />
 </div>
 </div>
