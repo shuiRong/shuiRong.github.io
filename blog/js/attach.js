@@ -229,11 +229,11 @@ jQuery(document).ready(function($) {
     var leimuHTML = `
 <div id="updown">
 <div class="sidebar_wo" id="leimu">
-    <img src="https://i.loli.net/2020/04/01/tM7FYKIei4OGwfP.jpg" alt="雷姆" onmouseover="this.src='https://i.loli.net/2020/04/01/tM7FYKIei4OGwfP.jpg'" onmouseout="this.src='https://i.loli.net/2020/04/01/tM7FYKIei4OGwfP.jpg'"
+    <img src="https://i.imgur.com/iy0XCno.jpg" alt="雷姆" onmouseover="this.src='https://i.imgur.com/iy0XCno.jpg'" onmouseout="this.src='https://i.imgur.com/iy0XCno.jpg'"
     id="audioBtn" />
 </div>
 <div class="sidebar_wo" id="lamu">
-    <img src="https://i.imgur.com/jRAQATb.jpg" alt="拉姆" onmouseover="this.src='https://i.loli.net/2020/04/01/VldCJzo62ReO7MZ.jpg'" onmouseout="this.src='https://i.imgur.com/jRAQATb.jpg'"
+    <img src="https://i.imgur.com/jRAQATb.jpg" alt="拉姆" onmouseover="this.src='https://i.imgur.com/ZblGvrA.jpg'" onmouseout="this.src='https://i.imgur.com/jRAQATb.jpg'"
     id="audioBtn" />
 </div>
 </div>
