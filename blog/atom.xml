@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="/blog/"/>
-  <updated>2020-04-03T17:15:18.690Z</updated>
+  <updated>2020-04-10T18:23:00.916Z</updated>
   <id>/blog/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>花了一天时间Debug的问题是什么样子？</title>
+    <link href="/blog/2020/04/11/%E8%8A%B1%E4%BA%86%E4%B8%80%E5%A4%A9%E6%97%B6%E9%97%B4Debug%E7%9A%84%E9%97%AE%E9%A2%98%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%EF%BC%9F/"/>
+    <id>/blog/2020/04/11/%E8%8A%B1%E4%BA%86%E4%B8%80%E5%A4%A9%E6%97%B6%E9%97%B4Debug%E7%9A%84%E9%97%AE%E9%A2%98%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%EF%BC%9F/</id>
+    <published>2020-04-10T18:17:43.000Z</published>
+    <updated>2020-04-10T18:23:00.916Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天测试同学反馈说接口状态埋点上报的参数中有两个不正常。我简单排查了下，重现了问题，但不明白为什么如此。今天和测试同学差不多花了一天的时间，终于解决了，但答案却让人无语。</p><blockquote><p><strong>什么是（数据）埋点？</strong></p><p>请看<a href="[https://linshuirong.cn/blog/2019/12/26/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E4%B9%8B%E6%9B%9D%E5%85%89%E5%AE%9E%E7%8E%B0/](https://linshuirong.cn/blog/2019/12/26/前端埋点之曝光实现/">前端埋点之曝光实现</a>)</p><p><strong>什么是接口状态埋点？</strong></p><p>顾名思义就是监控接口的响应状态（比如<code>status</code>,<code>timeout</code>,<code>responseText</code>，根据各自需求来确定），并且获取到预先挑选的数据，上报给服务端。</p></blockquote><h4 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h4><p>为了监控接口的异常状态，前端在接口响应时选择将拿到的<code>xhr.status</code>,<code>request url</code>,<code>res.code</code>(后端业务的逻辑code)上报给服务端。</p><blockquote><p>后端其实也有监控，但考虑到有时问题其实发生在前后端中间的某些地方，所以在直接面向用户的前端这边上报接口数据就是非常必要的。</p></blockquote><p>核心代码如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">xhr.onloadend = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> res: Response | &#123; <span class="attr">code</span>: number &#125; = &#123; <span class="attr">code</span>: <span class="number">-1</span> &#125;;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">   res = <span class="built_in">JSON</span>.parse(xhr.responseText);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'request url: '</span> + url);</span><br><span class="line">      <span class="built_in">console</span>.error(error);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">// 埋点：数据上报</span></span><br><span class="line">      report(<span class="string">'response_status'</span>, &#123;</span><br><span class="line">        xhr_status: xhr.status, <span class="comment">// 200、400、500等</span></span><br><span class="line">        url: <span class="built_in">encodeURIComponent</span>(requestUrl),</span><br><span class="line">        response_code: res.code</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    resolve(res);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>但测试同学通过Fiddler将接口的响应Status修改为500（400、502等）之后，告诉我说Fiddler显示上报请求中<code>xhr_status</code>参数为<code>0</code>。</p><h4 id="复现问题"><a href="#复现问题" class="headerlink" title="复现问题"></a>复现问题</h4><p>遇到问题之后，我立刻在电脑直接打开H5页面（内网测试环境）尝试复现。我使用Charles（Fiddler没必要macOS版本）的<code>Rewrite</code>功能将接口响应的<code>Status</code>修改为500，然后前端打log/断点。</p><blockquote><p>对于我来说，有三个环境需要说明下。</p><ol><li>开发环境。本地开发页面的环境，通过localhost来访问页面。</li><li>测试环境。开发完成后将打包后的资源文件部署到内网某服务器，通过正常的链接：<code>https://a.b.com/c/d/e</code>来访问。</li><li>外网。将测试环境验证没问题的代码部署到外网服务器，直接面向用户。</li></ol></blockquote><p>啊哦，没有复现！</p><p>然后我就去测试同学那边，让她给我演示一遍。</p><p>她开始操作：Fiddler–&gt;映射Response Body–&gt;定向到本地的JSON文件；同时修改<code>Reponse Status Code</code>为<code>500 Internal Server Error</code>；接着操作手机，发起请求。</p><p>啊哦，上报请求中的<code>xhr_status</code>参数依旧为<code>0</code>。（看来不是测试同学看错了，哈哈哈哈哈）</p><p><strong>可达鸭眉头一皱，发现事情并不简单.jpg</strong></p><p>接着，又测试了<code>400、404、502</code>，问题一样。</p><h4 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h4><p>然后我又回到位置上，电脑上打开项目开发环境的页面，Charles修改<code>Reponse Status Code</code>，然后发现<strong>还是正常</strong>？</p><blockquote><p>我通过Charles修改电脑浏览器发出的请求时还遇到了浏览器开发者工具那边没有显示修改过的请求头信息的问题，还以为我Charles用错了，折腾了一会儿，最后冷静下来，想了想才明白过来不是我设置的问题。关于这个坑，我记录在<a href="https://segmentfault.com/q/1010000022305182" target="_blank" rel="noopener">Segmentfault</a>了，可以点过去看看。</p></blockquote><p>我开始认真了。去查了下文档，先弄清楚<code>status</code>为<code>0</code>代表什么意思吧：</p><blockquote><p>只读属性 <code>XMLHttpRequest.status</code> 返回了<code>XMLHttpRequest</code> 响应中的数字状态码。<code>status</code> 的值是一个无符号短整型。<strong>在请求完成前，<code>status</code>的值为<code>0</code>。值得注意的是，如果 XMLHttpRequest 出错，浏览器返回的 status 也为0</strong>。</p></blockquote><p>所以我开始想为什么请求会没有完成？或者说请求为什么会出错？</p><p><strong>一时没有思路。</strong></p><p>又跑去测试同学那边，看着她再把所有的情况再测试一遍。值得一提的是，这次我留意到，就算测试同学通过Fiddler把<code>Reponse Status Code</code>修改为<code>200</code>（对，就是200，再用抓包工具修改一次），依旧拿不到<code>xhr.status</code>。同时发现，如果完全不使用Fiddler，那么服务器那边的log就能显示上报的<code>xhr.status</code>是正常取到的（是200）。</p><p><strong>那如果把服务器上的后端程序直接停掉呢？</strong></p><blockquote><p>页面接口的后端程序和埋点上报的后端不在一起，分开的。</p></blockquote><p>测试的结果是，前端拿不到<code>xhr.status</code>。</p><p>你一定开始晕了，我当时也有点懵逼。让我来理一下当时测试的所有情况：</p><ol><li>服务器正常，不经过任何抓包工具，能拿到<code>xhr.status</code>。</li><li>服务器停掉，不经过任何抓包工具，拿不到<code>xhr.status</code>。</li><li>服务器正常，通过Fiddler修改<code>Reponse Status Code</code>，拿不到<code>xhr.status</code>。</li><li>服务器正常，通过Charles修改<code>Reponse Status Code</code>，能拿到<code>xhr.status</code>。</li></ol><p>这样的测试结果，不禁让我开始怀疑起Fiddler。是不是它在实现修改Headers功能的时候，emmmm，有bug？否则为什么用Charles修改就可以，Fiddler却不行呢（3和4对比）？而且不用Fiddler就正常，用了就不正常（1和3对比），更说明是你的锅了呀。</p><p><strong>但我并没有死心，回到位置上继续排查。</strong></p><p>一顿操作，我注意到本地开发环境也复现了，同时我留意到控制台出现一个跨域错误，我想我知道答案了。</p><p><strong>因为请求遇到了跨域限制，所以浏览器中止XMLHttpRequest请求并抛出一个异常，即：XMLHttpRequest 出错，浏览器返回的 status 为0。</strong></p><h4 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题"></a>两个问题</h4><p><strong>但为什么之前本地开发环境测试时就没有问题呢？</strong></p><p>这是因为我早期在开发这个项目时用了测试环境的线上接口。后端没有对来自localhost的请求设置ACAO头，所以我为了开发方便通过Chrome扩展<a href="https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj" target="_blank" rel="noopener">ModHeader</a>自己修改了Reponse Header，添加上了<code>Access-Control-Allow-Origin: http://localhost:8080</code>。这就是为什么我开始测试时没有遇到跨域限制，然后<code>xhr.status</code>正常的原因。</p><p><strong>但这不能解释为什么我用Charles修改响应头能拿到，但测试同学通过Fiddler修改却不行。</strong></p><p>毕竟测试同学是直接在手机上操作的，不像我在本地开发环境操作，不会有跨域限制。</p><p>然后我又跑去测试同学那里和她讨论。我还是怀疑是Fiddler有问题，那么还能怎么测试呢？我让测试同学不用Fiddler修改<code>Response Status Code</code>和<code>Response body</code>，就只修改请求的链接，让它是错误的路径。</p><p>这次发现上报的埋点数据里，有<code>xhr_status</code>（404）了。然后修改回去，拿不到。</p><p>这下能基本确定了，是Fiddler修改<code>Response Status Code</code>功能的锅。</p><p>我其实想这个时候用Chrome的Inspect功能来确认下页面的控制台有没有跨域错误来着（应该是有）。但奈何换了好几个手机都不能在测试同学的Chrome上正常调试（现象是能检测到网页的Tab，但点击<code>inspect</code>后，弹框空白（翻墙了，清理过Chrome那个xxx，手机没有使用其他内核），应该是需要找一个特殊的Chromium版本才可以。太麻烦了，既然基本解决了就不浪费精力了。）</p><blockquote><p>搞了半天是Fiddler的锅。我就说嘛，我写的代码怎么可能有Bug？</p></blockquote><h4 id="另一个奇葩问题"><a href="#另一个奇葩问题" class="headerlink" title="另一个奇葩问题"></a>另一个奇葩问题</h4><p>这时候基本上是下午4、5点了。然后又遇到了另一个奇葩的问题。</p><p><strong>现象是：后台一个页面的某块字体样式不正常（变大并且靠左偏了）！</strong></p><p>我迅速去自己电脑上（测试环境）登陆后台看了下，<strong>一切正常</strong>。奇怪了。我只能去测试同学电脑上调试了。</p><p>首先打开<strong>开发者工具</strong>，通过<strong>审查元素</strong>查看问题元素的HTML和样式，一般都是样式不正常。比如多了些样式/少了些样式。但我这次不止如此，我先是注意到HTML结构很奇怪。我没有使用<code>&lt;font /&gt;</code>标签的习惯。但他喵的哪来的<code>&lt;font /&gt;</code>？</p><p>我还注意到有些陌生的带有<code>class</code>的元素（代码是我写的，但对这一块的布局很陌生），我copy该<code>class</code>，刷新页面（因为你打开开发者工具的时候可能有些资源文件已经加载完了，所以不会显示在开发者工具里），然后在<code>Network</code>里<code>Ctrl+F</code>搜索所有的资源文件，看他喵的这个<code>class</code>是哪个狗日的注入的。</p><p>然后就看到了<code>translate.googleapis.com</code>域名下的某js文件包含该<code>class</code>。</p><p>我：？？？</p><p>一看到这个域名，测试同学就说”Google翻译”，然后我们才注意到网页上方的Google翻译工具 <img src="https://i.imgur.com/o5J8UZx.jpg" alt="不见图请翻墙"></p><p><strong>左键–&gt;选项–&gt;一律不翻译此网站</strong></p><p>刷新页面，搞定。</p><blockquote><p><strong>顺便一提，对于所有的线上样式问题，调试思路大都如此。</strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;昨天测试同学反馈说接口状态埋点上报的参数中有两个不正常。我简单排查了下，重现了问题，但不明白为什么如此。今天和测试同学差不多花了一天的时间，终于解决了，但答案却让人无语。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;什么是（数据）埋点？&lt;/strong&gt;&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="大前端" scheme="/blog/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Debug" scheme="/blog/tags/Debug/"/>
+    
+      <category term="调试" scheme="/blog/tags/%E8%B0%83%E8%AF%95/"/>
+    
+      <category term="Charles" scheme="/blog/tags/Charles/"/>
+    
+      <category term="Fiddler" scheme="/blog/tags/Fiddler/"/>
+    
+      <category term="坑" scheme="/blog/tags/%E5%9D%91/"/>
+    
+  </entry>
   
   <entry>
     <title>关于折腾博客这件事儿</title>
@@ -610,36 +648,6 @@
       <category term="选择" scheme="/blog/tags/%E9%80%89%E6%8B%A9/"/>
     
       <category term="人生经验" scheme="/blog/tags/%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>当有人反驳你: “你有资格评价XXX吗？”</title>
-    <link href="/blog/2018/06/12/%E5%BD%93%E6%9C%89%E4%BA%BA%E5%8F%8D%E9%A9%B3%E4%BD%A0-%E2%80%9C%E4%BD%A0%E6%9C%89%E8%B5%84%E6%A0%BC%E8%AF%84%E4%BB%B7XXX%E5%90%97%EF%BC%9F%E2%80%9D/"/>
-    <id>/blog/2018/06/12/%E5%BD%93%E6%9C%89%E4%BA%BA%E5%8F%8D%E9%A9%B3%E4%BD%A0-%E2%80%9C%E4%BD%A0%E6%9C%89%E8%B5%84%E6%A0%BC%E8%AF%84%E4%BB%B7XXX%E5%90%97%EF%BC%9F%E2%80%9D/</id>
-    <published>2018-06-12T06:27:31.000Z</published>
-    <updated>2018-06-12T06:31:05.075Z</updated>
-    
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=95651&auto=0&height=66"></iframe><p>这句话大家应该都不陌生。</p><p>当你和别人讨论某些人某些事，恰巧你又发表了对方不喜欢的观点，这时要是他来一句“你有资格评价XXX吗？”总能把你剩下的话给呛到肚子里去。</p><p>我曾经也被这么呛过。我心里明明知道这句话有问题，但一时半会又想不出该怎么反驳。所以这次我就来认真地思考下这句话！</p><p><strong>这意味着我们要搞清楚两个问题：</strong></p><ol><li>我们有没有评价其他人/事的权利？</li><li>什么才叫有资格？</li></ol><p>对于问题一，没有什么可以质疑的： <strong>“评价”实质是言论自由的表现形式之一，言论自由是自由权的重要组成部分，而自由权是一项基本人权。</strong>(注：自由权仅次于生命权)</p><p>所以关键在于“什么才叫有资格？”</p><p>这是我思考的结果：<strong>专业领域外的，</strong> <strong>不熟悉，不了解，没有调查过的情况，你就没有资格去评价。</strong></p><p>案例一(<em>专业领域外</em>)</p><p>你如果不是程序员，你就没有资格评价我的编程水平。</p><p>案例二(<em>不了解，不熟悉</em>)</p><p>就算你是程序员而且和我相同方向，但如果你没有阅读过我的代码，就也没有资格评价我的编程水平。</p><p>案例三(<em>没有调查过</em>)</p><p>你在路边看到两个人在打架，如果你没有做过调查，像：“询问双方各自的观点，询问路人，查看监控…” 就没有资格说是谁的错，或者谁应该为此负责。</p><p><strong>最后专门说一个有趣的案例：</strong></p><p>你在某家餐厅吃饭，某道菜你觉得不好吃，然后就有人反驳说：“你又不是大厨，有什么资格说这道菜不好吃？”听起来似乎有道理(持有类似观点的人我在网络上也见过不少)。</p><p>说这件事有趣是因为说出这句话的人完全搞错了一件事，那就是：客人在评价菜好不好吃，而不是在评价菜烧的水平(火候的把握，材料的拿捏之类)，如果评价烧菜的水平的话，当然需要客人同样是厨师(或者会做饭)才行。但一道菜好不好吃这件事，任何有味蕾并且大脑正常的人都有资格评价！</p><p>(生活中还有很多其他事情，比如说评价某件东西不好用，皆同理)</p><p>因此如果以后再有人想用这句话让你闭嘴，你就可以从上述几点来说明你完全有资格评价！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=
-      
-    
-    </summary>
-    
-    
-      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
-    
-    
-      <category term="思考" scheme="/blog/tags/%E6%80%9D%E8%80%83/"/>
-    
-      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-      <category term="反驳" scheme="/blog/tags/%E5%8F%8D%E9%A9%B3/"/>
     
   </entry>
   
