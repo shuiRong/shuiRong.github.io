@@ -144,10 +144,10 @@
 </ol>
 <p>这样的测试结果，不禁让我开始怀疑起Fiddler。是不是它在实现修改Headers功能的时候，emmmm，有bug？否则为什么用Charles修改就可以，Fiddler却不行呢（3和4对比）？而且不用Fiddler就正常，用了就不正常（1和3对比），更说明是你的锅了呀。</p>
 <p><strong>但我并没有死心，回到位置上继续排查。</strong></p>
-<p>一顿操作，我注意到本地开发环境也复现了，同时我留意到控制台出现一个跨域错误，我想我知道答案了。</p>
+<p>一顿操作（关掉Chrome扩展<a href="https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj" target="_blank" rel="noopener">ModHeader</a>），我注意到本地开发环境也复现了，同时我留意到控制台出现一个跨域错误，我想我知道答案了。</p>
 <p><strong>因为请求遇到了跨域限制，所以浏览器中止XMLHttpRequest请求并抛出一个异常，即：XMLHttpRequest 出错，浏览器返回的 status 为0。</strong></p>
 <h4 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题"></a>两个问题</h4><p><strong>但为什么之前本地开发环境测试时就没有问题呢？</strong></p>
-<p>这是因为我早期在开发这个项目时用了测试环境的线上接口。后端没有对来自localhost的请求设置ACAO头，所以我为了开发方便通过Chrome扩展<a href="https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj" target="_blank" rel="noopener">ModHeader</a>自己修改了Reponse Header，添加上了<code>Access-Control-Allow-Origin: http://localhost:8080</code>。这就是为什么我开始测试时没有遇到跨域限制，然后<code>xhr.status</code>正常的原因。</p>
+<p>这是因为我早期在开发这个项目时用了测试环境的线上接口。后端没有对来自localhost的请求设置ACAO头，所以我为了开发方便通过Chrome扩展<a href="https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj" target="_blank" rel="noopener">ModHeader</a>自己修改了Reponse Header，添加上了<code>Access-Control-Allow-Origin: http://localhost:8080</code>。这就是为什么我开始测试时没有遇到跨域限制，<code>xhr.status</code>正常的原因。</p>
 <p><strong>但这不能解释为什么我用Charles修改响应头能拿到，但测试同学通过Fiddler修改却不行。</strong></p>
 <p>毕竟测试同学是直接在手机上操作的，不像我在本地开发环境操作，不会有跨域限制。</p>
 <p>然后我又跑去测试同学那里和她讨论。我还是怀疑是Fiddler有问题，那么还能怎么测试呢？我让测试同学不用Fiddler修改<code>Response Status Code</code>和<code>Response body</code>，就只修改请求的链接，让它是错误的路径。</p>
