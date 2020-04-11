@@ -102,13 +102,13 @@
 <h4 id="Intersection-Observer"><a href="#Intersection-Observer" class="headerlink" title="Intersection Observer"></a>Intersection Observer</h4><p>它提供了一种<strong>异步</strong>观察目标元素与祖先元素或顶级文档Viewport的<strong>交集变化</strong>的方法。也就是说，不仅可以用来获得相对于<strong>视窗</strong>的曝光，可以做得更多，这取决于“另一个元素”是什么。</p>
 <p><code>Intersection Observer</code>将本来是开发者做的：监听滚动、遍历获取元素与另一个元素（或视窗）相对位置的工作给做了。这两块工作是页面性能损耗大户，现在交给浏览器来实现，会比我们开发者来做要妥当的多。开发者现在只需要关心其他业务逻辑即可 😁</p>
 <p>那这么好用的API，它的兼容性状况如何呢？</p>
-<p><img src="https://i.imgur.com/bHh0N4R.jpg" alt="兼容性"></p>
+<p><img src="https://i.imgur.com/bHh0N4R.jpg" alt="不见图请翻墙"></p>
 <p>还不错，但兼容性方面要求高的话还是不能让人放心使用。</p>
 <p><strong>Polyfill</strong></p>
 <p>但不用担心，我们有polyfill。W3C提供了一个<a href="https://github.com/w3c/IntersectionObserver" target="_blank" rel="noopener">polyfill</a>，当浏览器不支持时使用常规解决方案替代。它的思路就是在检测到当前浏览器不支持<code>Intersection Observer API</code>时，使用<a href="https://github.com/w3c/IntersectionObserver/blob/cd18b01234ae2dfbdee81af2c23885dd562e3e11/polyfill/intersection-observer.js#L329" target="_blank" rel="noopener"><code>getBoundingClientRect</code></a>去重新实现一遍<code>Intersection Observer API</code>。</p>
 <p>那么使用了该Polyfill后，浏览器兼容性状况如何呢？</p>
 <p>非常棒！ 😎（IE7都支持了，还想啥呢，大兄弟。）</p>
-<p><img src="https://i.imgur.com/wUxlGeb.jpg" alt="Polyfill兼容性"></p>
+<p><img src="https://i.imgur.com/wUxlGeb.jpg" alt="不见图请翻墙"></p>
 <h4 id="曝光实现步骤"><a href="#曝光实现步骤" class="headerlink" title="曝光实现步骤"></a>曝光实现步骤</h4><p>思路就像上面一再提到的，很简单：</p>
 <ol>
 <li><code>new IntersectionObserver()</code>实例化一个全局<code>observer</code>，（结合Vue指令）让每个DOM自行把自己加入到<code>observer</code>的观察列表。</li>
@@ -128,9 +128,9 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
   </script>
   <div class="busuanzi center">
-    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
 
 
