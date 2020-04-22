@@ -1,12 +1,26 @@
+:root {
+    --main-color: #2570a1;
+}
+
 blockquote {
-    border-left: 4px solid #2570a1;
+    border-left: 4px solid var(--main-color);
     margin: 1em 0;
     padding: 10px 0px 10px 15px;
-    background-color: rgba(37,112,161, 0.1)
+    background-color: rgba(37, 112, 161, 0.1);
 }
 
 blockquote p {
     font-style: normal;
     color: #555;
     font-size: 1em;
+}
+
+.declare {
+    background-color: rgba(37, 112, 161, 0.1);
+    margin-top: 2em;
+    border-left: 4px solid var(--main-color);
+    padding: 10px 10px 10px 15px;
+}
+.declare p {
+    margin: 0;
 }
