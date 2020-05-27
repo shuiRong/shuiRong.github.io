@@ -528,9 +528,9 @@
       <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="大前端" scheme="/blog/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="翻译" scheme="/blog/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="大前端" scheme="/blog/tags/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
       <category term="React" scheme="/blog/tags/React/"/>
     
