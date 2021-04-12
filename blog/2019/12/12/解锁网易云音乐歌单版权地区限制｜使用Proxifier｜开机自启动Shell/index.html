@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content>
+  
+  <title>解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell</title>
+  <meta name="author" content="林水溶">
+  <meta name="description" content="以前我没得选，现在我只想做个坏人">
+  
+  
+  <meta property="og:title" content="解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="林水溶的博客">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/blog/atom.xml" title="林水溶的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/blog/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/blog/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+</head>
+</html>
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/blog/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  <div class="description">
+    &nbsp;以前我没得选，现在我只想做个坏人
+  </div>
+</div>
+
+<link rel="stylesheet" href="/blog/css/attach.post.css">
+<article class="standard post">
+  <div class="title">
+    
+  
+    <h1 class="page-title center">
+        解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell
+    </h1>
+  
+
+
+  </div>
+  <div class="meta center">
+    <time datetime="2019-12-12T05:37:40.000Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2019-12-12
+</time>
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/blog/categories/碎碎念/">碎碎念</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/blog/tags/GFW/">GFW</a>·<a href="/blog/tags/翻墙/">翻墙</a>·<a href="/blog/tags/科学上网/">科学上网</a>·<a href="/blog/tags/碎碎念/">碎碎念</a>
+
+
+  </div>
+  <hr>
+  
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、安装项目运行环境（Node-js）"><span class="toc-text">1、安装项目运行环境（Node.js）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、下载项目｜两种方法"><span class="toc-text">2、下载项目｜两种方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1、方法1代理模式（亲测可用）"><span class="toc-text">3.1、方法1代理模式（亲测可用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2、方法2Hosts模式（亲测失效）"><span class="toc-text">3.2、方法2Hosts模式（亲测失效）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、设置开机自动运行程序"><span class="toc-text">4、设置开机自动运行程序</span></a></li></ol>
+  
+  <div class="picture-container">
+    
+  </div>
+  <p>那天我像往常一样打开网易云音乐，点击首页那张之前创建的中岛美雪的歌单，然后看到了这个：</p>
+<p><img src="https://i.imgur.com/OZClAAE.jpg" alt="不见图请翻墙"></p>
+<p>满屏的灰色打破了我镇定的情绪。</p>
+<p>我决定开始行动。</p>
+<hr>
+<p>一顿搜索之后发现了这个解决方案：<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">UnblockNeteaseMusic </a>，赞美作者：<a href="https://github.com/nondanee" target="_blank" rel="noopener">nondanee</a> </p>
+<p>它的思路是：</p>
+<ol>
+<li>使用 QQ / 虾米 / 百度 / 酷狗 / 酷我 / 咪咕 / JOOX 音源替换变灰歌曲链接</li>
+<li>为请求增加 <code>X-Real-IP</code> 参数解锁海外版权限制。（因为有些歌曲在国外是可以正常听的）</li>
+</ol>
+<p>下面是教程正文</p>
+<hr>
+<h4 id="1、安装项目运行环境（Node-js）"><a href="#1、安装项目运行环境（Node-js）" class="headerlink" title="1、安装项目运行环境（Node.js）"></a>1、安装项目运行环境（Node.js）</h4><p><strong>Windows</strong></p>
+<p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Download | Node.js</a><br>下载 .msi 安装包并安装</p>
+<p><strong>macOS</strong></p>
+<p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Download | Node.js</a><br>下载 .pkg 安装包并安装</p>
+<p><strong>Linux</strong></p>
+<p><a href="https://nodejs.org/en/download/package-manager/" target="_blank" rel="noopener">Installing Node.js via package manager | Node.js</a></p>
+<blockquote>
+<p>当然用 macOS 的 Homebrew，Windows 的 Scoop 等包管理器安装也可以，根据个人喜好选择即可。</p>
+<p>Android 平台的终端模拟器如 Termux，NeoTerm 等也可以安装 Node.js，教程非常多，请善用搜索引擎。</p>
+</blockquote>
+<h4 id="2、下载项目｜两种方法"><a href="#2、下载项目｜两种方法" class="headerlink" title="2、下载项目｜两种方法"></a>2、下载项目｜两种方法</h4><ol>
+<li><p>使用 Git 克隆</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/nondanee/UnblockNeteaseMusic.git #克隆项目仓库</span><br><span class="line">cd UnblockNeteaseMusic #进入项目根目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手动下载源码压缩包：在<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">项目首页</a>点击 Clone or download 绿色按钮，选择 Download ZIP 并解压</p>
+</li>
+</ol>
+<p>P.S. 项目不需要安装任何依赖（前端同学不要手快<code>npm install</code>或者<code>yarn</code>）。</p>
+<p>使用此项目存在两种方法，或者说两种模式。下面分别介绍：</p>
+<h4 id="3-1、方法1代理模式（亲测可用）"><a href="#3-1、方法1代理模式（亲测可用）" class="headerlink" title="3.1、方法1代理模式（亲测可用）"></a>3.1、方法1代理模式（亲测可用）</h4><p><strong>首先配置Proxifier</strong></p>
+<p>添加一个后面用到的Proxies：只需要填<code>Addresss</code> <code>Port</code> <code>Protocol</code>，其他的空着。</p>
+<p><img src="https://i.imgur.com/xMZ1L74.jpg" alt="不见图请翻墙"></p>
+<p>然后添加一个Rules：注意那个+按钮，点击后选择网易云音乐，然后Applications框里就会出现内容。我们的内容或许不同，没问题。其他地方和我这边保持一致即可。Action选择你在上一步添加的那个。</p>
+<p><code>*.music.126.net;*.music.163.com;mam.netease.com;api.iplay.163.com</code></p>
+<p><img src="https://i.imgur.com/KWdqjEc.jpg" alt="不见图请翻墙"></p>
+<p>接着Rules右边的 <code>DNS</code> 部分，选择<code>Resolve hostname through proxy</code>，其余地方默认即可。</p>
+<p><strong>最后，在命令行启动作者的项目：</strong><code>node app.js</code></p>
+<p>现在我们打开网易云客户端会发现，已经可以听因为版权而灰掉的音乐了～</p>
+<p><img src="https://i.imgur.com/Cln5oQ4.jpg" alt="不见图请翻墙"></p>
+<h4 id="3-2、方法2Hosts模式（亲测失效）"><a href="#3-2、方法2Hosts模式（亲测失效）" class="headerlink" title="3.2、方法2Hosts模式（亲测失效）"></a>3.2、方法2Hosts模式（亲测失效）</h4><p>因此不做介绍，感兴趣点击<a href="https://github.com/nondanee/UnblockNeteaseMusic/issues/22#issuecomment-429514826" target="_blank" rel="noopener">这里</a>了解。</p>
+<h4 id="4、设置开机自动运行程序"><a href="#4、设置开机自动运行程序" class="headerlink" title="4、设置开机自动运行程序"></a>4、设置开机自动运行程序</h4><p>有没有觉得每次开机都要跑到项目目录下，然后命令行运行<code>node app.js</code>，很烦人？</p>
+<p>觉得“没有”的同学，可以关掉本页面了～</p>
+<p>思路是写一个shell脚本，脚本里是运行项目的命令，然后在系统设置开机时自动运行此shell脚本。下面是过程：</p>
+<ol>
+<li><p>在作者项目目录下新建<code>launch.sh</code>文件，然后写下此脚本：</p>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh </span></span><br><span class="line"><span class="built_in">cd</span> /Users/xxxxxx/UnblockNeteaseMusic <span class="comment"># 这一行是cd到作者项目的目录，你那边肯定和我的路径不一样，不能照抄。</span></span><br><span class="line">nohup node app.js -p 8080:8081 &amp;  <span class="comment"># 注意有个 -p 8080:8081</span></span><br><span class="line"><span class="built_in">exit</span> <span class="comment"># 必须加上此命令，目的是正常退出当前shell。原因请看这篇文章：https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你会注意到上面有个nohup命令，它是让命令行程序可以运行在后台的工具（因为一般在终端运行脚本时，得保持终端开启。关掉终端意味着结束脚本运行。但nohup让脚本可以在终端关闭后可以持续运行。）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#P.S. 貌似OSX系统自带有nohup命令，无需安装。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>赋予此脚本管理员权限：<code>sudo chmod 777 launch.sh</code></p>
+</li>
+<li><p>打开系统设置、用户与群组、登录项：添加上面那个脚本进来。<img src="https://i.imgur.com/UNUgdQP.jpg" alt="不见图请翻墙"></p>
+</li>
+<li><p>右键此脚本文件，点击“显示简介”，设置“打开方式”为自己的终端程序（iTerm也行）。</p>
+</li>
+<li><p>重启测试。</p>
+</li>
+</ol>
+<blockquote>
+<p>所有的折腾（一晚上+中午两小时）都是值得的。（比如可以水一篇博客23333）</p>
+</blockquote>
+<p><strong>更新</strong></p>
+<blockquote>
+<p>2020-2-24：此更新仅建议开发者浏览，因为对普通用户来说这其实有点折腾。</p>
+</blockquote>
+<p>对于「4」，现在有了更优雅的解决方法，那就是神奇的命令行工具：<code>pm2</code>。</p>
+<ol>
+<li><p>使用<code>npm</code>（开头安装完<code>Node.js</code>后就已经有了）安装<code>pm2</code>：<code>npm install pm2 -g</code></p>
+</li>
+<li><p>命令行<code>cd</code>到插件根目录（比如我的）：<code>cd /Users/shuirong/UnblockNeteaseMusic</code></p>
+</li>
+<li><p>创建一个 <code>launch.sh</code>文件，并将下列内容复制进去：</p>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh </span></span><br><span class="line"><span class="built_in">cd</span> /Users/shuirong/More/UnblockNeteaseMusic  <span class="comment">#这个路径换成你自己的</span></span><br><span class="line">node app.js -p 8082:8081</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>pm2</code>来启动它：<code>pm2 start bash ./launch.sh</code></p>
+</li>
+<li><p>启动<code>pm2</code>的钩子：<code>pm2 startup</code></p>
+</li>
+<li><p>这时很可能<code>pm2</code>会展示给你几行英文，注意这么一句：<code>copy/paste the following command:</code>，那么就需要你粘贴复制它下面的命令，然后在命令行运行即可。这一步的教程也可以看<a href="https://www.jianshu.com/p/8e681759544a" target="_blank" rel="noopener">这里</a>。</p>
+</li>
+<li><p>最后将状态保存起来：<code>pm2 save</code></p>
+</li>
+<li><p>ok</p>
+</li>
+</ol>
+<p>现在可以关掉终端，甚至重启电脑测试下了（亲测可行）。（对了，使用此方法时别忘了将步骤「4」在系统设置的东西取消掉哦～）</p>
+
+  
+  
+  <div class="declare">
+    <p><strong>本文作者：</strong>
+      <span>
+        林水溶
+        </span></p>
+    <p><strong>Github</strong>
+      <a href='https://github.com/shuiRong' target='_blanket'>https://github.com/shuiRong</a></p>
+      <p>  <strong>本文链接：</strong>
+        <a href="https://linshuirong.cn/blog/2019/12/12/解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell/">https://linshuirong.cn/blog/2019/12/12/解锁网易云音乐歌单版权地区限制｜使用Proxifier｜开机自启动Shell/</a>
+    </p>
+    <p> <strong>版权声明：</strong>
+      <span> 本作品采用
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+        进行许可。转载请注明出处！
+        
+  </div>
+  
+</article>
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+  page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+  site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+  site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+    
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/dinbror/bpopup@0.11.0/jquery.bpopup.min.js''></script>
+<script src="/blog/js/attach.js"></script>
+
+
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/blog/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/blog/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haru@1.0.5/01/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

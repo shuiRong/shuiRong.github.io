@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content>
+  
+  <title>利用免费云资源部署网站前后端</title>
+  <meta name="author" content="林水溶">
+  <meta name="description" content="以前我没得选，现在我只想做个坏人">
+  
+  
+  <meta property="og:title" content="利用免费云资源部署网站前后端">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="林水溶的博客">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/blog/atom.xml" title="林水溶的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/blog/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/blog/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+</head>
+</html>
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/blog/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  <div class="description">
+    &nbsp;以前我没得选，现在我只想做个坏人
+  </div>
+</div>
+
+<link rel="stylesheet" href="/blog/css/attach.post.css">
+<article class="standard post">
+  <div class="title">
+    
+  
+    <h1 class="page-title center">
+        利用免费云资源部署网站前后端
+    </h1>
+  
+
+
+  </div>
+  <div class="meta center">
+    <time datetime="2021-04-12T13:21:44.000Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2021-04-12
+</time>
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/blog/categories/编程/">编程</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/blog/tags/网站/">网站</a>·<a href="/blog/tags/部署/">部署</a>·<a href="/blog/tags/netlify/">netlify</a>·<a href="/blog/tags/heroku/">heroku</a>·<a href="/blog/tags/mongo/">mongo</a>·<a href="/blog/tags/mongodb/">mongodb</a>·<a href="/blog/tags/weibo/">weibo</a>·<a href="/blog/tags/白嫖/">白嫖</a>
+
+
+  </div>
+  <hr>
+  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Netlify-静态资源"><span class="toc-text">Netlify - 静态资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Heroku-后端接口"><span class="toc-text">Heroku - 后端接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-Cloud-云数据库"><span class="toc-text">MongoDB Cloud - 云数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-Actions-定时跑程序"><span class="toc-text">Github Actions - 定时跑程序</span></a></li></ol>
+  
+  <div class="picture-container">
+    
+  </div>
+  <p><strong>写完了一个小项目，想要快速验证，但没有域名、服务器资源怎么办？</strong></p>
+<p><strong>好办，有免费的云资源可以利（bai）用（piao）。</strong></p>
+<p>上周末快速开发上线了一个小项目：<a href="https://weibo1.netlify.app/" target="_blank" rel="noopener">微博历史榜历史</a>，在最后发布的过程中遇到了一些问题。在搜索的过程中我意识到，关于国外的云服务使用/部署相关的文章貌似就没几篇。好在折腾了一番后顺利上线。故今天把这些部署过程记录下来，方便后人。</p>
+<p>该项目前后端分离，还包含一个爬虫，并且使用了 Mongo 数据库。这就意味着我需要找地方放这四块东西：</p>
+<ul>
+<li>前端项目打包生成静态资源</li>
+<li>后端接口</li>
+<li>数据库</li>
+<li>定时爬虫</li>
+</ul>
+<p>我没有 VPS、域名（博客在用，绑定到了 Github Pages，不能动），也不想租，所以我决定利用那些提供免费服务的云资源来部署本项目。</p>
+<p>在看下文之前，我假设你已经能够顺利翻墙…</p>
+<h3 id="Netlify-静态资源"><a href="#Netlify-静态资源" class="headerlink" title="Netlify - 静态资源"></a><strong><a href="http://netlify.com/" target="_blank" rel="noopener">Netlify</a> - 静态资源</strong></h3><hr>
+<p>我从 17 年起开始用它，知道对于前端资源的部署，用它没啥问题。在国内访问速度也还凑合。后来我也发现 <a href="https://vercel.com/" target="_blank" rel="noopener">Vercel</a> 家的服务也不错，看官也可用来替代 Netlify。</p>
+<p>Netlify 提供静态资源托管服务，有以下几个特点：</p>
+<ul>
+<li>可关联 Github 仓库，在仓库更新后自动收重新打包部署。</li>
+<li>支持配置命令（<code>yarn</code>,<code>yarn build</code>），自动帮你安装依赖，构建等。</li>
+<li>默认使用<code>dist</code>目录下的静态资源。</li>
+<li>提供二级域名（https）。</li>
+<li>（貌似是）仓库数量不限制。（但 Vercel 免费版只能部署你个人的仓库代码，不能部署组织下的。Netlify 没这限制。）</li>
+</ul>
+<blockquote>
+<p>这几个特点貌似流行的静态资源托管商都一样，毕竟连这功能都没的话，简直没得打。</p>
+</blockquote>
+<p>但不仅仅如此，Netlify、Vercel 现在也提供<strong>无服务函数/云函数（Serverless）</strong>的托管了。我本来打算此项目的后端接口部署成云函数，但我看着他俩的官方示例，都没搞成功…</p>
+<p>我后端接口用的是 <code>Go</code>，在用 Vercel 部署云函数时就直接遇到了<a href="https://github.com/xuthus5/zeit-serverless/issues/1" target="_blank" rel="noopener">报错</a>，在官方仓库的 issue 区找不到答案，最后无奈放弃。或许用 <code>Node.js</code> 不会有问题，但我就想用 <code>Go</code>。Netlify 那边遇到啥错我忘记了，总之也没成功。</p>
+<p>所以后端代码部署这块，还是找 Heroku…</p>
+<h3 id="Heroku-后端接口"><a href="#Heroku-后端接口" class="headerlink" title="Heroku - 后端接口"></a><strong><a href="http://netlify.com/" target="_blank" rel="noopener">Heroku</a> - 后端接口</strong></h3><hr>
+<p>Heroku 貌似是挺老牌的服务商了（搜了下，07 年就有了，最开始只支持 Ruby）。提供的服务也不仅仅是部署后端。</p>
+<p>它的特点有：</p>
+<ul>
+<li>免费额度：5 个项目。</li>
+<li>部署方便，下载 heroku 的命令行工具后，几个命令下来就可以部署了。</li>
+<li>支持语言多。</li>
+<li>提供二级域名（https）。</li>
+<li>支持云函数（但我貌似用 Go 部署时貌似也遇到了问题，忘了具体的错）。</li>
+<li>也支持部署静态资源（但不同于 Netlify，你必须把静态资源放到后端代码框框里，等于说 Heroku 那边部署的还是后端程序，只不过你这个程序没额外功能，只是读取静态资源）。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>国内被墙 🧱</li>
+</ul>
+<p>部署完后，会提供一个接口链接，供你访问，比如我<a href="https://warm-reef-76661.herokuapp.com/api/list" target="_blank" rel="noopener">这个</a>。直接在前端代码里调用就好了。</p>
+<p>具体的部署步骤，自己搜文章吧…</p>
+<h3 id="MongoDB-Cloud-云数据库"><a href="#MongoDB-Cloud-云数据库" class="headerlink" title="MongoDB Cloud - 云数据库"></a><strong><a href="https://www.mongodb.com/cloud" target="_blank" rel="noopener">MongoDB Cloud</a> - 云数据库</strong></h3><hr>
+<p>每个 Project 只有免费额度：500MB（可以创建多个 Project），所幸我的项目每天写入的数据量不大，500MB 够用一年多的了。</p>
+<p>在后台创建 Project 没什么好说的，只是提醒一下，连接数据库时的账号密码不是网站的账号密码，而是 Project - Security - Database Access 下面的那个账号密码。</p>
+<h3 id="Github-Actions-定时跑程序"><a href="#Github-Actions-定时跑程序" class="headerlink" title="Github Actions - 定时跑程序"></a><strong><a href="https://github.com/WeiboTrendingBackup/Spider/actions" target="_blank" rel="noopener">Github Actions</a> - 定时跑程序</strong></h3><hr>
+<p>GA 是什么东西呢？</p>
+<blockquote>
+<p>GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.</p>
+</blockquote>
+<p>官方介绍里都是：自动化工作流，CI/CD (自动集成测试和持续部署) 等对新人来说，不好理解的概念。</p>
+<p>其实解释 Github Actions 可以很直观：一台 Github 提供的 VPS（虚拟专用主机），你可以在主机里跑任何程序。</p>
+<blockquote>
+<p>注意不要滥用（挖矿什么的），会被封号。</p>
+</blockquote>
+<p>如果你有什么定时运行的程序，就非常适合用 Github Actions 来完成。比如我这个每小时运行一次的微博热搜备份<a href="https://github.com/WeiboTrendingBackup/Spider/blob/main/.github/workflows/autorun.yml" target="_blank" rel="noopener">爬虫</a>。</p>
+
+  
+  
+  <div class="declare">
+    <p><strong>本文作者：</strong>
+      <span>
+        林水溶
+        </span></p>
+    <p><strong>Github</strong>
+      <a href='https://github.com/shuiRong' target='_blanket'>https://github.com/shuiRong</a></p>
+      <p>  <strong>本文链接：</strong>
+        <a href="https://linshuirong.cn/blog/2021/04/12/利用免费云资源部署网站前后端/">https://linshuirong.cn/blog/2021/04/12/利用免费云资源部署网站前后端/</a>
+    </p>
+    <p> <strong>版权声明：</strong>
+      <span> 本作品采用
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+        进行许可。转载请注明出处！
+        
+  </div>
+  
+</article>
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+  page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+  site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+  site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+    
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/dinbror/bpopup@0.11.0/jquery.bpopup.min.js''></script>
+<script src="/blog/js/attach.js"></script>
+
+
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/blog/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/blog/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haru@1.0.5/01/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
