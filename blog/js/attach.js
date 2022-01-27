@@ -224,60 +224,60 @@ if (!os.isPc) {
     }
 })();
 
-// 左/右下角蕾姆拉姆图片
-jQuery(document).ready(function($) {
-    var leimuHTML = `
-<div id="updown">
-<div class="sidebar_wo" id="leimu">
-    <img src="https://i.imgur.com/Rv8vp3T.png" alt="雷姆" onmouseover="this.src='https://i.imgur.com/Rv8vp3T.png'" onmouseout="this.src='https://i.imgur.com/Rv8vp3T.png'"
-    id="audioBtn" />
-</div>
-<div class="sidebar_wo" id="lamu">
-    <img src="https://i.imgur.com/j7Lt5p6.png" alt="拉姆" onmouseover="this.src='https://i.imgur.com/P96BAEG.png'" onmouseout="this.src='https://i.imgur.com/j7Lt5p6.png'"
-    id="audioBtn" />
-</div>
-</div>
-<style>
-  .sidebar_wo {
-    position: fixed;
-    line-height: 0;
-    bottom: 0;
-    z-index: 1000;
-  }
+// // 左/右下角蕾姆拉姆图片
+// jQuery(document).ready(function($) {
+//     var leimuHTML = `
+// <div id="updown">
+// <div class="sidebar_wo" id="leimu">
+//     <img src="https://i.imgur.com/Rv8vp3T.png" alt="雷姆" onmouseover="this.src='https://i.imgur.com/Rv8vp3T.png'" onmouseout="this.src='https://i.imgur.com/Rv8vp3T.png'"
+//     id="audioBtn" />
+// </div>
+// <div class="sidebar_wo" id="lamu">
+//     <img src="https://i.imgur.com/j7Lt5p6.png" alt="拉姆" onmouseover="this.src='https://i.imgur.com/P96BAEG.png'" onmouseout="this.src='https://i.imgur.com/j7Lt5p6.png'"
+//     id="audioBtn" />
+// </div>
+// </div>
+// <style>
+//   .sidebar_wo {
+//     position: fixed;
+//     line-height: 0;
+//     bottom: 0;
+//     z-index: 1000;
+//   }
 
-  #leimu {
-    left: 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    -webkit-transform: translate(-7px, 7px);
-    -ms-transform: translate(-7px, 7px);
-    transform: translate(-7px, 7px);
-  }
+//   #leimu {
+//     left: 0;
+//     -webkit-transition: all 0.3s ease-in-out;
+//     transition: all 0.3s ease-in-out;
+//     -webkit-transform: translate(-7px, 7px);
+//     -ms-transform: translate(-7px, 7px);
+//     transform: translate(-7px, 7px);
+//   }
 
-  #lamu {
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    -webkit-transform: translate(7px, 7px);
-    -ms-transform: translate(7px, 7px);
-    transform: translate(7px, 7px);
-    right: 0;
-  }
+//   #lamu {
+//     -webkit-transition: all 0.3s ease-in-out;
+//     transition: all 0.3s ease-in-out;
+//     -webkit-transform: translate(7px, 7px);
+//     -ms-transform: translate(7px, 7px);
+//     transform: translate(7px, 7px);
+//     right: 0;
+//   }
 
-  #leimu:hover {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
+//   #leimu:hover {
+//     -webkit-transform: translate(0, 0);
+//     -ms-transform: translate(0, 0);
+//     transform: translate(0, 0);
+//   }
 
-  #lamu:hover {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-</style>
-`;
-    $('body').append(leimuHTML);
-});
+//   #lamu:hover {
+//     -webkit-transform: translate(0, 0);
+//     -ms-transform: translate(0, 0);
+//     transform: translate(0, 0);
+//   }
+// </style>
+// `;
+//     $('body').append(leimuHTML);
+// });
 
 // var sawaboutme = localStorage.getItem("sawaboutme");
 // if(!sawaboutme && window.confirm("总结了下我的前端学习经历：大事件表(2016-7至今)，即「关于我」部分。要去看看吗？")){
