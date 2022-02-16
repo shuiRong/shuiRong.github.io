@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content>
+  
+  <title>手绘风格图表库chart.xkcd 实现原理</title>
+  <meta name="author" content="林水溶">
+  <meta name="description" content="以前我没得选，现在我只想做个坏人">
+  
+  
+  <meta property="og:title" content="手绘风格图表库chart.xkcd 实现原理">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="林水溶的博客">
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/blog/atom.xml" title="林水溶的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/blog/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/blog/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+</head>
+</html>
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/blog/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  <div class="description">
+    &nbsp;以前我没得选，现在我只想做个坏人
+  </div>
+</div>
+
+<link rel="stylesheet" href="/blog/css/attach.post.css">
+<article class="standard post">
+  <div class="title">
+    
+  
+    <h1 class="page-title center">
+        手绘风格图表库chart.xkcd 实现原理
+    </h1>
+  
+
+
+  </div>
+  <div class="meta center">
+    <time datetime="2022-02-16T09:04:28.000Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2022-02-16
+</time>
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/blog/categories/大前端/">大前端</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/blog/tags/前端/">前端</a>·<a href="/blog/tags/chart/">chart</a>·<a href="/blog/tags/xkcd/">xkcd</a>·<a href="/blog/tags/原理/">原理</a>
+
+
+  </div>
+  <hr>
+  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#xkcd-是什么？"><span class="toc-text">xkcd 是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理"><span class="toc-text">实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#感受"><span class="toc-text">感受</span></a></li></ol>
+  
+  <div class="picture-container">
+    
+  </div>
+  <h3 id="xkcd-是什么？"><a href="#xkcd-是什么？" class="headerlink" title="xkcd 是什么？"></a>xkcd 是什么？</h3><hr>
+<p>一系列浪漫、讽刺、数学和语言的<strong>网络漫画</strong>。</p>
+<p>它的网站在这里：<a href="https://xkcd.com/" target="_blank" rel="noopener">https://xkcd.com/</a></p>
+<p>虽然该网站早在2007年就已经在互联网上（英文世界吧）广泛传播了，但我是在2021年通过前端图表库<a href="https://github.com/timqian/chart.xkcd" target="_blank" rel="noopener">chart.xkcd</a>才闻其大名的。就去翻看了其中的一些漫画。我觉得最好笑的是这一张：<img src="https://i.imgur.com/Mf9ZCS8.png" alt="不见图，请翻墙"></p>
+<blockquote>
+<p>Q：这个词是什么意思？</p>
+<p>A：没有任何意义，就是随意的几个字母而已。</p>
+</blockquote>
+<p><strong>注意到中间的趋势图了吗？</strong></p>
+<p>这就是 xkcd 风格的图表，也可以说是手绘风格。</p>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>（或许是之前很少接触到图表）在无意中于社交媒体上看到 chart.xkcd 之前，我都不知道前端还能实现这种手绘效果，简直太酷了。</p>
+<p><img src="https://i.imgur.com/tz1D64S.png" alt="不见图，请翻墙"></p>
+<p>那么他是怎么实现的呢？</p>
+<p>在我 clone 了该库的源码，研究了一番之后。发现其实原理挺简单的：就是用  <strong><a href="https://github.com/d3/d3" target="_blank" rel="noopener">D3.js</a> 画图表</strong>  + SVG 的 <code>feDisplacementMap</code> 滤镜实现手绘特效。</p>
+<p>在使用 <code>feDisplacementMap</code> 滤镜之前，图表是这个样子的，就是很普通的图表：</p>
+<blockquote>
+<p>P.S.文字的效果其实是<a href="https://cdn.rawgit.com/ipython/xkcd-font/master/xkcd-script/font/xkcd-script.woff" target="_blank" rel="noopener">xkcd-font</a>字体带来的。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/dvdf1Wj.png" alt="不见图，请翻墙"></p>
+<p>而加上滤镜之后，就有了最上面那种效果，关键代码在<a href="https://github.com/timqian/chart.xkcd/blob/3e16a733e6639f2b38a95c8cce55257840df2381/src/utils/addFilter.js#L15" target="_blank" rel="noopener">这里</a>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 摘录代码经过精简</span></span><br><span class="line">f.append(<span class="string">'feDisplacementMap'</span>)</span><br><span class="line">  .attr(<span class="string">'scale'</span>, <span class="string">'5'</span>)</span><br><span class="line">  .attr(<span class="string">'in'</span>, <span class="string">'SourceGraphic'</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>那这个 <code>feDisplacementMap</code> 滤镜是什么呢？</strong></p>
+<p>一大堆，不想解释了，直接推荐看这篇文章吧，讲挺好：<a href="https://segmentfault.com/a/1190000039700192" target="_blank" rel="noopener">https://segmentfault.com/a/1190000039700192</a></p>
+<p><strong>那么 <code>D3.js</code> 是什么呢？</strong></p>
+<p>一个用来操作 SVG 的强大的JS库，比我们更熟知的 ECharts 更底层，因此也意味着可定制度更高，更强大。推荐这篇文章：<a href="https://juejin.cn/post/6982089492991574047" target="_blank" rel="noopener">https://juejin.cn/post/6982089492991574047</a></p>
+<h3 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h3><p>在我搞懂手绘风格图表的实现原理之后，有一个感受：<strong>仅仅是知道/不知道某一个知识点，最后带来的差距还是挺大的。所以我们需要涉猎广泛，乱七八糟的东西知道的大概就行。这些知识未来肯定会给我们带来很大的收益，虽然你那时候可能没意识到。</strong></p>
+
+  
+  
+  <div class="declare">
+    <p><strong>本文作者：</strong>
+      <span>
+        林水溶
+        </span></p>
+    <p><strong>Github</strong>
+      <a href='https://github.com/shuiRong' target='_blanket'>https://github.com/shuiRong</a></p>
+      <p>  <strong>本文链接：</strong>
+        <a href="https://linshuirong.cn/blog/2022/02/16/手绘风格图表库chart-xkcd-实现原理/">https://linshuirong.cn/blog/2022/02/16/手绘风格图表库chart-xkcd-实现原理/</a>
+    </p>
+    <p> <strong>版权声明：</strong>
+      <span> 本作品采用
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+        进行许可。转载请注明出处！
+        
+  </div>
+  
+</article>
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+  page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+  site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+  site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+    
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/dinbror/bpopup@0.11.0/jquery.bpopup.min.js''></script>
+<script src="/blog/js/attach.js"></script>
+
+
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/blog/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/blog/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>

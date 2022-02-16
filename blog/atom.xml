@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="/blog/"/>
-  <updated>2021-04-12T13:26:27.806Z</updated>
+  <updated>2022-02-16T09:08:24.881Z</updated>
   <id>/blog/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>手绘风格图表库chart.xkcd 实现原理</title>
+    <link href="/blog/2022/02/16/%E6%89%8B%E7%BB%98%E9%A3%8E%E6%A0%BC%E5%9B%BE%E8%A1%A8%E5%BA%93chart-xkcd-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/"/>
+    <id>/blog/2022/02/16/%E6%89%8B%E7%BB%98%E9%A3%8E%E6%A0%BC%E5%9B%BE%E8%A1%A8%E5%BA%93chart-xkcd-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</id>
+    <published>2022-02-16T09:04:28.000Z</published>
+    <updated>2022-02-16T09:08:24.881Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="xkcd-是什么？"><a href="#xkcd-是什么？" class="headerlink" title="xkcd 是什么？"></a>xkcd 是什么？</h3><hr><p>一系列浪漫、讽刺、数学和语言的<strong>网络漫画</strong>。</p><p>它的网站在这里：<a href="https://xkcd.com/" target="_blank" rel="noopener">https://xkcd.com/</a></p><p>虽然该网站早在2007年就已经在互联网上（英文世界吧）广泛传播了，但我是在2021年通过前端图表库<a href="https://github.com/timqian/chart.xkcd" target="_blank" rel="noopener">chart.xkcd</a>才闻其大名的。就去翻看了其中的一些漫画。我觉得最好笑的是这一张：<img src="https://i.imgur.com/Mf9ZCS8.png" alt="不见图，请翻墙"></p><blockquote><p>Q：这个词是什么意思？</p><p>A：没有任何意义，就是随意的几个字母而已。</p></blockquote><p><strong>注意到中间的趋势图了吗？</strong></p><p>这就是 xkcd 风格的图表，也可以说是手绘风格。</p><h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>（或许是之前很少接触到图表）在无意中于社交媒体上看到 chart.xkcd 之前，我都不知道前端还能实现这种手绘效果，简直太酷了。</p><p><img src="https://i.imgur.com/tz1D64S.png" alt="不见图，请翻墙"></p><p>那么他是怎么实现的呢？</p><p>在我 clone 了该库的源码，研究了一番之后。发现其实原理挺简单的：就是用  <strong><a href="https://github.com/d3/d3" target="_blank" rel="noopener">D3.js</a> 画图表</strong>  + SVG 的 <code>feDisplacementMap</code> 滤镜实现手绘特效。</p><p>在使用 <code>feDisplacementMap</code> 滤镜之前，图表是这个样子的，就是很普通的图表：</p><blockquote><p>P.S.文字的效果其实是<a href="https://cdn.rawgit.com/ipython/xkcd-font/master/xkcd-script/font/xkcd-script.woff" target="_blank" rel="noopener">xkcd-font</a>字体带来的。</p></blockquote><p><img src="https://i.imgur.com/dvdf1Wj.png" alt="不见图，请翻墙"></p><p>而加上滤镜之后，就有了最上面那种效果，关键代码在<a href="https://github.com/timqian/chart.xkcd/blob/3e16a733e6639f2b38a95c8cce55257840df2381/src/utils/addFilter.js#L15" target="_blank" rel="noopener">这里</a>：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 摘录代码经过精简</span></span><br><span class="line">f.append(<span class="string">'feDisplacementMap'</span>)</span><br><span class="line">  .attr(<span class="string">'scale'</span>, <span class="string">'5'</span>)</span><br><span class="line">  .attr(<span class="string">'in'</span>, <span class="string">'SourceGraphic'</span>)</span><br></pre></td></tr></table></figure><p><strong>那这个 <code>feDisplacementMap</code> 滤镜是什么呢？</strong></p><p>一大堆，不想解释了，直接推荐看这篇文章吧，讲挺好：<a href="https://segmentfault.com/a/1190000039700192" target="_blank" rel="noopener">https://segmentfault.com/a/1190000039700192</a></p><p><strong>那么 <code>D3.js</code> 是什么呢？</strong></p><p>一个用来操作 SVG 的强大的JS库，比我们更熟知的 ECharts 更底层，因此也意味着可定制度更高，更强大。推荐这篇文章：<a href="https://juejin.cn/post/6982089492991574047" target="_blank" rel="noopener">https://juejin.cn/post/6982089492991574047</a></p><h3 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h3><p>在我搞懂手绘风格图表的实现原理之后，有一个感受：<strong>仅仅是知道/不知道某一个知识点，最后带来的差距还是挺大的。所以我们需要涉猎广泛，乱七八糟的东西知道的大概就行。这些知识未来肯定会给我们带来很大的收益，虽然你那时候可能没意识到。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;xkcd-是什么？&quot;&gt;&lt;a href=&quot;#xkcd-是什么？&quot; class=&quot;headerlink&quot; title=&quot;xkcd 是什么？&quot;&gt;&lt;/a&gt;xkcd 是什么？&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;一系列浪漫、讽刺、数学和语言的&lt;strong&gt;网络漫画&lt;/strong&gt;。
+      
+    
+    </summary>
+    
+    
+      <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="/blog/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="chart" scheme="/blog/tags/chart/"/>
+    
+      <category term="xkcd" scheme="/blog/tags/xkcd/"/>
+    
+      <category term="原理" scheme="/blog/tags/%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>利用免费云资源部署网站前后端</title>
@@ -287,11 +320,11 @@
     
       <category term="GFW" scheme="/blog/tags/GFW/"/>
     
-      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
       <category term="翻墙" scheme="/blog/tags/%E7%BF%BB%E5%A2%99/"/>
     
       <category term="科学上网" scheme="/blog/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
   </entry>
   
@@ -349,11 +382,11 @@
     
       <category term="GFW" scheme="/blog/tags/GFW/"/>
     
-      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
       <category term="翻墙" scheme="/blog/tags/%E7%BF%BB%E5%A2%99/"/>
     
       <category term="科学上网" scheme="/blog/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+      <category term="碎碎念" scheme="/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
   </entry>
   
@@ -379,9 +412,9 @@
       <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="Github" scheme="/blog/tags/Github/"/>
-    
       <category term="言论自由" scheme="/blog/tags/%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1/"/>
+    
+      <category term="Github" scheme="/blog/tags/Github/"/>
     
       <category term="逻辑" scheme="/blog/tags/%E9%80%BB%E8%BE%91/"/>
     
@@ -443,13 +476,13 @@
       <category term="大前端" scheme="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Mastodon" scheme="/blog/tags/Mastodon/"/>
-    
       <category term="ReactNative" scheme="/blog/tags/ReactNative/"/>
     
       <category term="App" scheme="/blog/tags/App/"/>
     
       <category term="Android" scheme="/blog/tags/Android/"/>
+    
+      <category term="Mastodon" scheme="/blog/tags/Mastodon/"/>
     
   </entry>
   
@@ -637,34 +670,6 @@
       <category term="时光之轮" scheme="/blog/tags/%E6%97%B6%E5%85%89%E4%B9%8B%E8%BD%AE/"/>
     
       <category term="书评" scheme="/blog/tags/%E4%B9%A6%E8%AF%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我眼中的权威</title>
-    <link href="/blog/2018/07/25/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%9D%83%E5%A8%81/"/>
-    <id>/blog/2018/07/25/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%9D%83%E5%A8%81/</id>
-    <published>2018-07-25T15:51:43.000Z</published>
-    <updated>2018-07-26T14:10:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26522008&auto=0&height=66"></iframe><p><strong>我不相信权威！</strong></p><blockquote><p>不只是权威，我对任何人的言论都有所保留。除非它符合逻辑，也就是说，它要听起来“有道理”。但“权威”是比较典型的群体，所以本文借它来说理</p></blockquote><p><strong>注</strong> 为了避免无意义地争论，我有必要解释下这句话：看待事物不要走极端。我不是不相信“每一个”权威，也不是不相信权威说的“每一句话”。<strong>我的意思是，在公共场合下，权威们所说的大部分话，我都持怀疑态度。</strong></p><h3 id="在其位谋其政"><a href="#在其位谋其政" class="headerlink" title="在其位谋其政"></a>在其位谋其政</h3><hr><p>换句话说，屁股决定脑袋。<br>趋利避害是人的本能。人做的事，说的话，背后大都是有利益等考量，公共场合更是如此。只不过具体怎样的利益考量，只有他自己知道了。</p><p><strong>正是因为权威说的话大都是出于利益等考量，而不是出于对真理，对事实的追求。所以我才会说“我不相信权威”。</strong></p><p>经常在网络上看到有人在争论。</p><p>如果我发现某个人和其“争论的对象”有利益关联或者说其他人性/心理方面的动机（比如：和一个贫穷的人讨论“贫穷和愚昧的关系”，他就有可能仅仅因为“对号入座”而不顾事实逻辑，一味反驳；很多人听不得对当下社会的批评言论也是出于某种“奇怪的心理原因”，尽管事实如此。），那么他的观点的可信度就会大大降低。</p><blockquote><p>前段时间“李笑来通话录音流出”，又证实了我的想法：大多数所谓“知名人士”只是把大众当成“可以随意摆弄的对象”（本来想说“傻逼”，但这个词太情绪化了，遂换之）罢了，没别的。还有这么多人把他们的言论奉为圭臬，呵呵。</p></blockquote><p>这么多人轻信权威的话，可能是觉得：<strong>因为</strong>权威比自己更专业，见识更多，更有经验，更….<strong>所以</strong>权威的言论就更可靠。<br>这个因果关系看上去<strong>似乎</strong>没问题。</p><p>但这句话正确的一个前提却被大众忽略了，而这个前提恰恰是致命的：权威在经过一番权衡后（利益？道德？），认为告诉大众<strong>“正确的话”</strong>是符合<strong>“他的需求”</strong>的。</p><p>那么问题来了：如果权威在经过一番权衡后，认为告诉大众<strong>“错误的话”</strong>是符合<strong>“他的需求”</strong>的呢？</p><h3 id="预设观点"><a href="#预设观点" class="headerlink" title="预设观点"></a>预设观点</h3><hr><p>相信多数人在看到权威的观点前都会有自己的“观点”。</p><p>多数人发现权威的观点和自己的一致，会笑着点了点头说：“嗯，果然我想的没错！”，然后就吃瓜去了。</p><blockquote><p>这种人只是在欺骗自己罢了。他们了解权威观点的唯一目的只是想确认”权威的观点和自己的一致“。并且这里还有个隐藏的预设：他们潜意识认为“权威的观点就是正确的”。</p><p>他们这种行为还反映出他们的<strong>不自信</strong>。居然需要别人告诉自己是对的，自己才觉得自己是对的，呵。</p><p>那么这种人在发现权威观点和自己的不一致时，也只会抛弃自己的观点，选择接受权威的观点，而不会去主动思考！思考！思考！</p></blockquote><p>少数人则不止于此，会去思考权威说的话是否有逻辑问题，数据引用是否正确等，还会继续通过搜索引擎去看其他人的观点，尤其是相反的观点，<strong>继续思考</strong>！</p><h3 id="尽信书不如无书"><a href="#尽信书不如无书" class="headerlink" title="尽信书不如无书"></a>尽信书不如无书</h3><hr><p>“努力很重要”</p><p>“选择比努力重要”</p><p>“选择虽然比努力重要，但坚持比选择更重要”</p><blockquote><p>可能有人会抓狂说：”他喵的，到底哪个重要？”</p><p><strong>纠结哪个重要根本无关紧要！</strong></p></blockquote><p>在我高中的某个时刻突然发现：针对同一件事，一个人可以出于不同的考量而说出相反却都有说服力的话之后，我就决定<strong>不再只是一味地接受任何人的观点了。</strong></p><p>所谓<strong>尽信书不如无书</strong>，就是这个道理。</p><h3 id="独立思考"><a href="#独立思考" class="headerlink" title="独立思考"></a>独立思考</h3><hr><p>“独立思考”简直太重要了。重要到什么程度呢？完全可以说是“性命攸关”。</p><p>它可以帮助你在生活中面临大大小小的选择时，<strong>大概率</strong>能选择到更有利的那一个。</p><p>关于独立思考，不想聊了。</p><p>其他相关文章及讨论：</p><p><a href="https://program-think.blogspot.com/2010/10/book-review-asking-right-questions.html" target="_blank" rel="noopener">书评：《学会提问——批判性思维指南》</a> （需科学上网）</p><p><a href="https://www.zhihu.com/question/19649898" target="_blank" rel="noopener">什么是独立思考？如何独立思考？</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=
-      
-    
-    </summary>
-    
-    
-      <category term="一些思考" scheme="/blog/categories/%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
-    
-    
-      <category term="权威" scheme="/blog/tags/%E6%9D%83%E5%A8%81/"/>
-    
-      <category term="独立思考" scheme="/blog/tags/%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83/"/>
     
   </entry>
   
